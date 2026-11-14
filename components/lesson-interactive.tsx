@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSaved } from "@/lib/use-saved";
 
 /* Câu hỏi kiểm tra nhanh */
 export function Quiz({
@@ -177,29 +178,6 @@ export function LessonMotion() {
   }, []);
 
   return <div className="read-bar" style={{ transform: `scaleX(${p})` }} aria-hidden="true" />;
-}
-
-function useSaved<T>(key: string, initial: T): [T, (v: T) => void] {
-  const [val, setVal] = useState<T>(initial);
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(key);
-      if (raw) setVal(JSON.parse(raw));
-    } catch {
-      /* dùng giá trị mặc định */
-    }
-  }, [key]);
-  return [
-    val,
-    (v: T) => {
-      setVal(v);
-      try {
-        window.localStorage.setItem(key, JSON.stringify(v));
-      } catch {
-        /* bỏ qua */
-      }
-    },
-  ];
 }
 
 /* Thang điểm tự chấm video, mốc đạt 80/100 */

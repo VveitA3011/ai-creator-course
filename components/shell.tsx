@@ -10,6 +10,7 @@ import { Icon } from "./icons";
 const links = [
   { href: "/", label: "Trang chủ", icon: "home" as const, match: (p: string) => p === "/" },
   { href: "/lo-trinh", label: "Lộ trình", icon: "layers" as const, match: (p: string) => p.startsWith("/lo-trinh") || p.startsWith("/khoa-hoc") },
+  { href: "/cong-cu", label: "Công cụ", icon: "tools" as const, match: (p: string) => p.startsWith("/cong-cu") },
   { href: "/hoc-tap", label: "Học tập", icon: "pie" as const, match: (p: string) => p.startsWith("/hoc-tap") },
 ];
 

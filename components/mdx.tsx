@@ -40,6 +40,22 @@ export function Beat({ time, label, children }: { time: string; label: string; c
   );
 }
 
+/* Nút mở công cụ thực hành */
+export function ToolLink({ href, title, children }: { href: string; title: string; children: ReactNode }) {
+  return (
+    <a className="tool-link" href={href}>
+      <span className="tool-link-icon" aria-hidden="true">
+        <Icon name="tools" />
+      </span>
+      <span>
+        <b>{title}</b>
+        <span className="muted">{children}</span>
+      </span>
+      <Icon name="chevron" />
+    </a>
+  );
+}
+
 /* Hộp bài tập, đầu ra, lưu ý */
 export function Exercise({ title, children }: { title?: string; children: ReactNode }) {
   return (
@@ -330,6 +346,7 @@ export const mdxComponents = {
   ShotSizes,
   CameraMoves,
   LightingDemo,
+  ToolLink,
   Quiz,
   SelfCheck,
   Rubric,

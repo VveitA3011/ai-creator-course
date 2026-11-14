@@ -33,6 +33,11 @@ const paths = {
       <path d="M12 7v5l3 2" />
     </>
   ),
+  tools: (
+    <>
+      <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3.5 17.5l3 3 5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.5-.5-.5-2.5z" />
+    </>
+  ),
   play: <path d="M8 5v14l11-7z" fill="currentColor" stroke="none" />,
 };
 
