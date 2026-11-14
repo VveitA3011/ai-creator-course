@@ -1,0 +1,70 @@
+## Storyboard là gì và vì sao không được bỏ qua
+
+Storyboard là chuỗi hình ảnh sắp theo thứ tự, mỗi hình đại diện cho một shot. Nó cho bạn thấy cả video trước khi tốn một credit sinh video nào.
+
+Sinh video AI là bước đắt nhất. Duyệt storyboard trước khi sản xuất là cách chính để kiểm soát chi phí, và khi làm cho khách hàng, đây là thời điểm chốt nội dung với họ.
+
+## Sáu cột của một shot
+
+Mỗi shot trong storyboard cần đủ sáu thông tin:
+
+| Cột | Ý nghĩa |
+| --- | --- |
+| Scene | Cảnh số mấy, ở bối cảnh nào |
+| Shot | Cỡ cảnh |
+| Camera | Góc máy và chuyển động |
+| Lighting | Ánh sáng và màu |
+| Action | Ai làm gì trong shot |
+| Duration | Thời lượng, tính bằng giây |
+
+## Ví dụ: quảng cáo nước hoa 24 giây
+
+| Scene | Shot | Camera | Lighting | Action | Duration |
+| --- | --- | --- | --- | --- | --- |
+| 1 · Bàn đá | Extreme close-up | Slow dolly-in | Low-key, rim light | Một bàn tay chạm vào lọ nước hoa | 3s |
+| 2 · Sảnh tiệc | Full shot | Tracking shot | Vàng ấm, đèn chùm | Nhân vật bước vào, tà váy chuyển động | 5s |
+| 3 · Sảnh tiệc | Medium shot | Static | Vàng ấm | Hai người quay lại nhìn theo | 4s |
+| 4 · Bàn đá | Close-up | Orbit | Low-key, rim light | Lọ nước hoa, hạt sương trên thân chai | 5s |
+| 5 · Sảnh tiệc | Close-up | Slow dolly-in | Vàng ấm | Nhân vật mỉm cười, nhìn qua vai | 4s |
+| 6 · Nền đen | Medium shot | Static | Low-key | Sản phẩm, tên thương hiệu, CTA | 3s |
+
+Tổng: 3 + 5 + 4 + 5 + 4 + 3 = 24 giây.
+
+Để ý: cỡ cảnh thay đổi giữa các shot liền nhau, chỉ có hai bối cảnh chính, và không shot nào dài quá 5 giây.
+
+## Tạo ảnh cho từng shot
+
+Với mỗi dòng, tạo một ảnh tĩnh đại diện. Ghép prompt từ những gì bạn đã chuẩn bị:
+
+```text
+[cỡ cảnh], [nhân vật theo character sheet], [hành động],
+[bối cảnh], [ánh sáng và màu], vertical 9:16
+```
+
+Dùng ảnh character sheet và ảnh bối cảnh làm tham chiếu. Ảnh storyboard không cần hoàn hảo, nhưng phải đúng bố cục, đúng nhân vật và đúng ánh sáng. Những ảnh tốt nhất sẽ được dùng làm khung hình đầu cho image-to-video ở Tuần 3.
+
+## Soát storyboard trước khi sản xuất
+
+- Tổng thời lượng có khớp với mục tiêu không?
+- Đặt các ảnh cạnh nhau: nhân vật, trang phục, tông màu có giống nhau không?
+- Tắt hết chữ, chỉ nhìn chuỗi ảnh, có hiểu được câu chuyện không?
+- Hook nằm ở shot đầu tiên và có đủ mạnh không?
+- Có shot nào yêu cầu thứ AI dễ lỗi (chữ trong khung hình, bàn tay phức tạp, đám đông) không?
+
+## Bài tập tổng kết Tuần 2
+
+<Exercise title="Hai bộ storyboard">
+
+1. Lấy kịch bản quảng cáo ở Tuần 1 và phân thành 5–6 shot. Mỗi shot đủ sáu cột: scene, shot, camera, lighting, action, duration.
+2. Làm tương tự với một kịch bản kể chuyện.
+3. Tạo ảnh tĩnh cho từng shot, dùng character sheet và ảnh bối cảnh làm tham chiếu.
+4. Soát theo danh sách năm câu hỏi ở trên và sửa.
+5. Gom mọi prompt đã dùng trong tuần vào một tệp, chia bốn nhóm: nhân vật, bối cảnh, góc máy, ánh sáng.
+
+</Exercise>
+
+<Output>
+
+Đầu ra của Tuần 2: 2 bộ storyboard, 1 character sheet, 1 bộ ảnh tham chiếu sản phẩm và thư viện prompt cơ bản. Tuần 3 sẽ biến các ảnh này thành video.
+
+</Output>

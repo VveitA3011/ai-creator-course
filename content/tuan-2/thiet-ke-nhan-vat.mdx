@@ -1,0 +1,62 @@
+## Mục tiêu của Tuần 2
+
+Biết biến câu chữ thành hình ảnh trước khi tạo video. Mọi thứ bạn làm tuần này (nhân vật, bối cảnh, storyboard) là để tuần sau sinh video nhanh hơn và ít phải làm lại.
+
+## Vì sao phải khóa nhân vật trước
+
+Lỗi dễ nhận ra nhất của video AI là nhân vật đổi khuôn mặt, kiểu tóc hoặc trang phục giữa các cảnh. Cách xử lý là tạo một **character sheet**: bộ ảnh tham chiếu cố định ngoại hình nhân vật, dùng lại cho mọi cảnh sau này.
+
+## Viết hồ sơ nhân vật
+
+Trước khi tạo ảnh, viết ra những đặc điểm sẽ không thay đổi:
+
+| Mục | Ví dụ |
+| --- | --- |
+| Tuổi, giới tính, vóc dáng | Nữ, khoảng 28 tuổi, dáng mảnh |
+| Khuôn mặt | Mặt trái xoan, mắt nâu sẫm, nốt ruồi nhỏ dưới mắt trái |
+| Kiểu tóc | Tóc đen ngang vai, rẽ ngôi lệch |
+| Trang phục | Áo len màu kem, quần jeans xanh đậm |
+| Phong cách hình ảnh | Chân thực, tông màu ấm, ánh sáng tự nhiên |
+
+Đặc điểm càng cụ thể và càng ít thì càng dễ giữ. Một chi tiết nhận diện rõ (nốt ruồi, chiếc khăn, màu áo) giúp cả AI lẫn người xem nhận ra nhân vật.
+
+## Bốn góc của character sheet
+
+Tạo ảnh nhân vật ở bốn góc, giữ nguyên phần mô tả ngoại hình trong prompt:
+
+1. Chính diện
+2. Góc 3/4
+3. Góc nghiêng
+4. Toàn thân
+
+Mẫu prompt để bắt đầu. Hãy viết bằng tiếng Anh vì đa số công cụ hiểu tiếng Anh tốt hơn:
+
+```text
+Character reference sheet, [tuổi, giới tính, vóc dáng],
+[khuôn mặt], [kiểu tóc], wearing [trang phục],
+front view, neutral expression, plain light grey background,
+soft natural light, realistic photography, consistent character
+```
+
+Đổi `front view` thành `three-quarter view`, `side profile`, `full body` cho ba ảnh còn lại. Phần mô tả ngoại hình phải giữ nguyên từng chữ.
+
+## Đưa nhân vật vào bối cảnh
+
+Khi đã có bốn góc ưng ý, dùng chúng làm ảnh tham chiếu để tạo thêm ba bối cảnh có cùng nhân vật. So sánh từng ảnh với character sheet: khuôn mặt, tóc, trang phục có giữ không?
+
+Với nhân vật hoạt hình, quy trình giống hệt. Chỉ cần thêm mô tả phong cách (ví dụ hoạt hình 3D) và giữ phong cách đó cho mọi ảnh.
+
+<Exercise title="Tạo character sheet">
+
+1. Viết hồ sơ nhân vật cho nhân vật chính của một kịch bản kể chuyện ở Tuần 1.
+2. Tạo bốn ảnh: chính diện, góc 3/4, góc nghiêng, toàn thân. Cố định trang phục, kiểu tóc và đặc điểm khuôn mặt.
+3. Tạo thêm ba bối cảnh có cùng nhân vật.
+4. Lưu prompt đã dùng vào một tệp. Đây là những mục đầu tiên trong thư viện prompt của bạn.
+
+</Exercise>
+
+<Output>
+
+Một character sheet bốn góc và ba ảnh nhân vật trong bối cảnh.
+
+</Output>
