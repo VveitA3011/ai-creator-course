@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
+import { Rail, TopBar } from "@/components/shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Lộ trình 8 tuần thực chiến để trở thành AI Short-form Video Creator: từ kịch bản, storyboard đến video AI hoàn chỉnh và portfolio.",
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#4b1b22" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,28 +25,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">
           Bỏ qua điều hướng
         </a>
-        <header className="site-header">
-          <div className="wrap">
-            <Link href="/" className="brand">
-              AI Creator
-            </Link>
-            <nav aria-label="Điều hướng chính">
-              <Link href="/lo-trinh">Lộ trình</Link>
-              <Link href="/hoc-tap">Học tập</Link>
-            </nav>
-          </div>
-        </header>
-        <main id="main" className="wrap">
-          {children}
-        </main>
-        <footer className="site-footer">
-          <div className="wrap">
-            <p>
+        <div className="shell">
+          <Rail />
+          <div className="stage">
+            <TopBar />
+            <main id="main">{children}</main>
+            <footer className="site-footer">
               Nội dung mang tính hướng dẫn nghề nghiệp. Các con số về thị trường, giá dịch vụ và thu nhập là nhận định
               tham khảo, không phải cam kết kết quả.
-            </p>
+            </footer>
           </div>
-        </footer>
+        </div>
       </body>
     </html>
   );

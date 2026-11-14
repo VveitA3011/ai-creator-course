@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Lộ trình" };
 export default function Roadmap() {
   return (
     <div className="stack-lg">
-      <header className="stack">
+      <header className="stack rise">
         <span className="mono">Lộ trình lõi · {totalPlanned} bài</span>
         <h1>Lộ trình 8 tuần thực chiến</h1>
         <p className="lead">
@@ -16,9 +16,9 @@ export default function Roadmap() {
         </p>
       </header>
 
-      <div className="strip">
-        {modules.map((m) => (
-          <ModuleCard key={m.slug} module={m} />
+      <div className="cards-grid">
+        {modules.map((m, n) => (
+          <ModuleCard key={m.slug} module={m} index={n} />
         ))}
       </div>
 

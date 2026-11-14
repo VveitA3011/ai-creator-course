@@ -22,7 +22,7 @@ export default async function ModulePage({ params }: Props) {
   if (!m || m.lessons.length === 0) notFound();
 
   return (
-    <div className="stack" style={{ maxWidth: 720 }}>
+    <div className="stack rise" style={{ maxWidth: 720 }}>
       <p className="crumbs">
         <Link href="/lo-trinh">Lộ trình</Link> / {m.tag}
       </p>

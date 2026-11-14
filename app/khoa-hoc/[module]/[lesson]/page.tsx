@@ -44,7 +44,7 @@ export default async function LessonPage({ params }: Props) {
         <LessonList module={m} current={lesson.slug} />
       </aside>
 
-      <article className="stack">
+      <article className="stack rise">
         <p className="crumbs">
           <Link href="/lo-trinh">Lộ trình</Link> / <Link href={`/khoa-hoc/${m.slug}`}>{m.tag}</Link>
         </p>
