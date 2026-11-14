@@ -5,9 +5,12 @@ import { Rail, TopBar } from "@/components/shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ai-creator-course-nine.vercel.app"),
   title: { default: "AI Creator · Khóa học AI Short-form Video", template: "%s · AI Creator" },
   description:
     "Lộ trình 8 tuần thực chiến để trở thành AI Short-form Video Creator: từ kịch bản, storyboard đến video AI hoàn chỉnh và portfolio.",
+  openGraph: { type: "website", locale: "vi_VN", siteName: "AI Creator" },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#f5f5dc" };
