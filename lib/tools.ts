@@ -38,16 +38,9 @@ export const tools: Tool[] = [
     tone: "cream",
   },
   {
-    slug: "cham-diem",
-    name: "Thang điểm tự chấm",
-    summary: "Sáu tiêu chí có trọng số, báo đạt khi từ 80/100 để đưa video vào portfolio.",
-    lessons: [{ label: "Final Challenge: The Last Letter", href: "/khoa-hoc/final/the-last-letter" }],
-    tone: "orange",
-  },
-  {
     slug: "checklist",
-    name: "Checklist chất lượng",
-    summary: "Mười hai mục kiểm tra trước khi bàn giao bất kỳ video nào.",
+    name: "Checklist nghiệm thu",
+    summary: "Mười hai mục kiểm tra đo được trước khi bàn giao bất kỳ video nào: định dạng, nhân vật, phụ đề, âm thanh, giấy phép.",
     lessons: [{ label: "Final Challenge: The Last Letter", href: "/khoa-hoc/final/the-last-letter" }],
     tone: "dark",
   },
@@ -61,7 +54,7 @@ export const tools: Tool[] = [
 ];
 
 export const qcItems =
-  "Hook đủ thu hút trong 1–3 giây đầu|Câu chuyện hoặc thông điệp rõ ràng, không lan man|Nhân vật nhất quán về khuôn mặt, tóc và trang phục|Bối cảnh, ánh sáng và màu sắc không thay đổi vô lý|Chuyển động tự nhiên, không có lỗi AI dễ nhận ra|Sản phẩm đúng hình dáng, logo và đặc điểm khách cung cấp|Voice-over rõ, không lệch khẩu hình nếu có thoại|Nhạc nền và hiệu ứng âm thanh phù hợp|Phụ đề chính xác, đồng bộ và nằm trong vùng an toàn|CTA phù hợp với mục tiêu video|Video xuất đúng tỷ lệ, độ phân giải và định dạng|Bản quyền tài sản và yêu cầu khai báo AI đã được kiểm tra";
+  "Xuất đúng 1080×1920, 9:16, MP4 H.264, 30 fps|Tổng thời lượng đúng brief, lệch tối đa 1 giây|Khung hình đầu tiên đã là hook: chủ thể chính xuất hiện ngay giây 0|Nhân vật giữ cùng khuôn mặt, tóc, trang phục ở mọi shot (chụp màn hình các shot đặt cạnh nhau để so)|Không shot nào lộ lỗi tay, mặt hay vật thể biến dạng khi xem ở tốc độ thường|Sản phẩm đúng hình dáng, logo, màu theo ảnh khách gửi|Không có chữ do AI vẽ trong khung hình; chữ chỉ thêm ở khâu dựng|Phụ đề khớp 100% lời đọc, đúng chính tả, nằm trong vùng an toàn khoảng 900×1400 ở giữa|Lời dẫn nghe rõ trên loa điện thoại, nhạc thấp hơn lời rõ rệt|CTA hiện ít nhất 2 giây cuối và khớp mục tiêu trong brief|Đã xem bản xuất trên điện thoại ở cả TikTok, Reels, Shorts (chế độ nháp)|Đã lưu giấy phép nhạc, điều khoản công cụ và ghi chú khai báo AI";
 
 export function getTool(slug: string) {
   return tools.find((t) => t.slug === slug);

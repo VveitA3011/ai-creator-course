@@ -1,39 +1,32 @@
-## Không phải đoạn nào sinh ra cũng dùng được
+## Xem như người nghiệm thu
 
-Người làm chuyên nghiệp khác người mới ở khâu chọn lọc. Bạn cần một cách đánh giá nhanh và nhất quán cho mỗi đoạn video.
+Lỗi video AI thường chỉ lộ trong vài khung hình. Xem mỗi đoạn ba lần:
 
-## Năm câu hỏi cho mỗi đoạn
+| Lần | Cách xem | Tìm gì |
+| --- | --- | --- |
+| 1 | Tốc độ thường, toàn màn hình điện thoại | Ấn tượng chung, có gì khựng không |
+| 2 | Tốc độ 0,25 hoặc tua từng khung | Ngón tay, mắt, viền tóc, nhãn chai |
+| 3 | Đặt cạnh shot trước và sau | Màu, ánh sáng, trang phục có khớp không |
 
-<Checklist id="clip-review" items="Nhân vật có giữ đúng khuôn mặt, tóc, trang phục từ đầu đến cuối đoạn không?|Chuyển động có tự nhiên, không có tay chân biến dạng hay vật thể tan chảy không?|Bối cảnh, ánh sáng, màu sắc có khớp với shot trước và sau không?|Máy quay có chuyển động đúng như kịch bản không?|Đoạn video có ít nhất 2–3 giây sạch để cắt dùng không?" />
+Trong CapCut, phóng to timeline và dùng phím mũi tên trái phải để đi từng khung.
 
-Một đoạn không cần hoàn hảo cả đoạn. Nếu có vài giây sạch đủ cho shot đó, bạn cắt lấy phần ấy.
+## Bảng quyết định
 
-## Lỗi thường gặp và cách sửa
+| Phát hiện | Quyết định | Chi phí |
+| --- | --- | --- |
+| Lỗi chỉ ở 1 giây cuối | Cắt bỏ khi dựng | Không tốn credit |
+| Lỗi ở giữa, có 2–3 giây sạch | Dùng phần sạch, điều chỉnh độ dài cảnh | Không tốn credit |
+| Mặt hoặc sản phẩm sai cả đoạn | Tạo lại ở mức rẻ với prompt đã sửa | Credit thử |
+| Lỗi lặp lại sau 3 lần | Đổi ảnh khung đầu | Thời gian tạo ảnh |
+| Lệch màu giữa các shot | Để lại, sửa ở khâu chỉnh màu | Không tốn credit |
+| Chữ lạ trong khung | Tạo lại với negative prompt chặn chữ, hoặc che bằng crop | Tùy mức |
 
-| Lỗi | Cách sửa rẻ nhất |
-| --- | --- |
-| Lỗi ở cuối đoạn | Cắt bỏ phần cuối khi dựng |
-| Bàn tay, ngón tay biến dạng | Đổi cỡ cảnh hoặc góc để tay không ở trung tâm |
-| Mặt đổi khi quay đầu | Giảm biên độ chuyển động, rút ngắn đoạn |
-| Chữ trong khung hình bị sai | Bỏ chữ khỏi cảnh, thêm chữ ở khâu dựng |
-| Sản phẩm sai hình dáng, logo | Dùng ảnh sản phẩm thật làm đầu vào, giảm chuyển động |
-| Tông màu lệch giữa các shot | Chỉnh màu ở khâu dựng |
+## Đánh dấu tệp
 
-Thứ tự ưu tiên khi sửa: cắt ở khâu dựng trước, sửa prompt và sinh lại sau, đổi ảnh đầu vào là lựa chọn cuối.
-
-## Tổng kết Tuần 3
-
-<Exercise title="Soát toàn bộ video của tuần">
-
-1. Gom mọi đoạn video đã sinh trong tuần.
-2. Chấm từng đoạn bằng năm câu hỏi. Đổi tên tệp với hậu tố `ok`, `cat` (cắt dùng được) hoặc `bo`.
-3. Sinh lại những shot quan trọng chưa có bản đạt.
-4. Cập nhật video thử nghiệm bằng các bản tốt nhất.
-
-</Exercise>
+Đổi tên sau khi soát: `_ok` (dùng nguyên), `_cat` (cắt phần sạch), `_bo` (bỏ). Ghi khoảng giây dùng được cho các tệp `_cat`, ví dụ `c03_v2_cat_0-3s.mp4`.
 
 <Output>
 
-Đầu ra của Tuần 3: 12–15 đoạn video AI ngắn đã chọn lọc, một chuỗi video có cùng nhân vật và một video thử nghiệm 15–20 giây.
+Đầu ra của Tuần 3: thư mục `03_video-ai/` đã đánh dấu đủ 6 shot dùng được, bản ghép thô 24 giây, nhật ký credit đầy đủ.
 
 </Output>

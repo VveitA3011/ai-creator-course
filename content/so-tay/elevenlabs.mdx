@@ -1,0 +1,111 @@
+## Bài này giúp bạn làm gì
+
+Tạo voice-over tiếng Việt và tiếng Anh nghe tự nhiên trên ElevenLabs: chọn đúng mô hình, chỉnh độ ổn định, dùng audio tag để điều khiển cảm xúc, sửa phát âm và xuất tệp đúng chuẩn để dựng.
+
+<Note>
+
+Thông tin mô hình lấy từ tài liệu chính thức của ElevenLabs ([Models](https://elevenlabs.io/docs/overview/models.md), [Best practices](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices)) tại thời điểm tháng 11/2026. Danh sách mô hình và ngôn ngữ thay đổi thường xuyên; xem lại trang Models trước khi chọn. Quyền dùng thương mại phụ thuộc gói trả phí: đọc điều khoản của gói bạn dùng trước khi giao cho khách.
+
+</Note>
+
+## Chọn mô hình
+
+| Mô hình | Điểm mạnh | Giới hạn mỗi lần | Dùng cho |
+| --- | --- | --- | --- |
+| Eleven v3 | Biểu cảm nhất, hiểu audio tag, hội thoại nhiều người | 5.000 ký tự | Lời dẫn kể chuyện, quảng cáo cảm xúc |
+| Flash v2.5 | Nhanh, rẻ, 32 ngôn ngữ có tiếng Việt | 40.000 ký tự | Bản nháp, video kiến thức, khi v3 đọc tiếng Việt chưa ổn |
+| Multilingual v2 | Ổn định, tự nhiên | 10.000 ký tự | Tiếng Anh dài; danh sách 29 ngôn ngữ của bản này không có tiếng Việt |
+
+Cách chọn thực tế: thử **cùng một câu** trên v3 và Flash v2.5 với cùng một giọng, nghe bằng tai nghe, chọn bản tự nhiên hơn. Với tiếng Việt, kiểm tra kỹ dấu thanh và từ mượn tiếng Anh.
+
+## Chọn giọng
+
+<Steps>
+<Step title="Lọc trong Voice Library">Lọc theo ngôn ngữ, giới tính, độ tuổi, mục đích (narration, advertisement).</Step>
+<Step title="Nghe thử bằng chính câu của bạn">Dán câu quan trọng nhất của kịch bản, không chỉ nghe câu mẫu.</Step>
+<Step title="Thêm vào My Voices">Lưu 2–3 giọng ứng viên, ghi tên giọng vào hồ sơ dự án.</Step>
+<Step title="Giữ một giọng cho cả series">Đổi giọng giữa các tập làm người xem mất nhận diện.</Step>
+</Steps>
+
+Tài liệu chính thức khuyên dùng giọng nhân bản nhanh (Instant Voice Clone) hoặc giọng thiết kế nếu cần tận dụng tính năng của v3. Không nhân bản giọng của người khác khi chưa có sự đồng ý bằng văn bản.
+
+## Độ ổn định (Stability) với Eleven v3
+
+Theo hướng dẫn chính thức, Stability là thiết lập quan trọng nhất của v3, có ba mức:
+
+| Mức | Kết quả | Dùng khi |
+| --- | --- | --- |
+| Creative | Nhiều cảm xúc, hợp audio tag, đôi khi đọc lệch | Kể chuyện, cao trào |
+| Natural | Cân bằng, gần giọng gốc | Điểm xuất phát cho hầu hết video |
+| Robust | Rất ổn định, ít phản ứng với audio tag | Lời đọc dài, video kiến thức |
+
+Bắt đầu ở Natural. Chỉ chuyển sang Creative cho những câu cần cảm xúc mạnh, và tạo riêng từng câu đó.
+
+## Audio tag: đạo diễn bằng ngoặc vuông
+
+Eleven v3 hiểu các chỉ dẫn trong ngoặc vuông đặt ngay trước câu. Ví dụ hay dùng: `[whispers]`, `[sighs]`, `[laughs]`, `[excited]`, `[curious]`, `[sad]`, `[sarcastic]`. Danh sách đầy đủ ở trang Prompting Eleven v3 trong tài liệu ElevenLabs.
+
+```text
+[whispers] Có những mùi hương... không cần giới thiệu.
+[softly] Chỉ cần một lần, là đủ để họ nhớ bạn.
+```
+
+Nguyên tắc từ tài liệu và kinh nghiệm thực tế:
+
+- Tag là gợi ý, không phải lệnh tuyệt đối. Tạo lại 2–3 lần và chọn bản hay nhất.
+- Mỗi câu tối đa hai tag và chúng phải hợp nhau.
+- Stability càng cao, tag càng ít tác dụng.
+
+## Ngắt nghỉ và phát âm
+
+Eleven v3 không hỗ trợ thẻ ngắt SSML. Dùng dấu câu:
+
+| Muốn | Viết |
+| --- | --- |
+| Nghỉ ngắn | Dấu phẩy, hoặc gạch ngang — |
+| Nghỉ lưng chừng, ngập ngừng | Dấu ba chấm ... |
+| Nghỉ dài, chuyển ý | Xuống dòng thành câu riêng |
+| Nhấn mạnh một từ | Đặt từ đó cuối câu, câu ngắn |
+
+Sửa phát âm:
+
+- Tên thương hiệu đọc sai: viết theo cách đọc, ví dụ `LUNE` thành `Luyn`.
+- Số: viết thành chữ, ví dụ `24 giờ` thành `hai mươi bốn giờ`.
+- Từ tiếng Anh trong câu tiếng Việt: thử cả cách viết gốc và cách viết phiên âm, giữ bản đọc đúng.
+
+## Quy trình tạo một voice-over
+
+<Steps>
+<Step title="Tách theo cảnh">Mỗi cảnh trong kịch bản là một lần tạo, không dán cả bài một lần.</Step>
+<Step title="Thử câu khó nhất trước">Câu có tên riêng, số, từ tiếng Anh.</Step>
+<Step title="Tạo 2–3 bản mỗi cảnh">Nghe, chọn bản đạt, ghi lại thiết lập.</Step>
+<Step title="Tải về đúng định dạng">MP3 chất lượng cao để dựng; WAV nếu cần xử lý âm thanh thêm.</Step>
+<Step title="Đặt tên">`vo_c01_v2.mp3` theo số cảnh và số lần thử.</Step>
+<Step title="Đo thời lượng">Nghe trong CapCut, so với thời lượng hình của cảnh. Dài hơn thì rút lời, không tăng tốc quá tay.</Step>
+</Steps>
+
+## Lỗi thường gặp
+
+| Lỗi | Cách sửa |
+| --- | --- |
+| Đọc sai dấu tiếng Việt | Thử Flash v2.5, hoặc đổi giọng; viết lại câu ngắn hơn |
+| Giọng đổi tông giữa các cảnh | Giữ cùng giọng, cùng mô hình, cùng mức Stability cho cả video |
+| Cảm xúc quá lố | Tăng Stability lên Natural hoặc Robust, bỏ bớt tag |
+| Đọc liền không ngắt | Thêm dấu câu, tách câu dài thành hai câu |
+| Âm cuối bị cắt | Thêm một dấu chấm hoặc một từ đệm, rồi cắt bỏ ở khâu dựng |
+
+<Checklist id="st-eleven" items="Đã thử cùng một câu trên hai mô hình|Đã chọn và lưu một giọng cho dự án|Mỗi cảnh một tệp voice-over đặt tên đúng|Đã sửa tên riêng và số bị đọc sai|Thời lượng voice-over mỗi cảnh ngắn hơn thời lượng hình|Đã kiểm tra quyền thương mại của gói đang dùng" />
+
+<Exercise title="Voice-over cho quảng cáo 24 giây">
+
+1. Thử câu đầu tiên của kịch bản LUNE trên Eleven v3 và Flash v2.5, chọn mô hình và giọng.
+2. Tạo voice-over cho từng cảnh có lời dẫn, dùng ít nhất một audio tag ở câu hook.
+3. Ghi lại thiết lập cuối cùng (mô hình, giọng, Stability) vào hồ sơ dự án.
+
+</Exercise>
+
+<Output>
+
+Bộ tệp `vo_c01` đến `vo_c06` cho kịch bản 24 giây và ghi chú thiết lập giọng của dự án.
+
+</Output>

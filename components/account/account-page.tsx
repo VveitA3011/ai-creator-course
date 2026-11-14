@@ -71,7 +71,7 @@ function AccountInner() {
         <div className="row-between">
           <div>
             <h2 className="tool-h">Đồng bộ dữ liệu học tập</h2>
-            <p className="muted small">Tiến độ bài học, kịch bản, storyboard, thư viện prompt và điểm tự chấm được lưu vào tài khoản.</p>
+            <p className="muted small">Tiến độ bài học, kịch bản, storyboard, thư viện prompt và checklist được lưu vào tài khoản.</p>
           </div>
           <span className={`sync-pill ${sync.state}`} aria-live="polite">
             {sync.state === "syncing" ? "Đang đồng bộ…" : sync.state === "error" ? "Lỗi đồng bộ" : `Đã đồng bộ ${timeAgo(sync.lastSync)}`}

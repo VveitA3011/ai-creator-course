@@ -1,0 +1,113 @@
+## Bài này giúp bạn làm gì
+
+Tạo bằng ChatGPT bốn loại ảnh mà khóa học cần: nhân vật cố định qua nhiều cảnh, bối cảnh, ảnh sản phẩm đúng hình dáng, và khung storyboard để làm ảnh đầu vào cho Kling.
+
+<Note>
+
+Mô hình tạo ảnh của ChatGPT được nâng cấp thường xuyên, tên phiên bản và giới hạn có thể khác khi bạn đọc bài này. Các nguyên tắc dưới đây vẫn đúng với hầu hết công cụ tạo ảnh. Kiểm tra quyền sử dụng thương mại theo gói bạn đang dùng trước khi giao ảnh cho khách.
+
+</Note>
+
+## Nguyên tắc nền: một ảnh mỏ neo
+
+Ảnh tạo bằng AI không tự nhớ nhân vật giữa các lần tạo. Cách giữ nhất quán đáng tin nhất là:
+
+<Steps>
+<Step title="Tạo một ảnh mỏ neo">Một ảnh chính diện rõ mặt, nền trơn, ánh sáng đều. Đây là “căn cước” của nhân vật.</Step>
+<Step title="Tải lại đúng ảnh gốc mỗi lần">Mỗi cảnh mới, đính kèm lại chính tệp ảnh mỏ neo, không dùng ảnh đã tạo ra sau đó làm tham chiếu.</Step>
+<Step title="Lặp lại khối mô tả bằng chữ">Ảnh tham chiếu không bảo đảm giống hệt; dán kèm khối mô tả nhân vật nguyên văn.</Step>
+<Step title="Mỗi lần chỉ đổi một thứ">Đổi bối cảnh thì giữ trang phục; đổi tư thế thì giữ bối cảnh.</Step>
+<Step title="Sửa bằng chỉnh sửa vùng">Nếu chỉ sai một chi tiết, dùng chức năng chọn vùng và sửa vùng đó, không tạo lại cả ảnh.</Step>
+</Steps>
+
+## Ảnh 1. Nhân vật mỏ neo và character sheet
+
+```text
+Portrait photo of a 28-year-old Vietnamese woman, oval face, dark brown eyes,
+small mole under her left eye, shoulder-length straight black hair with a side part,
+cream knit sweater. Front view, neutral expression, looking at camera,
+plain light grey background, soft even studio light, realistic photography.
+Vertical 2:3.
+```
+
+Khi đã ưng, tải ảnh về, đặt tên `nhanvat_moneo.png`. Tiếp theo, tạo character sheet:
+
+```text
+Using the attached reference image as the exact same person, create a character
+reference sheet with four views side by side: front, three-quarter, side profile,
+full body. Keep face, hair, mole and cream knit sweater identical.
+Plain light grey background, even lighting. No text.
+```
+
+Kiểm tra bằng mắt: nốt ruồi, đường rẽ ngôi, màu áo có giữ ở cả bốn hình không. Hình nào sai, chọn vùng và yêu cầu sửa riêng hình đó.
+
+## Ảnh 2. Đặt nhân vật vào bối cảnh
+
+```text
+Using the attached reference image as the exact same woman (same face, mole,
+hair, cream knit sweater), show her sitting by a rainy café window, holding a cup,
+looking outside. Medium shot, eye level. Overcast soft light, cool grey-blue tones
+with warm interior lamp. Realistic photography. Vertical 9:16.
+```
+
+Mẹo: thêm “vertical 9:16” ở cuối và yêu cầu khung dọc ngay từ ảnh. Cắt ảnh ngang thành dọc về sau sẽ mất bố cục.
+
+## Ảnh 3. Sản phẩm đúng hình dáng
+
+Với sản phẩm thật của khách, **luôn bắt đầu từ ảnh sản phẩm khách gửi**:
+
+```text
+Use the attached product photo. Keep the bottle shape, cap, label position and
+liquid color exactly as in the photo. Place it on a black marble surface,
+low-key lighting with warm rim light from behind, water droplets on the glass,
+premium product photography. Vertical 9:16. Do not add or change any text on the label.
+```
+
+Nếu chữ trên nhãn bị méo: xóa chữ khỏi nhãn trong ảnh (“remove all text from the label”), rồi thêm logo thật ở khâu dựng.
+
+## Ảnh 4. Khung storyboard cho Kling
+
+Mỗi shot trong storyboard cần một ảnh khung đầu. Ghép prompt từ 6 cột storyboard:
+
+```text
+[Shot size], [nhân vật theo khối mô tả], [hành động bắt đầu],
+[bối cảnh], [ánh sáng và màu], [phong cách], vertical 9:16
+```
+
+<ToolLink href="/cong-cu/storyboard" title="Bảng storyboard">Công cụ tự ghép prompt ảnh từ 6 cột cho từng shot.</ToolLink>
+
+Ảnh khung đầu tốt cho Kling có ba đặc điểm: nhân vật ở tư thế **bắt đầu** của hành động, còn khoảng trống theo hướng sẽ di chuyển, và tay chân không bị che khuất kỳ quặc.
+
+## Lỗi thường gặp
+
+| Lỗi | Cách sửa |
+| --- | --- |
+| Mặt nhân vật khác dần qua các ảnh | Đính kèm lại ảnh mỏ neo gốc, không dùng ảnh trung gian |
+| Ảnh có chữ lạ | Thêm “No text” vào prompt, hoặc chọn vùng chữ và yêu cầu xóa |
+| Bàn tay sai số ngón | Chọn vùng bàn tay, yêu cầu sửa; hoặc đổi tư thế để tay khuất |
+| Tông màu lệch giữa các cảnh | Dán cùng một dòng ánh sáng và màu vào mọi prompt |
+| Ảnh ra khung vuông | Ghi rõ “Vertical 9:16” ở cuối prompt và nhắc lại nếu cần |
+| Sản phẩm sai hình dáng | Dùng ảnh sản phẩm thật làm đầu vào, cấm đổi nhãn bằng chữ |
+
+<Note>
+
+Không tạo ảnh giống người thật có thể nhận diện, kể cả người nổi tiếng. Với ảnh người chân thực đăng lên nền tảng, gắn nhãn nội dung AI khi nền tảng yêu cầu.
+
+</Note>
+
+<Checklist id="st-img" items="Có ảnh mỏ neo nhân vật đã lưu đúng tên|Có character sheet 4 góc khớp nhau|Khối mô tả nhân vật đã lưu vào Thư viện prompt|Ảnh sản phẩm dựa trên ảnh thật, nhãn không bị đổi|Mọi ảnh khung storyboard đều dọc 9:16|Đã kiểm tra quyền thương mại của gói đang dùng" />
+
+<Exercise title="Bộ ảnh cho một quảng cáo 6 shot">
+
+1. Tạo ảnh mỏ neo và character sheet cho nhân vật chính.
+2. Tạo 3 ảnh sản phẩm từ ảnh thật (hoặc ảnh sản phẩm giả lập bạn tự tạo).
+3. Tạo 6 ảnh khung đầu cho 6 shot của storyboard, dùng ảnh mỏ neo cho mọi shot có nhân vật.
+4. Đặt các ảnh cạnh nhau, đánh dấu ảnh lệch và sửa bằng chỉnh sửa vùng.
+
+</Exercise>
+
+<Output>
+
+Ảnh mỏ neo, character sheet, 3 ảnh sản phẩm và 6 ảnh khung đầu đã sẵn sàng đưa vào Kling.
+
+</Output>

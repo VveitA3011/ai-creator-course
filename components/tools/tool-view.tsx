@@ -1,6 +1,6 @@
 "use client";
 
-import { Checklist, IncomeCalc, Rubric } from "@/components/lesson-interactive";
+import { Checklist, IncomeCalc } from "@/components/lesson-interactive";
 import { qcItems } from "@/lib/tools";
 import { BeatBuilder } from "./beat-builder";
 import { PromptLibrary } from "./prompt-library";
@@ -14,8 +14,6 @@ export function ToolView({ slug }: { slug: string }) {
       return <StoryboardBoard />;
     case "prompt":
       return <PromptLibrary />;
-    case "cham-diem":
-      return <Rubric />;
     case "checklist":
       return <Checklist id="qc-12" items={qcItems} />;
     case "thu-nhap":

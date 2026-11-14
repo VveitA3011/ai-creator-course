@@ -1,57 +1,50 @@
 ## Mục tiêu của Tuần 3
 
-Biết chuyển ảnh tĩnh thành những đoạn video có chuyển động tự nhiên. Tuần này bạn học bảy buổi theo thứ tự, mỗi buổi một kỹ thuật, và kết thúc bằng một video thử nghiệm 15–20 giây.
+Biến 6 ảnh khung đầu của LUNE thành 6 đoạn video dùng được trên Kling, và biết chính xác dự án tốn bao nhiêu credit. Tuần này làm việc trực tiếp trên Kling theo bài **Kling AI từng bước** trong Sổ tay.
 
-<Note>
+<ToolLink href="/khoa-hoc/so-tay/kling" title="Sổ tay: Kling AI từng bước">Bản đồ chế độ, thông số cho video dọc, Elements, Multi-Shot, bảng lỗi.</ToolLink>
 
-Giao diện và tên nút trong Kling AI thay đổi theo phiên bản. Bài học mô tả cách làm và cách nghĩ; khi tên nút khác đi, hãy tìm tính năng tương ứng trong công cụ bạn đang dùng.
+## Khi nào dùng Text to Video
 
-</Note>
+Text to Video để AI tự quyết định toàn bộ hình ảnh. Kiểm soát kém nhất, nên chỉ dùng cho:
 
-## Text-to-Video là gì
+| Loại cảnh | Ví dụ trong LUNE |
+| --- | --- |
+| Cảnh chuyển, không có nhân vật cố định | Hạt sáng bay trong bóng tối trước khi chai xuất hiện |
+| Chất liệu, không khí | Khói mỏng, mặt nước gợn, vệt sáng |
+| Thử ý tưởng nhanh trước khi làm ảnh | Xem một góc máy có hợp không |
 
-Bạn viết một đoạn mô tả, công cụ sinh ra một đoạn video ngắn. Đây là cách nhanh nhất để thử ý tưởng, nhưng cũng là cách khó kiểm soát nhất vì AI tự quyết định nhân vật, bố cục và ánh sáng.
+Không dùng Text to Video cho shot có nhân vật hoặc sản phẩm của khách.
 
-Dùng text-to-video cho cảnh không cần nhân vật cố định: cảnh thiên nhiên, cảnh thành phố, chi tiết đồ vật, cảnh chuyển.
+## Công thức prompt
 
-## Công thức một prompt video
-
-<Steps>
-<Step title="Chủ thể">Ai hoặc cái gì, mô tả ngắn và cụ thể.</Step>
-<Step title="Hành động">Một hành động duy nhất, diễn ra trong vài giây.</Step>
-<Step title="Bối cảnh">Ở đâu, lúc nào.</Step>
-<Step title="Máy quay">Cỡ cảnh và chuyển động máy, dùng thuật ngữ Tuần 2.</Step>
-<Step title="Ánh sáng và phong cách">Kiểu ánh sáng, tông màu, chân thực hay hoạt hình.</Step>
-</Steps>
+Theo các hướng dẫn prompt của Kling: chủ thể → hành động → bối cảnh → máy quay → ánh sáng, không khí. Một hành động. Dưới 60 từ.
 
 ```text
-A glass perfume bottle on black marble, a single drop of water
-slides down the bottle, dark studio, extreme close-up,
-slow dolly-in, low-key lighting with warm rim light,
-cinematic, realistic, vertical 9:16
+Golden dust particles drift slowly upward in a pitch black space,
+a single beam of warm light cuts diagonally through them.
+Slow dolly-in. Low-key lighting, amber highlights, premium mood. Vertical 9:16.
 ```
 
-## Quy tắc quan trọng nhất
+## Làm trên dự án LUNE
 
-Không yêu cầu AI tạo cả bộ phim dài bằng một prompt. Hãy tạo các đoạn khoảng 4–8 giây, kiểm tra chất lượng từng cảnh rồi mới ghép.
+<Steps>
+<Step title="Đặt thông số thử">9:16, 5 giây, Standard, 1 bản, tắt âm thanh, dán negative prompt mặc định.</Step>
+<Step title="Tạo cảnh mở bằng prompt trên">Ghi số credit trước khi bấm tạo.</Step>
+<Step title="Thử biến thể">Đổi một yếu tố mỗi lần: chuyển động máy, hoặc màu ánh sáng. Tối đa 3 lần.</Step>
+<Step title="So sánh Standard với chất lượng cao">Tạo lại bản tốt nhất ở chất lượng cao, đặt hai bản cạnh nhau, ghi khác biệt bạn thấy và chênh lệch credit.</Step>
+</Steps>
 
-<Compare>
-<Before label="Prompt quá tham">Một cô gái thức dậy, pha cà phê, ra phố, gặp bạn cũ và cả hai cùng cười.</Before>
-<After label="Một shot, một hành động">Một cô gái đứng bên cửa sổ, nâng cốc cà phê lên, hơi nóng bay lên trong nắng sớm. Medium shot, static camera.</After>
-</Compare>
+Bảng ghi cho bài này:
 
-<ToolLink href="/cong-cu/prompt" title="Thư viện prompt">Lưu prompt video đã cho kết quả tốt.</ToolLink>
-
-<Exercise title="Ba đoạn text-to-video">
-
-1. Chọn ba shot không có nhân vật chính từ storyboard Tuần 2 (cảnh sản phẩm, cảnh bối cảnh).
-2. Viết prompt theo công thức năm phần cho từng shot.
-3. Sinh mỗi shot hai lần, so sánh và ghi lại điều gì trong prompt tạo ra khác biệt.
-
-</Exercise>
+| Lần | Prompt thay đổi gì | Chất lượng | Thời lượng | Credit | Nhận xét |
+| --- | --- | --- | --- | --- | --- |
+| 1 | gốc | Standard | 5s | (ghi số thật) | |
+| 2 | máy quay: static | Standard | 5s | | |
+| 3 | bản chọn | cao | 5s | | |
 
 <Output>
 
-Ba đoạn video 4–8 giây và prompt tương ứng, lưu vào thư mục `video`.
+`03_video-ai/c00_v1…v3.mp4` (cảnh chuyển mở đầu, có thể dùng hoặc bỏ khi dựng) và bảng credit 3–4 dòng đầu tiên trong nhật ký dự án.
 
 </Output>

@@ -1,44 +1,36 @@
-## Cùng một câu, ba cách đọc
+## Ba công cụ điều khiển cách đọc
 
-“Một mùi hương. Đủ để họ nhớ bạn.” Đọc nhanh và đều thì đó là một câu quảng cáo bình thường. Đọc chậm, ngắt sau “mùi hương”, hạ giọng ở “nhớ bạn” thì đó là một lời thì thầm. Nội dung giống nhau, cảm xúc khác hẳn.
-
-## Ba thứ bạn điều khiển
-
-<Cards>
-<Card title="Tốc độ" tag="Nhịp" tone="coral">Chậm cho cảm xúc và sự sang trọng. Nhanh cho năng lượng và video bán hàng.</Card>
-<Card title="Khoảng nghỉ" tag="Im lặng" tone="violet">Khoảng lặng trước một câu quan trọng khiến người xem chú ý hơn.</Card>
-<Card title="Sắc thái" tag="Cảm xúc" tone="cream">Ấm, buồn, hào hứng, bí ẩn. Chọn một sắc thái chính cho cả video.</Card>
-</Cards>
-
-## Cách chỉnh trong thực tế
-
-- **Dấu câu là công cụ đầu tiên.** Dấu phẩy tạo nghỉ ngắn, dấu chấm tạo nghỉ dài, dấu ba chấm kéo dài hơi.
-- **Tách câu thành nhiều dòng** khi cần nghỉ rõ.
-- **Thanh chỉnh của công cụ:** hầu hết công cụ giọng đọc có thiết lập về độ ổn định và mức biểu cảm. Thử các mức khác nhau với cùng một câu và nghe sự khác biệt.
-- **Tạo nhiều lần.** Cùng thiết lập, mỗi lần tạo cho kết quả hơi khác. Chọn bản hay nhất.
-
-## Khớp nhịp đọc với hình
-
-Quay lại kịch bản: mỗi cảnh có số giây cố định. Lời dẫn của cảnh đó phải ngắn hơn số giây một chút để còn chỗ thở.
-
-| Cảnh | Thời lượng hình | Lời dẫn nên dài |
+| Công cụ | Làm gì | Ví dụ |
 | --- | --- | --- |
-| Hook 0–3s | 3 giây | Khoảng 2 giây hoặc không lời |
-| Thân 3–22s | 19 giây | Khoảng 14–16 giây |
-| CTA 22–30s | 8 giây | Khoảng 4–5 giây |
+| Dấu câu | Ngắt nghỉ | `Có những mùi hương... không cần giới thiệu.` |
+| Audio tag (Eleven v3) | Cảm xúc, cách nói | `[whispers]`, `[softly]`, `[sighs]` |
+| Stability | Mức biểu cảm so với độ ổn định | Creative cho câu cảm xúc, Natural cho câu thông tin |
 
-Các con số trên là gợi ý chia nhịp. Nếu lời dẫn dài hơn hình, hãy cắt lời trước khi nghĩ đến chuyện tăng tốc độ đọc.
+Eleven v3 không nhận thẻ ngắt SSML; dùng dấu phẩy, gạch ngang, dấu ba chấm và xuống dòng.
 
-<Quiz q="Lời dẫn của một cảnh dài hơn thời lượng hình 3 giây. Cách xử lý nên thử trước là gì?" a="Tăng tốc độ đọc lên thật nhanh" b="Rút gọn lời dẫn" c="Kéo dài hình bằng cách làm chậm video" correct="b" why="Đọc quá nhanh làm mất cảm xúc, làm chậm hình dễ lộ lỗi. Rút lời là cách sạch nhất, đúng tinh thần viết cho tai ở Tuần 1." />
+## Làm trên dự án LUNE
 
-<Exercise title="Ba phiên bản của một câu">
+Tạo ba phiên bản cho câu c01 và chọn một:
 
-Lấy câu quan trọng nhất trong lời dẫn. Tạo ba phiên bản: chậm và trầm, trung tính, nhanh và sáng. Chọn bản hợp với video và ghi lại thiết lập đã dùng để dùng cho các câu còn lại.
+```text
+Bản A (Natural, không tag):
+Có những mùi hương... không cần giới thiệu.
 
-</Exercise>
+Bản B (Natural, có tag):
+[whispers] Có những mùi hương... không cần giới thiệu.
+
+Bản C (Creative, có tag):
+[softly] Có những mùi hương... [whispers] không cần giới thiệu.
+```
+
+<Steps>
+<Step title="Tạo 3 bản mỗi phiên bản">Tag là gợi ý, không phải lệnh; mỗi lần tạo cho kết quả hơi khác.</Step>
+<Step title="Nghe với hình">Kéo cả ba vào CapCut dưới đoạn `c01`, nghe cùng hình. Chọn bản hợp hình nhất, không phải bản hay nhất khi nghe riêng.</Step>
+<Step title="Áp dụng cho câu c06">Câu kết dùng cùng thiết lập với câu đã chọn, để giọng không đổi tông.</Step>
+</Steps>
 
 <Output>
 
-Bộ voice-over đã chỉnh nhịp, mỗi cảnh ngắn hơn thời lượng hình.
+`vo_c01` và `vo_c06` bản cuối, ghi chú phiên bản đã chọn (A, B hoặc C) và lý do.
 
 </Output>

@@ -1,49 +1,32 @@
 ## Mục tiêu của Tuần 4
 
-Biết ghép các thành phần thành một video có thể đăng tải. Cuối tuần bạn có video hoàn chỉnh đầu tiên: khung dọc 9:16, có voice-over, phụ đề, nhạc nền, hiệu ứng âm thanh và âm lượng cân bằng.
+Ghép 6 shot của LUNE thành video hoàn chỉnh đạt 12 tiêu chí nghiệm thu: voice-over, nhạc, hiệu ứng, phụ đề, chỉnh màu, xuất đúng chuẩn. Tuần này làm trên ElevenLabs và CapCut Desktop theo hai bài tương ứng trong Sổ tay.
 
-<Note>
+<ToolLink href="/khoa-hoc/so-tay/elevenlabs" title="Sổ tay: ElevenLabs từng bước">Chọn mô hình, Stability, audio tag, phát âm, xuất tệp.</ToolLink>
 
-Trước khi dùng giọng đọc AI cho khách hàng, hãy kiểm tra quyền sử dụng thương mại theo đúng gói bạn đang dùng. Tên tính năng trong ElevenLabs có thể thay đổi theo phiên bản.
+## Lời dẫn của LUNE
 
-</Note>
+| Cảnh | Lời dẫn | Thời lượng hình |
+| --- | --- | --- |
+| c01 | Có những mùi hương... không cần giới thiệu. | 3s |
+| c04 | Hương gỗ đàn hương, ở lại thật lâu. | 5s |
+| c06 | Luyn. Ở lại sau khi bạn rời đi. | 3s |
 
-## Chọn giọng
+Tên LUNE được viết thành “Luyn” để giọng đọc phát âm đúng; phụ đề vẫn ghi LUNE.
 
-Giọng đọc quyết định cá tính của video. Chọn theo ba tiêu chí:
-
-<Cards>
-<Card title="Hợp với thương hiệu" tag="Tiêu chí 1" tone="coral">Nước hoa cao cấp cần giọng trầm, chậm. Video bán hàng trên TikTok cần giọng gần gũi, nhanh hơn.</Card>
-<Card title="Hợp với người xem" tag="Tiêu chí 2" tone="cream">Ngôn ngữ, vùng miền, độ tuổi mà người xem thấy quen.</Card>
-<Card title="Ổn định" tag="Tiêu chí 3" tone="violet">Cùng một giọng cho cả video và cả series. Đổi giọng giữa chừng làm người xem mất tập trung.</Card>
-</Cards>
-
-## Quy trình tạo voice-over
+## Làm trên dự án LUNE
 
 <Steps>
-<Step title="Chuẩn bị văn bản">Dùng lời dẫn đã rút gọn ở Tuần 1. Viết số thành chữ, tách câu dài.</Step>
-<Step title="Tạo thử một câu">Nghe thử với hai đến ba giọng trước khi tạo cả bài.</Step>
-<Step title="Tạo theo từng cảnh">Mỗi cảnh một tệp âm thanh riêng, dễ căn với hình và dễ làm lại.</Step>
-<Step title="Nghe lại bằng tai nghe">Soát lỗi phát âm tên riêng, từ tiếng Anh, chỗ ngắt nghỉ sai.</Step>
-<Step title="Đặt tên tệp">Theo số cảnh, ví dụ `vo_c01.mp3`.</Step>
+<Step title="Thử mô hình">Dán câu c01 vào Text to Speech. Tạo một bản bằng Eleven v3 và một bản bằng Flash v2.5 với cùng một giọng tiếng Việt.</Step>
+<Step title="Chọn giọng">Nghe bằng tai nghe. Chọn giọng trầm, chậm, hợp sản phẩm cao cấp. Thử 3 giọng nếu chưa ưng.</Step>
+<Step title="Đặt Stability">Với v3, bắt đầu ở Natural.</Step>
+<Step title="Tạo từng cảnh">Mỗi cảnh một lần tạo, 2–3 bản. Chọn bản tốt nhất.</Step>
+<Step title="Tải và đặt tên">`vo_c01_v2.mp3`, `vo_c04_v1.mp3`, `vo_c06_v3.mp3` vào `04_am-thanh/`.</Step>
+<Step title="Ghi thiết lập">Ghi mô hình, tên giọng, mức Stability vào `00_brief/LUNE_ghichu`.</Step>
 </Steps>
-
-## Sửa lỗi phát âm
-
-- Tên thương hiệu đọc sai: viết lại theo cách phát âm.
-- Ngắt nghỉ sai: thêm dấu phẩy, dấu chấm, hoặc xuống dòng.
-- Một câu hỏng: tạo lại riêng câu đó, không tạo lại cả bài.
-
-<Exercise title="Voice-over cho video thử nghiệm">
-
-1. Viết lời dẫn cho video thử nghiệm của Tuần 3, dài vừa với 20–30 giây.
-2. Thử ba giọng với câu đầu tiên, chọn một.
-3. Tạo voice-over theo từng cảnh và đặt tên tệp.
-
-</Exercise>
 
 <Output>
 
-Bộ tệp voice-over theo từng cảnh, lưu vào thư mục `am-thanh`.
+Ba tệp voice-over trong `04_am-thanh/`, mỗi tệp ngắn hơn thời lượng hình của cảnh, và ghi chú thiết lập giọng.
 
 </Output>

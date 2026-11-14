@@ -1,47 +1,44 @@
-## Từ một shot đến một chuỗi
+## Hai công cụ nối shot
 
-Một video hoàn chỉnh là nhiều shot nối với nhau. Hai kỹ thuật giúp các shot nối mượt là keyframe và cách chia shot có chủ đích.
-
-## Keyframe: khung đầu và khung cuối
-
-Thay vì chỉ đưa ảnh đầu, bạn đưa cả ảnh đầu và ảnh cuối của đoạn video. AI tạo phần chuyển động ở giữa. Cách này cho bạn kiểm soát điểm kết thúc của shot.
-
-Dùng keyframe khi:
-
-- Bạn cần nhân vật kết thúc ở một tư thế cụ thể.
-- Bạn muốn chuyển từ cỡ cảnh này sang cỡ cảnh khác trong một shot.
-- Bạn cần shot sau bắt đầu đúng nơi shot trước kết thúc.
-
-<Compare>
-<Before label="Chỉ có khung đầu">Bạn biết shot bắt đầu thế nào, AI quyết định nó kết thúc ra sao.</Before>
-<After label="Có khung đầu và khung cuối">Bạn quyết định cả hai đầu, AI chỉ nối phần giữa.</After>
-</Compare>
-
-## Nối shot bằng khung hình cuối
-
-Một mẹo đơn giản: lấy khung hình cuối của shot trước làm ảnh đầu vào cho shot sau. Hai shot sẽ liền mạch về ánh sáng, trang phục và vị trí.
-
-## Chia shot có chủ đích
-
-Không phải cảnh nào cũng cần liền mạch. Trong dựng phim, cắt từ cảnh rộng sang cảnh cận là bình thường. Hãy quyết định trước cho từng điểm nối:
-
-| Kiểu nối | Khi nào dùng | Cách làm |
+| Công cụ | Làm gì | Dùng khi |
 | --- | --- | --- |
-| Liền mạch | Một hành động kéo dài qua hai shot | Dùng khung cuối shot trước làm khung đầu shot sau |
-| Cắt thẳng | Đổi cỡ cảnh, đổi góc | Hai ảnh riêng, cùng nhân vật và ánh sáng |
-| Chuyển cảnh | Đổi địa điểm, thời gian | Hai ảnh khác bối cảnh, thêm hiệu ứng chuyển ở khâu dựng |
+| Start + End Frame | Bạn cho ảnh đầu và ảnh cuối, Kling tạo phần chuyển động ở giữa | Shot phải kết thúc đúng một tư thế, hoặc khớp đầu shot sau |
+| Multi-Shot | Một lần tạo cho ra một đoạn có nhiều shot cắt liền | Thử nhanh một chuỗi; cảnh hội thoại nhiều góc |
 
-<Exercise title="Hai shot nối nhau">
+Theo hướng dẫn chính thức: ô End Frame chỉ dùng được sau khi tải khung đầu; với Multi-Shot phải bật công tắc Multi-Shot trước rồi mới chọn Custom Multi-Shot để tự mô tả từng shot. Một số hướng dẫn ghi hai tính năng này không dùng chung được trong một lần tạo.
 
-1. Chọn hai ảnh liên tiếp trong bộ bốn cảnh của bài trước.
-2. Tạo một shot dùng keyframe: ảnh thứ nhất làm khung đầu, ảnh thứ hai làm khung cuối.
-3. Tạo một cặp shot nối bằng khung hình cuối.
-4. So sánh hai cách và ghi lại cách nào hợp với kịch bản của bạn.
+## Start + End Frame: làm sao cho hai ảnh khớp
 
-</Exercise>
+- Cùng tỉ lệ 9:16, cùng nhân vật, cùng ánh sáng, cùng bối cảnh.
+- Khác nhau ở **một** thứ: tư thế, vị trí, hoặc cỡ cảnh.
+- Tạo ảnh cuối bằng cách đính kèm ảnh đầu vào ChatGPT và yêu cầu đổi đúng một thứ.
+
+```text
+Using the attached image, keep everything identical (same woman, same dress, same hall,
+same lighting, same camera position) but she is now three steps closer to the camera,
+smiling. Vertical 9:16.
+```
+
+## Custom Multi-Shot: mỗi shot một dòng
+
+```text
+Shot 1 (3s): wide shot, she enters the grand hall, warm chandelier light.
+Shot 2 (3s): medium shot, two guests turn their heads.
+Shot 3 (4s): close-up, she smiles and glances over her shoulder.
+```
+
+## Làm trên dự án LUNE
+
+<Steps>
+<Step title="Nối c02 với c05">Tạo ảnh cuối cho c02 bằng prompt trên, chạy Start + End Frame. So với bản c02 cũ: bản nào nối sang c03, c05 tự nhiên hơn.</Step>
+<Step title="Thử Multi-Shot cho c02–c03–c05">Một lần tạo với prompt Custom Multi-Shot ở trên, gọi Element `LUNE_NV` nếu được.</Step>
+<Step title="So chi phí và chất lượng">Ghi credit của cách tạo từng shot riêng và cách Multi-Shot. Chọn cách cho bản giao.</Step>
+</Steps>
+
+Với bản giao khách, khóa học khuyên giữ **từng shot riêng**: khách yêu cầu sửa một shot thì chỉ tạo lại shot đó.
 
 <Output>
 
-Một shot dùng keyframe và một cặp shot nối liền mạch.
+Một bản c02 dùng Start + End Frame, một đoạn Multi-Shot thử nghiệm, và ghi chú so sánh chi phí trong nhật ký.
 
 </Output>

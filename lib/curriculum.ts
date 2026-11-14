@@ -16,11 +16,11 @@ export const modules: Module[] = [
     tag: "Module 0",
     title: "Định hướng",
     summary: "Nghề AI Short-form Video Creator, 5 ngách thị trường, bộ công cụ và pipeline sản xuất.",
-    output: "Bản tự đánh giá và ngách đã chọn",
+    output: "Ngách, lĩnh vực sản phẩm và bộ công cụ đã chọn, tài khoản đã tạo",
     lessonCount: 4,
     lessons: [
       { slug: "nghe-ai-creator", title: "Nghề AI Short-form Video Creator", minutes: 12 },
-      { slug: "tu-danh-gia-chon-ngach", title: "Tự đánh giá và chọn ngách", minutes: 20 },
+      { slug: "tu-danh-gia-chon-ngach", title: "Chọn ngách theo dữ liệu thị trường", minutes: 20 },
       { slug: "bo-cong-cu", title: "Bộ công cụ tối thiểu", minutes: 12 },
       { slug: "pipeline-chuan-ban-giao", title: "Pipeline và chuẩn bàn giao", minutes: 15 },
     ],
@@ -30,7 +30,7 @@ export const modules: Module[] = [
     tag: "Tuần 1",
     title: "Tư duy biên kịch video ngắn",
     summary: "Hook 1–3 giây, cấu trúc quảng cáo và storytelling, voice-over, cao trào và CTA.",
-    output: "6 kịch bản hoàn chỉnh, ít nhất 2 kịch bản có 3 phương án hook",
+    output: "Kịch bản LUNE 24 giây, kho 20 hook từ quảng cáo thật, kịch bản phim ngắn",
     lessonCount: 6,
     lessons: [
       { slug: "hook-3-giay-dau", title: "Hook trong 1–3 giây đầu", minutes: 15 },
@@ -46,7 +46,7 @@ export const modules: Module[] = [
     tag: "Tuần 2",
     title: "Visual Development và Storyboard",
     summary: "Thiết kế nhân vật, bối cảnh, ngôn ngữ máy quay, ánh sáng và storyboard.",
-    output: "2 bộ storyboard, 1 character sheet, 1 bộ ảnh tham chiếu sản phẩm, thư viện prompt cơ bản",
+    output: "Storyboard LUNE 6 shot có ảnh khung đầu, character sheet, ảnh sản phẩm",
     lessonCount: 5,
     lessons: [
       { slug: "thiet-ke-nhan-vat", title: "Character Design: thiết kế nhân vật", minutes: 18 },
@@ -61,7 +61,7 @@ export const modules: Module[] = [
     tag: "Tuần 3",
     title: "Làm chủ Kling AI",
     summary: "Text-to-video, image-to-video, chuyển động camera, tham chiếu nhân vật, multi-shot và keyframe.",
-    output: "12–15 đoạn video AI ngắn, một chuỗi cùng nhân vật, một video thử 15–20 giây",
+    output: "6 shot LUNE đã chọn lọc, Element nhân vật, bản ghép thô 24 giây, nhật ký credit",
     lessonCount: 7,
     lessons: [
       { slug: "text-to-video", title: "Text-to-Video: tạo video từ mô tả", minutes: 15 },
@@ -78,7 +78,7 @@ export const modules: Module[] = [
     tag: "Tuần 4",
     title: "Voice-over, âm thanh và CapCut",
     summary: "ElevenLabs, nhạc nền và hiệu ứng, cắt dựng theo nhịp thoại, phụ đề, color grading.",
-    output: "Video hoàn chỉnh số 1: quảng cáo sản phẩm ngắn, khung dọc 9:16",
+    output: "Gói giao LUNE hoàn chỉnh đạt 12 tiêu chí nghiệm thu",
     lessonCount: 7,
     lessons: [
       { slug: "voice-over-elevenlabs", title: "Tạo voice-over bằng ElevenLabs", minutes: 15 },
@@ -94,14 +94,14 @@ export const modules: Module[] = [
     slug: "tuan-5",
     tag: "Tuần 5",
     title: "Thực chiến AI Video Advertising",
-    summary: "Thương hiệu nước hoa giả lập: bản Cinematic Commercial và bản Social Media Advertisement.",
-    output: "2 video quảng cáo, 2 bộ kịch bản, 2 storyboard, prompt và ảnh tham chiếu",
+    summary: "Dự án thứ hai: bản Cinematic 24 giây và bản Social 16 giây với 3 hook để chạy thử quảng cáo.",
+    output: "Thư mục giao khách: 1 video Cinematic, 3 video Social cùng thân khác hook, kịch bản, storyboard, ghi chú",
     lessonCount: 4,
     lessons: [
       { slug: "brief-va-concept", title: "Brief và concept cho thương hiệu nước hoa", minutes: 18 },
       { slug: "cinematic-commercial", title: "Phiên bản A: Cinematic Commercial", minutes: 25 },
       { slug: "social-media-ad", title: "Phiên bản B: Social Media Advertisement", minutes: 20 },
-      { slug: "danh-gia-hai-phien-ban", title: "So sánh, hoàn thiện và đóng gói đầu ra", minutes: 15 },
+      { slug: "danh-gia-hai-phien-ban", title: "Nghiệm thu và đóng gói giao khách", minutes: 25 },
     ],
   },
   {
@@ -149,7 +149,7 @@ export const modules: Module[] = [
     tag: "Final Challenge",
     title: "The Last Letter",
     summary: "Phim ngắn AI chân thực 45–60 giây, storyboard 6–8 cảnh, xuất 9:16.",
-    output: "Tự chấm đạt 80/100 trước khi đưa vào portfolio",
+    output: "Phim 45–60 giây đạt đủ 12 tiêu chí nghiệm thu, kèm case study",
     lessonCount: 1,
     lessons: [
       { slug: "the-last-letter", title: "Final Challenge: The Last Letter", minutes: 30 },
@@ -199,7 +199,25 @@ export const extraModules: Module[] = [
   },
 ];
 
-export const allModules: Module[] = [...modules, ...extraModules];
+// Sổ tay công cụ: hướng dẫn từng bước cho từng công cụ, tra cứu khi cần. Đặt cuối để giữ số thứ tự ảnh bìa 1–63.
+export const handbook: Module = {
+  slug: "so-tay",
+  tag: "Sổ tay",
+  title: "Sổ tay công cụ",
+  summary: "Hướng dẫn từng bước ChatGPT/Claude, ChatGPT Images, Kling, ElevenLabs, CapCut và cách quản lý tệp, credit, bản quyền.",
+  output: "Bộ công cụ đã thiết lập, thư mục dự án chuẩn và bộ chỉ dẫn, prompt mẫu dùng lại được",
+  lessonCount: 6,
+  lessons: [
+    { slug: "chatgpt-claude-bien-kich", title: "ChatGPT và Claude làm biên kịch: thiết lập và chuỗi prompt", minutes: 35 },
+    { slug: "chatgpt-images", title: "ChatGPT Images: nhân vật nhất quán, sản phẩm, khung storyboard", minutes: 35 },
+    { slug: "kling", title: "Kling AI từng bước: chế độ, thông số, nhân vật, multi-shot", minutes: 40 },
+    { slug: "elevenlabs", title: "ElevenLabs từng bước: giọng, độ ổn định, audio tag, phát âm", minutes: 30 },
+    { slug: "capcut", title: "CapCut Desktop từng bước: dựng, phụ đề, âm thanh, màu, xuất", minutes: 40 },
+    { slug: "quan-ly-du-an", title: "Quản lý dự án: thư mục, đặt tên, credit, bản quyền", minutes: 20 },
+  ],
+};
+
+export const allModules: Module[] = [...modules, ...extraModules, handbook];
 
 export const pipeline = [
   { step: "Brief", text: "Mục tiêu, người xem, nền tảng, thông điệp, CTA" },

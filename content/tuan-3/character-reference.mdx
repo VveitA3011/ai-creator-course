@@ -1,47 +1,42 @@
-## Bài toán khó nhất của video AI
+## Vì sao cần Elements
 
-Người xem chấp nhận một chuyển động hơi cứng, nhưng họ nhận ra ngay khi nhân vật ở cảnh 3 không giống nhân vật ở cảnh 1. Trong thang điểm cuối khóa, nhất quán nhân vật chiếm 20%, ngang với kịch bản và chất lượng hình ảnh.
+Ảnh khung đầu chỉ giữ nhân vật ở khung hình đầu tiên. Khi nhân vật quay đầu hoặc đi lại, mặt có thể trôi. Elements trong Kling cho mô hình xem nhân vật từ nhiều góc, giúp giữ khuôn mặt và trang phục ổn định hơn trong suốt đoạn video và qua nhiều cảnh.
 
-## Dùng ảnh tham chiếu
+Theo hướng dẫn Element Library chính thức, một Element nhiều ảnh dùng một ảnh chính và 1–3 ảnh góc phụ của cùng nhân vật, đồ vật hoặc bối cảnh.
 
-Character sheet bạn tạo ở Tuần 2 là công cụ chính. Cách làm:
+## Chuẩn bị ảnh cho Element
+
+| Ảnh | Lấy từ | Yêu cầu |
+| --- | --- | --- |
+| Ảnh chính | `nhanvat_moneo.png` | Chính diện, rõ mặt, nền trơn |
+| Góc 3/4 | Character sheet | Cùng trang phục, cùng ánh sáng |
+| Góc nghiêng | Character sheet | Rõ đường nét mặt |
+| Toàn thân | Character sheet | Rõ trang phục, vóc dáng |
+
+Cắt từng góc từ character sheet thành tệp riêng trước khi tải lên.
+
+## Làm trên dự án LUNE
 
 <Steps>
-<Step title="Chọn ảnh tham chiếu chuẩn">Một ảnh chính diện rõ mặt và một ảnh toàn thân rõ trang phục.</Step>
-<Step title="Tạo ảnh từng cảnh từ ảnh tham chiếu">Dùng tính năng ảnh tham chiếu của công cụ tạo ảnh để đặt nhân vật vào bối cảnh mới.</Step>
-<Step title="So với character sheet">Đặt ảnh mới cạnh ảnh gốc: mặt, tóc, trang phục, màu da.</Step>
-<Step title="Chỉ ảnh đạt mới đem sinh video">Sửa ở bước ảnh rẻ hơn nhiều so với sửa ở bước video.</Step>
+<Step title="Tạo Element">Tạo Element tên `LUNE_NV`, tải ảnh chính và 3 ảnh góc.</Step>
+<Step title="Tạo c02, c03, c05 với Element">Mỗi shot: ảnh khung đầu làm khung đầu, gọi Element `LUNE_NV`, prompt chuyển động như bài trước.</Step>
+<Step title="So với bản không dùng Element">Với c02, tạo thêm một bản không gọi Element, so khuôn mặt ở giây cuối.</Step>
+<Step title="Kiểm tra nhất quán">Chụp màn hình khuôn mặt ở giây cuối của c02, c03, c05, đặt cạnh ảnh mỏ neo.</Step>
 </Steps>
 
-## Giữ nguyên phần mô tả
+Cùng cách làm áp dụng cho sản phẩm: tạo Element `LUNE_CHAI` từ 3 ảnh sản phẩm nếu chai bị méo ở các shot sản phẩm.
 
-Trong mọi prompt, đoạn mô tả ngoại hình nhân vật phải giống nhau từng chữ. Lưu nó thành một khối văn bản cố định trong thư viện prompt và dán vào thay vì gõ lại.
+## Khi vẫn lệch
 
-```text
-[KHỐI NHÂN VẬT - không sửa]
-a 28-year-old woman, oval face, dark brown eyes, small mole
-under left eye, shoulder-length black hair, cream knit sweater,
-dark blue jeans
-```
-
-## Ba thứ phải nhất quán
-
-- **Khuôn mặt:** hình dáng, mắt, chi tiết nhận diện.
-- **Trang phục:** kiểu dáng và màu. Chỉ đổi khi câu chuyện cho thấy thời gian trôi qua.
-- **Tông màu:** cùng bảng màu và kiểu ánh sáng trong cùng một bối cảnh.
-
-<Quiz q="Ảnh cảnh 3 có khuôn mặt nhân vật hơi khác character sheet. Bạn nên làm gì?" a="Cứ sinh video, lỗi nhỏ người xem không để ý" b="Tạo lại ảnh cho đến khi khớp rồi mới sinh video" c="Đổi sang nhân vật khác cho cảnh đó" correct="b" why="Sửa ở bước ảnh rẻ hơn nhiều so với bước video, và lỗi khuôn mặt là thứ người xem nhận ra nhanh nhất." />
-
-<ToolLink href="/cong-cu/prompt" title="Thư viện prompt">Khối nhân vật cố định có sẵn trong nhóm “Nhân vật”.</ToolLink>
-
-<Exercise title="Một nhân vật, bốn cảnh">
-
-Tạo cùng một nhân vật trong bốn cảnh: đứng trên phố, đi vào quán cà phê, ngồi bên cửa sổ, nhìn ra ngoài trời mưa. Giữ nhất quán khuôn mặt, trang phục và tông màu. Ở bài này chỉ cần ảnh tĩnh; bạn sẽ sinh video ở buổi 6.
-
-</Exercise>
+| Lệch | Sửa |
+| --- | --- |
+| Mặt trôi khi quay đầu | Giảm góc quay đầu trong prompt, rút còn 5 giây |
+| Tóc đổi kiểu | Thêm mô tả tóc nguyên văn vào prompt chuyển động |
+| Trang phục đổi màu | Kiểm tra ảnh khung đầu: màu áo có khớp character sheet không |
+| Element không cải thiện | Thay ảnh góc phụ bằng ảnh rõ hơn, nền trơn hơn |
 
 <Output>
 
-Bốn ảnh cùng một nhân vật trong bốn bối cảnh, đã so khớp với character sheet.
+Element `LUNE_NV` trong thư viện Kling, các đoạn `c02`, `c03`, `c05` đã chọn, và tệp `02_hinh-anh/sosanh_mat.png` ghép 4 khuôn mặt cạnh nhau.
 
 </Output>

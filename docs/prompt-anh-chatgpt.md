@@ -1,16 +1,16 @@
-# Prompt ảnh bìa cho 63 bài học (ChatGPT)
+# Prompt ảnh bìa cho 69 bài học (ChatGPT)
 
-Mỗi bài học có một ô ảnh bìa đánh số **#1 đến #63** (số hiện ngay trên ô trống ở đầu mỗi bài). Tệp ảnh đặt tên đúng bằng số đó.
+Mỗi bài học có một ô ảnh bìa đánh số **#1 đến #69** (số hiện ngay trên ô trống ở đầu mỗi bài). Tệp ảnh đặt tên đúng bằng số đó.
 
 ## Cách làm
 
 1. Mở ChatGPT, chọn chế độ tạo ảnh.
 2. Dán nguyên một prompt bên dưới (đã gồm phần phong cách chung), gửi đi.
-3. Tải ảnh về, đổi tên thành **số của ảnh**: `1.png`, `2.png`, … `63.png`. Đuôi `.png`, `.jpg` hoặc `.webp` đều được.
+3. Tải ảnh về, đổi tên thành **số của ảnh**: `1.png`, `2.png`, … `69.png`. Đuôi `.png`, `.jpg` hoặc `.webp` đều được.
 4. Lặp lại cho các ảnh còn lại. Mỗi ảnh nên mở một tin nhắn mới và dán đủ prompt, để phong cách không bị trôi.
 5. Bỏ tất cả vào **một thư mục Google Drive**, ví dụ `ai-creator-anh-bai`, rồi báo tên thư mục cho Claude để lấy ảnh về gắn vào web.
 
-Không cần làm đủ 63 ảnh một lúc. Ảnh nào có trước thì gắn trước, bài nào chưa có ảnh vẫn hiện ô trống ghi số.
+Không cần làm đủ 69 ảnh một lúc. Ảnh nào có trước thì gắn trước, bài nào chưa có ảnh vẫn hiện ô trống ghi số.
 
 ## Phong cách chung
 
@@ -424,4 +424,42 @@ A winding road with five milestones leading to a bright play button on the horiz
 
 ```text
 On the left one recurring cartoon cat mascot, on the right many different small story scenes, a bridge between. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
+```
+
+### Sổ tay công cụ
+
+**Ảnh số 64** · tệp `64.png` · bài: ChatGPT và Claude làm biên kịch
+
+```text
+A chat window with speech bubbles turning into a stack of script pages linked by a chain of five arrows. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
+```
+
+**Ảnh số 65** · tệp `65.png` · bài: ChatGPT Images: ảnh mỏ neo và nhất quán
+
+```text
+One central portrait card with an anchor icon, connected by lines to four smaller identical character cards in different poses. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
+```
+
+**Ảnh số 66** · tệp `66.png` · bài: Kling: tạo video từ ảnh
+
+```text
+A still photo card sliding into a film strip that unrolls into moving frames, a small dial with a slider beside it. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
+```
+
+**Ảnh số 67** · tệp `67.png` · bài: ElevenLabs: giọng đọc AI
+
+```text
+A large microphone emitting a sound waveform that passes through three control sliders. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
+```
+
+**Ảnh số 68** · tệp `68.png` · bài: CapCut: dựng và xuất
+
+```text
+A video editing timeline with colored clip blocks on stacked tracks, a playhead, and a diamond keyframe marker. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
+```
+
+**Ảnh số 69** · tệp `69.png` · bài: Quản lý dự án và tệp
+
+```text
+Neatly labeled folders in a filing drawer, a checklist clipboard and a small credit counter gauge. Neo-brutalist flat vector illustration. Thick uniform black outlines on every shape. Solid flat colors only, no gradients, no textures, no photorealism. Strict palette: paper beige #F5F5DC background, teal #00C2CB, magenta #FF00FF, yellow #FFD700, pure black and pure white. Hard black offset drop shadows with no blur, shifted down and to the right. Simple bold geometric shapes with slightly rounded corners. Subject large and centered, with a clear margin around it. No text, no letters, no numbers, no logos, no watermark. People are simple stylized characters that do not resemble any real person. Landscape 3:2 aspect ratio, 1536x1024.
 ```

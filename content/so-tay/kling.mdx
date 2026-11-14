@@ -1,0 +1,126 @@
+## Bài này giúp bạn làm gì
+
+Đi từ ảnh khung đầu đến một đoạn video dùng được trên Kling, với thông số cụ thể cho video dọc và cách tiêu credit hợp lý. Bài viết theo Kling 3.0; nếu tài khoản của bạn có bản mới hơn, các mục chính vẫn giống nhau.
+
+<Note>
+
+Số liệu trong bài lấy từ trang hướng dẫn chính thức của Kling ([kling.ai/quickstart](https://kling.ai/quickstart)) và các bài hướng dẫn tại thời điểm tháng 11/2026. Giá credit và giới hạn thay đổi theo gói và theo mô hình, nên luôn xem số credit hiện ngay cạnh nút tạo video trước khi bấm.
+
+</Note>
+
+## Bản đồ các chế độ
+
+| Chế độ | Đầu vào | Dùng khi |
+| --- | --- | --- |
+| Text to Video | Chỉ prompt | Cảnh không có nhân vật cố định: thiên nhiên, đồ vật, cảnh chuyển |
+| Image to Video | Một ảnh khung đầu + prompt chuyển động | Cách làm chính của khóa học: hình đã khóa, AI chỉ thêm chuyển động |
+| Start + End Frame | Ảnh đầu, ảnh cuối + prompt | Cần shot kết thúc đúng tư thế hoặc nối liền shot sau |
+| Elements | 1 ảnh chính + 1–3 ảnh góc phụ của nhân vật, đồ vật | Giữ nhân vật, sản phẩm nhất quán qua nhiều cảnh |
+| Multi-Shot | Prompt mô tả nhiều shot | Một đoạn có vài cảnh cắt liền nhau trong 1 lần tạo |
+
+Theo hướng dẫn chính thức của Kling 3.0: chế độ Multi-Shot có hai kiểu, mô hình tự chia shot hoặc **Custom Multi-Shot** để bạn mô tả từng shot; phải bật Multi-Shot trước thì mới bật được Custom. Ô End Frame chỉ dùng được sau khi đã tải ảnh khung đầu.
+
+## Thông số nên đặt cho video dọc
+
+| Thông số | Đặt | Lý do |
+| --- | --- | --- |
+| Tỉ lệ | 9:16 | Khớp TikTok, Reels, Shorts; không phải cắt lại |
+| Thời lượng | 5 giây khi thử, 10 giây khi đã chắc | Đoạn ngắn lỗi ít hơn, rẻ hơn; khóa học khuyên mỗi shot 4–8 giây |
+| Chất lượng | Standard khi thử, Pro hoặc 1080p cho bản cuối | Thử nhiều ở mức rẻ, chỉ trả mức cao cho bản đã chọn |
+| Số bản mỗi lần | 1–2 | Đủ để so sánh, không đốt credit |
+| Âm thanh gốc | Tắt nếu bạn tự lồng tiếng và nhạc | Âm thanh sinh kèm khó kiểm soát và khó xin quyền |
+| Creativity ↔ Relevance | Nghiêng về Relevance | Bám sát prompt và ảnh đầu vào hơn |
+| Negative prompt | Luôn điền | Chặn trước các lỗi hay gặp |
+
+Ở Kling 3.0, thời lượng có thể chọn dài hơn (các hướng dẫn ghi tới 15 giây cho Multi-Shot), nhưng với người mới, 5–10 giây mỗi lần tạo cho kết quả ổn định nhất.
+
+Negative prompt mặc định để dán:
+
+```text
+blurry, distorted face, deformed hands, extra fingers, morphing, flickering,
+text, watermark, logo, subtitles, low quality, jitter
+```
+
+## Image to Video từng bước
+
+<Steps>
+<Step title="Chuẩn bị ảnh">Ảnh khung đầu 9:16 từ bài ChatGPT Images. Nhân vật ở tư thế bắt đầu hành động.</Step>
+<Step title="Chọn chế độ">Vào phần tạo video, chọn Image to Video, tải ảnh lên ô khung đầu.</Step>
+<Step title="Viết prompt chuyển động">Chỉ mô tả cái gì chuyển động và máy quay làm gì. Một hành động. Dưới 40 từ.</Step>
+<Step title="Đặt thông số">9:16, 5 giây, Standard, 1 bản, tắt âm thanh, dán negative prompt.</Step>
+<Step title="Xem credit rồi tạo">Ghi số credit hiển thị vào bảng theo dõi trước khi bấm.</Step>
+<Step title="Chấm nhanh kết quả">Mặt giữ không, tay chân có méo không, máy quay đúng chưa. Có 2–3 giây sạch là dùng được.</Step>
+<Step title="Nâng cấp bản tốt">Khi đã ưng prompt, tạo lại ở chất lượng cao và thời lượng cần thiết.</Step>
+<Step title="Tải về và đặt tên">Tải MP4, đặt tên `c04_v2_ok.mp4` theo số cảnh và số lần thử.</Step>
+</Steps>
+
+Prompt chuyển động mẫu theo loại shot:
+
+| Shot | Prompt chuyển động |
+| --- | --- |
+| Cận sản phẩm | `The bottle rotates slowly clockwise, light glides along the glass. Slow orbit camera.` |
+| Nhân vật cảm xúc | `She slowly looks down at the letter, blinks, her fingers tighten on the paper. Static camera.` |
+| Nhân vật đi | `The cat walks forward along the wet street, tail swaying. Tracking shot from the side, camera at ground level.` |
+| Mở cảnh | `Rain falls steadily, curtains move slightly in the wind. Slow dolly-in towards the window.` |
+
+## Giữ nhân vật bằng Elements
+
+<Steps>
+<Step title="Tạo Element">Trong thư viện Element, tạo mới, tải ảnh mỏ neo làm ảnh chính, thêm 1–3 ảnh góc khác từ character sheet.</Step>
+<Step title="Đặt tên rõ">Ví dụ `MINH_NV_CHINH`. Một Element cho mỗi nhân vật hoặc sản phẩm.</Step>
+<Step title="Gọi Element khi tạo video">Chọn Element trong ô tham chiếu, rồi viết prompt mô tả cảnh và hành động.</Step>
+<Step title="Kiểm tra qua nhiều cảnh">Tạo 3–4 cảnh khác bối cảnh, đặt cạnh nhau so khuôn mặt và trang phục.</Step>
+</Steps>
+
+Theo hướng dẫn Element Library của Kling, một Element nhiều ảnh dùng 1–3 ảnh góc phụ, và bản 3.0 cho phép gắn giọng nói vào nhân vật (cần đoạn ghi âm từ 3 giây). Khóa học khuyên chưa dùng giọng gắn kèm cho bản giao khách, mà lồng tiếng riêng bằng ElevenLabs để kiểm soát và rõ quyền sử dụng.
+
+## Start + End Frame
+
+Dùng khi shot phải kết thúc ở một trạng thái cụ thể, ví dụ cửa xe đóng lại sau khi nhân vật lùi bước. Hai ảnh cần cùng tỉ lệ, cùng nhân vật, cùng ánh sáng; khác nhau chỉ ở tư thế hoặc vị trí. Prompt mô tả quá trình đi từ ảnh đầu đến ảnh cuối:
+
+```text
+She steps back from the bus door, holding the letter. The bus doors close.
+Static camera, evening light.
+```
+
+## Multi-Shot
+
+Dùng khi cần một chuỗi cảnh cắt liền trong một lần tạo, ví dụ ba góc của cùng một khoảnh khắc. Với Custom Multi-Shot, viết mỗi shot một dòng có cỡ cảnh, hành động và thời lượng. Một số hướng dẫn ghi rằng Multi-Shot không kết hợp được với Start + End Frame trong cùng một lần tạo; nếu tùy chọn bị mờ, đó là lý do.
+
+Khóa học vẫn khuyên tạo **từng shot riêng** cho bản giao khách, vì dễ sửa từng shot mà không phải tạo lại cả chuỗi.
+
+## Tiêu credit hợp lý
+
+<Cards>
+<Card title="Thử rẻ" tag="Quy tắc 1" tone="coral">Thử prompt ở Standard và 5 giây. Chỉ nâng chất lượng cho bản đã chọn.</Card>
+<Card title="Chốt storyboard trước" tag="Quy tắc 2" tone="cream">Không tạo video cho shot chưa có ảnh khung đầu đạt.</Card>
+<Card title="Ghi lại" tag="Quy tắc 3" tone="violet">Mỗi lần tạo ghi: shot, chế độ, chất lượng, credit, kết quả. Sau một dự án bạn biết chi phí thật để báo giá.</Card>
+</Cards>
+
+## Lỗi thường gặp
+
+| Lỗi | Nguyên nhân hay gặp | Cách sửa |
+| --- | --- | --- |
+| Mặt đổi giữa đoạn | Chuyển động lớn, quay đầu nhiều | Giảm biên độ, rút còn 5 giây, dùng Elements |
+| Tay chân biến dạng | Hành động phức tạp | Đổi cỡ cảnh để tay khuất, một hành động mỗi shot |
+| Sản phẩm méo | AI tự “sáng tạo” hình dáng | Dùng ảnh sản phẩm thật làm khung đầu, cho máy quay chuyển động thay vì sản phẩm |
+| Máy quay đứng yên dù đã yêu cầu | Prompt chuyển động bị chìm | Đặt câu máy quay ở cuối, ngắn và rõ; hoặc dùng mục điều khiển camera nếu có |
+| Chữ lạ xuất hiện | Prompt không chặn | Thêm text, subtitles vào negative prompt |
+| Hình nhấp nháy | Nhiều chi tiết nhỏ chuyển động | Đơn giản hóa bối cảnh, giảm chuyển động nền |
+
+<Checklist id="st-kling" items="Đã đặt mặc định 9:16 và tắt âm thanh gốc|Có negative prompt dán sẵn|Có Element cho nhân vật chính|Mỗi shot thử ở mức rẻ trước khi nâng chất lượng|Có bảng ghi credit cho từng lần tạo|Tệp tải về đặt tên theo số cảnh và số lần thử" />
+
+<Exercise title="Sáu shot từ storyboard">
+
+1. Tạo Element cho nhân vật chính từ character sheet.
+2. Với 6 ảnh khung đầu đã làm, tạo mỗi shot 1–2 bản ở Standard, 5 giây.
+3. Chọn bản tốt nhất mỗi shot, tạo lại ở chất lượng cao.
+4. Ghi đủ bảng credit và tổng chi phí cho 6 shot.
+
+</Exercise>
+
+<Output>
+
+6 đoạn video 9:16 đã chọn, đặt tên đúng quy ước, kèm bảng credit thực tế của dự án.
+
+</Output>

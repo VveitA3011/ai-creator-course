@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Sticker } from "@/components/marquee";
 import { ModuleCard } from "@/components/module-card";
-import { extraModules, flatLessons, modules, totalPlanned } from "@/lib/curriculum";
+import { extraModules, flatLessons, handbook, modules, totalPlanned } from "@/lib/curriculum";
 
 export const metadata: Metadata = { title: "Lộ trình" };
 
@@ -33,6 +33,13 @@ export default function Roadmap() {
           {extraModules.map((m, n) => (
             <ModuleCard key={m.slug} module={m} index={n + 2} />
           ))}
+        </div>
+      </section>
+      <section className="stack">
+        <h2>Sổ tay công cụ</h2>
+        <p className="lead">Hướng dẫn từng bước cho từng công cụ. Đọc khi bắt đầu dùng một công cụ mới, hoặc tra lại khi gặp lỗi.</p>
+        <div className="cards-grid">
+          <ModuleCard module={handbook} index={1} />
         </div>
       </section>
     </div>

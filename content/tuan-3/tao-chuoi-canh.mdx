@@ -1,47 +1,40 @@
-## Buổi thực hành chính của tuần
+## Buổi sản xuất chính
 
-Đến lúc ghép mọi kỹ thuật lại. Bạn sẽ biến bộ bốn ảnh cùng một nhân vật thành một chuỗi video.
+Hôm nay bạn hoàn tất cả 6 shot của LUNE theo đúng trình tự sản xuất. Dự kiến 2–3 giờ.
 
 <Frames>
-<Frame n="1" shot="Full shot" cam="Static" dur="4s" tone="dark">Nhân vật đứng trên phố</Frame>
-<Frame n="2" shot="Medium shot" cam="Tracking shot" dur="5s" tone="orange">Đi vào quán cà phê</Frame>
-<Frame n="3" shot="Medium shot" cam="Slow dolly-in" dur="5s" tone="orange">Ngồi bên cửa sổ</Frame>
-<Frame n="4" shot="Close-up" cam="Static" dur="4s" tone="violet">Nhìn ra ngoài trời mưa</Frame>
+<Frame n="1" shot="Extreme close-up" cam="Slow dolly-in" dur="3s" tone="dark">Bàn tay chạm chai</Frame>
+<Frame n="2" shot="Full shot" cam="Tracking shot" dur="5s" tone="orange">Bước vào sảnh</Frame>
+<Frame n="3" shot="Medium shot" cam="Static" dur="4s" tone="orange">Hai người quay lại</Frame>
+<Frame n="4" shot="Extreme close-up" cam="Orbit" dur="5s" tone="dark">Chai và hạt sương</Frame>
+<Frame n="5" shot="Close-up" cam="Slow dolly-in" dur="4s" tone="orange">Mỉm cười qua vai</Frame>
+<Frame n="6" shot="Medium shot" cam="Static" dur="3s" tone="dark">Sản phẩm, CTA</Frame>
 </Frames>
 
-## Quy trình cho từng shot
+## Trình tự
 
 <Steps>
-<Step title="Kiểm tra ảnh đầu vào">Khớp character sheet, đúng 9:16, ánh sáng hợp với shot trước.</Step>
-<Step title="Viết prompt chuyển động">Một hành động, một chuyển động máy.</Step>
-<Step title="Sinh hai đến ba phiên bản">Không kỳ vọng lần đầu là đạt.</Step>
-<Step title="Chọn và đặt tên tệp">Đặt tên theo quy ước, ví dụ `c02_v3_ok.mp4`, để lúc dựng không bị lẫn.</Step>
+<Step title="Shot sản phẩm">c04, c06, c01: không có mặt người, ít rủi ro.</Step>
+<Step title="Shot nhân vật">c02, c03, c05 với Element `LUNE_NV`.</Step>
+<Step title="Mỗi shot tối đa 3 lần thử ở mức rẻ">Không đạt sau 3 lần: đổi ảnh khung đầu, không tiếp tục đổi prompt.</Step>
+<Step title="Nâng chất lượng 6 bản chọn">Chỉ sau khi cả 6 shot đều đã có bản thử đạt.</Step>
+<Step title="Ghép thô">Kéo 6 bản vào CapCut theo thứ tự, xem liền một mạch, chưa cần âm thanh.</Step>
 </Steps>
 
-## Theo dõi chi phí
+## Ngân sách credit
 
-Ghi lại số lần sinh cho mỗi shot. Con số này cho bạn biết shot nào khó, và sau này là căn cứ để báo giá cho khách.
+Trước khi bắt đầu, lập ngân sách bằng số credit hiện trên nút tạo của bạn:
 
-| Shot | Số lần sinh | Bản được chọn | Ghi chú |
+| Hạng mục | Số lần | Credit mỗi lần | Tổng |
 | --- | --- | --- | --- |
-| 1 | 2 | v2 | Ổn |
-| 2 | 4 | v3 | Tracking dễ lỗi chân khi bước |
-| 3 | 2 | v1 | Ổn |
-| 4 | 3 | v3 | Mưa trên kính cần viết rõ |
+| Thử ở mức rẻ | 6 shot × 3 lần = 18 | (số trên nút ở Standard 5s) | |
+| Bản chất lượng cao | 6 | (số trên nút ở chất lượng cao) | |
+| Dự phòng 20% | | | |
 
-Bảng trên là ví dụ về cách ghi, không phải số liệu chuẩn.
-
-<Exercise title="Chuỗi bốn cảnh">
-
-1. Sinh video cho cả bốn cảnh của nhân vật, thử static camera, slow dolly-in và tracking shot.
-2. Ghép thô bốn đoạn theo thứ tự trong CapCut, chưa cần âm thanh.
-3. Xem liền một mạch: nhân vật có giống nhau không, tông màu có đổi không.
-4. Điền bảng theo dõi số lần sinh.
-
-</Exercise>
+So ngân sách với nhật ký sau khi xong. Chênh lệch này cho biết bạn cần dự phòng bao nhiêu khi báo giá cho khách.
 
 <Output>
 
-Một chuỗi video cùng một nhân vật và một video thử nghiệm 15–20 giây ghép thô.
+6 tệp `c01…c06_*_ok.mp4`, một bản ghép thô 24 giây không âm thanh, và nhật ký có tổng credit thực tế so với ngân sách.
 
 </Output>

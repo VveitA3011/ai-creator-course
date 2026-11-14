@@ -1,0 +1,157 @@
+## Bài này giúp bạn làm gì
+
+Biến ChatGPT hoặc Claude thành một trợ lý biên kịch làm việc theo đúng quy trình của khóa học: nhận brief, đề xuất concept, viết kịch bản dạng bảng, chia storyboard và viết prompt cho từng shot. Cuối bài bạn có một "phòng làm việc" được thiết lập sẵn, dùng lại cho mọi dự án.
+
+<Note>
+
+Giao diện ChatGPT và Claude cập nhật thường xuyên. Bài này mô tả theo chức năng; nếu tên nút khác đi, hãy tìm mục có cùng chức năng. Cả hai công cụ đều làm được mọi bước dưới đây, chọn một cái và dùng nhất quán.
+
+</Note>
+
+## Bước 1. Tạo một không gian riêng cho mỗi dự án
+
+Cả ChatGPT và Claude đều có tính năng **Project**: một thư mục gom các cuộc trò chuyện, tệp đính kèm và một bộ chỉ dẫn áp dụng cho mọi cuộc trò chuyện trong đó.
+
+<Steps>
+<Step title="Tạo Project">Trong thanh bên trái, tạo Project mới. Đặt tên theo dự án, ví dụ `NUOC-HOA-LUNE-2026-11`.</Step>
+<Step title="Dán chỉ dẫn của Project">Mở phần chỉ dẫn (Instructions) của Project, dán bộ chỉ dẫn ở Bước 2.</Step>
+<Step title="Đính kèm tài liệu">Tải lên brief, ảnh sản phẩm, bảng thương hiệu nếu có. Mọi cuộc trò chuyện trong Project đều đọc được các tệp này.</Step>
+<Step title="Một cuộc trò chuyện cho một việc">Tách riêng: một cuộc cho concept, một cho kịch bản, một cho prompt. Cuộc trò chuyện quá dài làm AI quên chi tiết đầu.</Step>
+</Steps>
+
+## Bước 2. Bộ chỉ dẫn mẫu cho Project
+
+Sao chép nguyên khối dưới đây, sửa phần trong ngoặc vuông cho dự án của bạn.
+
+```text
+Bạn là biên kịch và đạo diễn sáng tạo cho video ngắn dọc 9:16 (TikTok, Reels, Shorts).
+
+Bối cảnh dự án:
+- Sản phẩm/chủ đề: [tên, đặc điểm có thật]
+- Người xem: [độ tuổi, mối quan tâm]
+- Mục tiêu: [nhận diện / bán hàng / kể chuyện]
+- Giọng thương hiệu: [ví dụ: sang trọng, kiệm lời]
+
+Cách làm việc:
+1. Luôn trả lời bằng tiếng Việt, trừ khi tôi yêu cầu prompt tiếng Anh.
+2. Kịch bản luôn trình bày dạng bảng: Cảnh | Thời lượng | Hình ảnh và hành động | Lời dẫn | Ghi chú.
+3. Mỗi cảnh tối đa 8 giây, một hành động. Ưu tiên kể bằng hình, ít lời.
+4. Hook nằm trong 3 giây đầu và phải mô tả được bằng một khung hình.
+5. Không bịa công dụng sản phẩm, không tạo lời chứng thực của khách hàng thật.
+6. Khi viết prompt tạo ảnh/video: viết bằng tiếng Anh, theo thứ tự
+   cỡ cảnh → chủ thể → hành động → bối cảnh → ánh sáng → phong cách → "vertical 9:16".
+7. Hỏi lại tôi nếu brief thiếu thông tin, thay vì tự đoán.
+```
+
+Điểm mấu chốt là dòng 3, 4 và 6: chúng ép AI viết theo cách sản xuất được, thay vì viết như một bài văn.
+
+## Bước 3. Chuỗi 5 prompt từ brief đến prompt video
+
+Chạy lần lượt, đọc và sửa kết quả của bước trước rồi mới sang bước sau.
+
+**Prompt 1 · Concept**
+
+```text
+Dựa trên brief đã đính kèm, đề xuất 5 concept cho video 20–30 giây.
+Mỗi concept gồm: một câu concept, insight của người xem, hình ảnh mở đầu (hook bằng hình),
+và lý do concept này hợp với mục tiêu. Xếp từ an toàn đến táo bạo.
+```
+
+**Prompt 2 · Hook**
+
+```text
+Chọn concept số [n]. Viết 3 phương án hook cho 3 giây đầu: cảm xúc, gây tò mò, lợi ích.
+Mỗi hook gồm: khung hình đầu tiên (máy quay thấy gì) và câu đầu tiên (dưới 12 từ).
+```
+
+**Prompt 3 · Kịch bản**
+
+```text
+Viết kịch bản 24 giây với hook số [n]. Trình bày dạng bảng theo chỉ dẫn của Project.
+Tổng thời lượng các cảnh phải đúng 24 giây. Lời dẫn tổng cộng không quá 50 từ.
+```
+
+**Prompt 4 · Storyboard**
+
+```text
+Chuyển kịch bản trên thành storyboard. Mỗi shot một dòng với 6 cột:
+Scene | Shot (cỡ cảnh) | Camera (góc và chuyển động) | Lighting | Action | Duration.
+Đảm bảo hai shot liền nhau không trùng cỡ cảnh.
+```
+
+**Prompt 5 · Prompt ảnh và video**
+
+```text
+Với mỗi shot, viết 2 prompt bằng tiếng Anh:
+(A) prompt tạo ảnh khung đầu, theo thứ tự trong chỉ dẫn;
+(B) prompt chuyển động cho image-to-video: chỉ mô tả cái gì chuyển động và máy quay làm gì.
+Lặp lại nguyên văn khối mô tả nhân vật sau trong mọi prompt (A):
+[dán khối nhân vật]
+```
+
+<ToolLink href="/cong-cu/kich-ban" title="Dựng nhịp kịch bản">Dán kết quả Prompt 3 vào công cụ để kiểm tra mốc giây và số từ lời dẫn.</ToolLink>
+
+## Ví dụ làm mẫu trọn vẹn
+
+Brief giả lập: nước hoa **LUNE**, hương gỗ đàn hương, dành cho nữ 25–35 tuổi, mục tiêu nhận diện, giọng thương hiệu sang trọng, kiệm lời.
+
+Kết quả Prompt 3 sau khi đã sửa:
+
+| Cảnh | Thời lượng | Hình ảnh và hành động | Lời dẫn | Ghi chú |
+| --- | --- | --- | --- | --- |
+| 1 | 0–3s | Cận đặc tả lọ nước hoa trong bóng tối, một vệt sáng chạy dọc thân chai | Có những mùi hương không cần giới thiệu. | Hook cảm xúc |
+| 2 | 3–8s | Cô gái bước vào sảnh tiệc, tà váy chuyển động | (nhạc) | Tracking |
+| 3 | 8–12s | Hai người quay lại nhìn theo | (nhạc) | Static |
+| 4 | 12–17s | Lọ nước hoa xoay chậm, hạt sương trên thân chai | Hương gỗ đàn hương, ở lại thật lâu. | Orbit |
+| 5 | 17–21s | Cô gái mỉm cười, nhìn qua vai | (nhạc) | Dolly-in |
+| 6 | 21–24s | Sản phẩm trên nền đen, tên LUNE thêm ở khâu dựng | LUNE. Ở lại sau khi bạn rời đi. | CTA |
+
+Một cặp prompt của Prompt 5 cho cảnh 4:
+
+```text
+(A) Extreme close-up of a frosted glass perfume bottle with a brushed gold cap,
+water droplets on the glass, black marble surface, low-key lighting with warm
+rim light from behind, high contrast, premium product photography, vertical 9:16
+
+(B) The bottle rotates slowly clockwise, droplets catch the light.
+Slow orbit camera around the bottle.
+```
+
+Lưu ý tên thương hiệu không nằm trong prompt ảnh: chữ sẽ thêm ở khâu dựng để tránh AI vẽ sai.
+
+## Sửa kết quả khi AI làm chưa tốt
+
+| AI làm | Bạn nói |
+| --- | --- |
+| Kịch bản dài dòng, nhiều lời | "Rút lời dẫn còn tối đa 40 từ, chuyển phần còn lại thành hình ảnh." |
+| Cảnh mô tả trừu tượng | "Viết lại cột hình ảnh: mỗi dòng phải trả lời được máy quay thấy gì." |
+| Tổng thời lượng sai | "Cộng lại cột thời lượng và sửa cho đúng 24 giây." |
+| Hook yếu | "Viết 5 hook khác, mỗi hook mở bằng một hình ảnh bất ngờ, không mở bằng câu hỏi." |
+| Prompt tiếng Anh dài và lan man | "Rút mỗi prompt còn dưới 60 từ, giữ đúng thứ tự trong chỉ dẫn." |
+
+## Kiểm tra tiếng Anh cho kênh US
+
+Với lời dẫn tiếng Anh, dùng thêm một bước kiểm tra riêng:
+
+```text
+Đọc lời dẫn sau như một biên tập viên người Mỹ. Đánh dấu câu nào nghe như dịch máy,
+đề xuất cách nói tự nhiên hơn, giữ nguyên độ dài. Giải thích ngắn gọn bằng tiếng Việt.
+```
+
+AI kiểm tra AI vẫn có thể sót. Với video đăng chính thức, nên nhờ thêm một người viết tiếng Anh tốt đọc lại.
+
+<Checklist id="st-chat" items="Đã tạo Project cho dự án|Đã dán và chỉnh bộ chỉ dẫn mẫu|Đã đính kèm brief và ảnh sản phẩm|Đã chạy đủ 5 prompt theo thứ tự|Kịch bản có tổng thời lượng đúng|Prompt ảnh có khối nhân vật giống hệt nhau|Đã lưu các prompt tốt vào Thư viện prompt" />
+
+<Exercise title="Thiết lập phòng biên kịch">
+
+1. Tạo một Project cho sản phẩm bạn chọn ở Module 0 và dán bộ chỉ dẫn.
+2. Chạy 5 prompt, sửa kết quả ít nhất hai lần bằng các câu ở bảng "Sửa kết quả".
+3. Lưu bộ chỉ dẫn đã chỉnh vào Thư viện prompt, nhóm "Phong cách", để dùng cho dự án sau.
+
+</Exercise>
+
+<Output>
+
+Một Project đã thiết lập, một kịch bản bảng 24 giây và bộ prompt ảnh, video cho từng shot.
+
+</Output>

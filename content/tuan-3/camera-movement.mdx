@@ -1,45 +1,38 @@
-## Ba chuyển động cần làm chủ trước
+## Điều khiển máy quay trên Kling
 
-Ở Tuần 2 bạn đã học tên các chuyển động máy. Tuần này bạn điều khiển chúng thật. Bắt đầu với ba chuyển động cho kết quả ổn định nhất:
+Có hai cách, dùng cách nào tùy mục có sẵn trong phiên bản của bạn:
 
-<Cards>
-<Card title="Static camera" tag="Máy đứng yên" tone="dark">Chỉ chủ thể chuyển động. Ít lỗi nhất, hợp với cảnh cảm xúc và cảnh hội thoại.</Card>
-<Card title="Slow dolly-in" tag="Tiến chậm" tone="coral">Máy tiến dần vào chủ thể. Tăng sự chú ý, hay dùng cho hook và cảnh sản phẩm.</Card>
-<Card title="Tracking shot" tag="Đi theo" tone="violet">Máy di chuyển cùng nhân vật. Tạo cảm giác đồng hành, hợp với cảnh đi bộ.</Card>
-</Cards>
+| Cách | Làm thế nào | Khi nào |
+| --- | --- | --- |
+| Viết trong prompt | Câu cuối của prompt: `Slow dolly-in.`, `Tracking shot from the side.` | Luôn dùng được |
+| Mục điều khiển camera | Chọn kiểu chuyển động có sẵn hoặc đặt từng trục (ngang, dọc, zoom, xoay) | Khi prompt không đủ chính xác |
+
+Với mục điều khiển theo trục, chỉ đặt **một trục** khác 0 mỗi lần. Hai trục cùng lúc dễ làm hình méo.
+
+## Bảng chuyển động cho quảng cáo
+
+| Chuyển động | Câu prompt | Cảm giác | LUNE dùng ở |
+| --- | --- | --- | --- |
+| Static | `Static camera.` | Tĩnh, tập trung | c03, c06 |
+| Dolly-in chậm | `Slow dolly-in.` | Chú ý tăng dần | c01, c05 |
+| Tracking | `Tracking shot from the front, camera moving backward.` | Đồng hành | c02 |
+| Orbit | `Slow orbit camera around the bottle.` | Tôn sản phẩm | c04 |
+| Pan | `Slow pan from left to right.` | Mở không gian | cảnh chuyển |
 
 <CameraMoves />
 
-## Cách ra lệnh cho máy quay
+## Làm trên dự án LUNE
 
-Đặt chuyển động máy thành một câu riêng ở cuối prompt, dùng đúng thuật ngữ:
+Shot c05 (cận mặt nhân vật) là shot nhạy cảm nhất: mặt dễ biến dạng khi máy chuyển động.
 
-```text
-The cat walks along the wet street. Tracking shot following
-the cat from the side, camera at ground level.
-```
-
-Nếu công cụ có mục điều khiển camera riêng, hãy dùng mục đó thay vì chỉ viết trong prompt.
-
-## Khi máy quay làm hỏng cảnh
-
-| Hiện tượng | Cách xử lý |
-| --- | --- |
-| Hình méo khi máy chuyển động | Giảm tốc độ, đổi sang static hoặc dolly-in chậm |
-| Nhân vật đổi khuôn mặt giữa chừng | Rút ngắn đoạn video, giảm biên độ chuyển động |
-| Máy chuyển động sai hướng | Viết rõ hướng: từ trái sang phải, từ dưới lên |
-| Cảnh bị rung, giật | Sinh lại, hoặc dùng static rồi thêm zoom nhẹ ở khâu dựng |
-
-Mẹo tiết kiệm credit: với cảnh khó, hãy sinh bản static rồi tạo chuyển động zoom và trượt bằng keyframe trong CapCut ở Tuần 4.
-
-<Exercise title="Một cảnh, ba kiểu máy">
-
-Lấy một ảnh nhân vật từ character sheet. Sinh ba phiên bản của cùng một cảnh với static camera, slow dolly-in và tracking shot. So sánh cảm xúc mà mỗi kiểu tạo ra và chọn kiểu hợp nhất với kịch bản.
-
-</Exercise>
+<Steps>
+<Step title="Ba bản cùng ảnh">Từ `kd_c05.png`, tạo ba bản: static, slow dolly-in, slow pan. Cùng thông số Standard 5 giây.</Step>
+<Step title="Đặt cạnh nhau">Mở ba đoạn cùng lúc, so: mặt có giữ không, chuyển động nào hợp cảm xúc nhất.</Step>
+<Step title="Phương án dự phòng">Nếu cả ba đều méo mặt: dùng bản static, rồi tạo chuyển động zoom bằng keyframe trong CapCut ở Tuần 4.</Step>
+</Steps>
 
 <Output>
 
-Ba đoạn video của cùng một cảnh với ba chuyển động máy, kèm ghi chú lựa chọn.
+Ba bản thử c05 và bản chọn `c05_*_ok.mp4`, ghi vào nhật ký lý do chọn.
 
 </Output>

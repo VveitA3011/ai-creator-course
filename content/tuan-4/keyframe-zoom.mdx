@@ -1,45 +1,27 @@
-## Thêm chuyển động ở khâu dựng
+## Chuyển động thêm ở khâu dựng
 
-Không phải chuyển động nào cũng cần sinh bằng AI. Một cú zoom chậm hoặc trượt ngang có thể tạo ngay trong CapCut bằng keyframe, không tốn credit và kiểm soát được hoàn toàn.
+Keyframe trong CapCut tạo chuyển động không tốn credit và kiểm soát hoàn toàn. Dùng cho shot AI bị static hoặc để tăng nhịp.
 
-## Keyframe là gì
+| Shot LUNE | Keyframe | Giá trị |
+| --- | --- | --- |
+| c03 (static) | Scale | 100% → 108% trong 4 giây |
+| c05 (nếu bản static) | Scale | 100% → 112%, ease in |
+| c06 | Scale | 105% → 100% (lùi nhẹ khi logo xuất hiện) |
 
-Keyframe là điểm đánh dấu trạng thái của hình tại một thời điểm: vị trí, kích thước, góc xoay, độ mờ. Bạn đặt hai keyframe với hai trạng thái khác nhau, phần mềm tự tạo chuyển động ở giữa.
+Giữ mức zoom trong khoảng 105–115%: vượt 120% hình AI 1080p bắt đầu mờ.
+
+## Làm trên dự án LUNE
 
 <Steps>
-<Step title="Đặt keyframe đầu">Ở đầu đoạn, giữ kích thước 100%.</Step>
-<Step title="Đặt keyframe cuối">Ở cuối đoạn, tăng kích thước lên khoảng 108–115%.</Step>
-<Step title="Xem lại">Chuyển động phải chậm và đều. Nếu thấy rõ là đang zoom thì đã quá tay.</Step>
+<Step title="Chọn đoạn c03">Đưa đầu phát về đầu đoạn, bấm hình thoi cạnh Scale ở 100%.</Step>
+<Step title="Keyframe cuối">Đưa đầu phát về cuối đoạn, đặt Scale 108%.</Step>
+<Step title="Làm mượt">Đặt kiểu chuyển động Ease nếu có.</Step>
+<Step title="Lặp cho c05 và c06">Theo giá trị trong bảng.</Step>
+<Step title="Ducking nhạc">Keyframe Volume cho track nhạc: hạ khi có lời ở c01, c04, c06, trả lại khi hết lời.</Step>
 </Steps>
-
-## Bốn chuyển động hay dùng
-
-<Cards>
-<Card title="Zoom-in chậm" tone="coral">Tăng sự chú ý vào chủ thể. Dùng cho cảnh cảm xúc và cảnh sản phẩm.</Card>
-<Card title="Zoom-out chậm" tone="violet">Mở rộng không gian. Dùng cho cảnh kết.</Card>
-<Card title="Trượt ngang" tone="cream">Di chuyển nhẹ theo hướng nhìn hoặc hướng đi của nhân vật.</Card>
-<Card title="Punch-in" tone="orange">Phóng to đột ngột ở một từ khóa. Dùng trong video social nhịp nhanh.</Card>
-</Cards>
-
-## Khi nào dùng keyframe thay cho AI
-
-| Tình huống | Nên làm |
-| --- | --- |
-| Shot AI bị lỗi khi máy chuyển động | Sinh bản static, thêm zoom bằng keyframe |
-| Cần ảnh tĩnh sản phẩm có sức sống | Zoom chậm kết hợp ánh sáng thay đổi nhẹ |
-| Cần nhấn một chi tiết | Punch-in ở khâu dựng |
-| Cần chuyển động phức tạp của nhân vật | Vẫn phải sinh bằng AI |
-
-Lưu ý chất lượng: phóng to quá nhiều làm hình bị mờ. Giữ mức zoom vừa phải, hoặc xuất video AI ở độ phân giải cao hơn nếu công cụ cho phép.
-
-<Exercise title="Ba chuyển động bằng keyframe">
-
-Trong bản dựng của bạn, thêm một zoom-in chậm vào cảnh cảm xúc nhất, một trượt ngang vào cảnh nhân vật di chuyển, và một punch-in hoặc zoom-out vào cảnh kết. Xem lại và giảm bớt nếu chuyển động gây chú ý hơn nội dung.
-
-</Exercise>
 
 <Output>
 
-Bản dựng có ba chuyển động keyframe phục vụ nội dung.
+Ba shot có keyframe đúng giá trị, nhạc được hạ ở ba đoạn có lời.
 
 </Output>

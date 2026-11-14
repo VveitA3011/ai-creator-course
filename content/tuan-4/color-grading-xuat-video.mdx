@@ -1,51 +1,29 @@
-## Vì sao video AI cần chỉnh màu
-
-Mỗi shot được sinh riêng nên tông màu, độ sáng và độ tương phản thường lệch nhau một chút. Chỉnh màu làm các shot trông như thuộc cùng một bộ phim. Đây cũng là cách sửa lỗi lệch tông rẻ nhất.
-
-## Hai bước chỉnh màu
+## Chỉnh màu hai bước
 
 <Steps>
-<Step title="Cân bằng giữa các shot">Chọn một shot làm chuẩn. Chỉnh độ sáng, tương phản, nhiệt độ màu của các shot khác cho khớp với shot chuẩn.</Step>
-<Step title="Tạo phong cách chung">Sau khi các shot đã khớp, áp một lớp chỉnh chung cho cả video theo bảng màu bạn chọn ở Tuần 2.</Step>
+<Step title="Chọn shot chuẩn">Với LUNE, chọn c04 (cận chai) làm chuẩn màu.</Step>
+<Step title="Cân từng shot về chuẩn">Mục Adjust: nhiệt độ màu, độ sáng, tương phản. Cảnh sảnh tiệc giữ ấm hơn cảnh bàn đá nhưng cùng độ đậm đen.</Step>
+<Step title="Lớp chỉnh chung">Thêm Adjustment layer phủ 0:00–0:24: giảm bão hòa nhẹ, tăng tương phản nhẹ.</Step>
+<Step title="Kiểm tra màu da">Ở c02, c05: da không ám xanh, không ám cam.</Step>
 </Steps>
 
-Thứ tự này quan trọng. Áp phong cách lên các shot chưa khớp chỉ làm sự lệch tông rõ hơn.
+## Xuất và tạo phiên bản
 
-<Palette colors="#120608,#c9923f,#f3e6c8" names="Vùng tối|Vùng nhấn|Vùng sáng" />
-
-## Những thứ nên chỉnh
-
-- **Độ sáng và tương phản:** để chủ thể nổi khỏi nền.
-- **Nhiệt độ màu:** ấm hơn hay lạnh hơn, giữ thống nhất trong một bối cảnh.
-- **Độ bão hòa:** giảm nhẹ thường cho cảm giác điện ảnh hơn.
-- **Màu da:** nếu có người, kiểm tra màu da trước tiên. Da bị ám xanh hoặc cam là lỗi dễ thấy nhất.
-
-## Xuất video
-
-| Thông số | Thiết lập |
+| Tệp | Thiết lập |
 | --- | --- |
-| Tỷ lệ | 9:16 |
-| Độ phân giải | 1080 × 1920 |
-| Định dạng | MP4 |
-| Phụ đề | Có |
-| Phiên bản | TikTok, Reels, Shorts |
+| `LUNE_quangcao_24s_v1_master.mp4` | 1080p, 30 fps, MP4, H.264, bitrate khuyến nghị hoặc cao |
+| `..._tiktok.mp4`, `..._reels.mp4`, `..._shorts.mp4` | Từ bản master; nếu phụ đề bị che ở ứng dụng nào thì dời phụ đề và xuất riêng cho ứng dụng đó |
 
-Xuất một bản master không có watermark của nền tảng nào. Từ bản master, bạn tạo phiên bản cho từng nền tảng.
+## Nghiệm thu
 
-## Kiểm tra trước khi coi là xong
+Mở bản master trên điện thoại và đi qua đủ 12 tiêu chí.
 
-<Checklist id="w4-export" items="Hook đủ thu hút trong 1–3 giây đầu|Voice-over rõ, âm lượng ba lớp cân bằng|Phụ đề chính xác, đồng bộ, nằm trong vùng an toàn|Tông màu thống nhất giữa các shot|Không còn khung hình lỗi AI dễ nhận ra|Xuất đúng 9:16, 1080 × 1920, MP4|Đã kiểm tra quyền sử dụng nhạc và giọng đọc" />
+<Checklist id="w4-final" items="Xuất đúng 1080×1920, 9:16, MP4 H.264, 30 fps|Tổng thời lượng 24 giây, lệch tối đa 1 giây|Khung hình đầu tiên đã là hook|Nhân vật giữ cùng khuôn mặt, tóc, trang phục ở c02, c03, c05|Không shot nào lộ lỗi tay, mặt hay chai biến dạng ở tốc độ thường|Chai đúng hình dáng, màu, nắp vàng ở mọi shot|Không có chữ do AI vẽ trong khung hình|Phụ đề khớp lời, ghi đúng LUNE, nằm trong vùng an toàn|Lời dẫn nghe rõ trên loa điện thoại, nhạc thấp hơn lời|CTA “Xem bộ sưu tập” hiện ít nhất 2 giây cuối|Đã xem trên TikTok, Reels, Shorts ở chế độ nháp|Đã lưu giấy phép nhạc, hiệu ứng và điều khoản công cụ" />
 
-## Bài tập tổng kết Tuần 4
-
-<Exercise title="Video hoàn chỉnh số 1">
-
-Hoàn thiện video thử nghiệm của Tuần 3 thành video 20–30 giây, khung hình dọc 9:16, có voice-over, phụ đề, nhạc nền, hiệu ứng âm thanh và âm lượng cân bằng. Chỉnh màu theo hai bước, xuất bản master và xem lại trên điện thoại.
-
-</Exercise>
+Mục nào chưa đạt: sửa và xuất bản v2. Không đưa vào portfolio khi còn mục chưa đạt.
 
 <Output>
 
-Đầu ra của Tuần 4: video hoàn chỉnh số 1. Đây là sản phẩm đầu tiên có thể đưa vào portfolio.
+Đầu ra của Tuần 4: gói giao LUNE hoàn chỉnh trong `06_ban-giao/` (bản master và 3 phiên bản nền tảng) đạt đủ 12 tiêu chí, kèm kịch bản, storyboard, ghi chú sản xuất. Đây là sản phẩm portfolio đầu tiên.
 
 </Output>

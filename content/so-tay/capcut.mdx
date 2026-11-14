@@ -1,0 +1,121 @@
+## Bài này giúp bạn làm gì
+
+Dựng hoàn chỉnh một video dọc trong CapCut Desktop: tạo dự án đúng khổ, cắt theo lời dẫn, làm chuyển động bằng keyframe, phụ đề tự động trong vùng an toàn, cân âm thanh, chỉnh màu và xuất tệp đúng chuẩn nền tảng.
+
+<Note>
+
+Tên mục trong CapCut khác nhau đôi chút theo phiên bản, hệ điều hành và khu vực. Một số tính năng như phụ đề tự động không giới hạn, hiệu ứng cao cấp hoặc xuất chất lượng cao có thể nằm trong gói Pro tùy thời điểm. Nếu một tài sản bị gắn nhãn Pro, bản xuất có thể bị chèn watermark: kiểm tra trước khi giao khách.
+
+</Note>
+
+## Thông số chuẩn của ba nền tảng
+
+| Thông số | Giá trị | Ghi chú |
+| --- | --- | --- |
+| Tỉ lệ | 9:16 | Chung cho TikTok, Reels, Shorts |
+| Độ phân giải | 1080 × 1920 | Chuẩn phổ biến cho cả ba |
+| Định dạng | MP4, mã hóa H.264 | Tương thích rộng nhất |
+| Tốc độ khung | 30 fps | Video AI thường ở 24 hoặc 30 fps; xuất 60 fps không làm mượt hơn |
+| Vùng an toàn | Khoảng 900 × 1400 ở giữa khung | Giao diện ứng dụng che mép dưới và cột phải; Instagram che phần dưới nhiều nhất |
+| Thời lượng tối đa | Shorts 3 phút; TikTok, Reels dài hơn | Video ngắn của khóa học nằm trong khoảng 15–90 giây |
+
+Các con số vùng an toàn khác nhau giữa các nguồn; luôn kiểm tra bản xuất trên điện thoại ở từng ứng dụng.
+
+## Tạo dự án và nhập tệp
+
+<Steps>
+<Step title="Tạo dự án mới">Đặt tỉ lệ khung 9:16 ngay từ đầu.</Step>
+<Step title="Nhập theo thư mục">Kéo thả cả thư mục `video`, `am-thanh` vào thư viện dự án.</Step>
+<Step title="Đặt voice-over trước">Kéo các tệp `vo_c01`… xuống track âm thanh, xếp theo thứ tự, chừa 0,2–0,5 giây giữa các câu.</Step>
+<Step title="Đặt video theo lời">Kéo từng đoạn video lên track chính, căn đầu đoạn với câu lời dẫn tương ứng.</Step>
+</Steps>
+
+## Cắt và nhịp dựng
+
+| Thao tác | Phím tắt (Windows / Mac) |
+| --- | --- |
+| Phát, dừng | Space |
+| Tách đoạn tại đầu phát | Ctrl + B / Cmd + B |
+| Xóa đoạn đã chọn | Delete |
+| Hoàn tác | Ctrl + Z / Cmd + Z |
+| Phóng to, thu nhỏ timeline | Ctrl + dấu cộng, dấu trừ / Cmd + dấu cộng, dấu trừ |
+
+Phím tắt có thể khác theo phiên bản; danh sách đầy đủ ở mục phím tắt trong cài đặt của CapCut.
+
+Quy tắc cắt: bỏ phần đầu và phần cuối lỗi của mỗi đoạn AI, giữ phần sạch; cắt ngay khi hành động vừa xong; khung hình đầu tiên của video phải là hook.
+
+## Zoom chậm bằng keyframe
+
+<Steps>
+<Step title="Chọn đoạn">Bấm vào đoạn video trên timeline.</Step>
+<Step title="Keyframe đầu">Đưa đầu phát về đầu đoạn. Trong bảng bên phải, phần Basic của Video, bấm biểu tượng hình thoi cạnh Scale, giữ 100%.</Step>
+<Step title="Keyframe cuối">Đưa đầu phát về cuối đoạn, đổi Scale thành 110%. Keyframe thứ hai tự tạo.</Step>
+<Step title="Làm mượt">Chọn keyframe, đặt kiểu chuyển động Ease In hoặc Ease Out nếu phiên bản của bạn có.</Step>
+</Steps>
+
+Mức zoom 105–115% là đủ; quá 120% hình AI bắt đầu mờ.
+
+## Phụ đề tự động
+
+<Steps>
+<Step title="Tạo">Mở Captions (hoặc Text), chọn Auto captions, chọn ngôn ngữ của lời dẫn, bấm Generate.</Step>
+<Step title="Sửa từng dòng">Đọc lại toàn bộ: dấu tiếng Việt, tên thương hiệu, số.</Step>
+<Step title="Định dạng chung">Chọn một kiểu chữ đậm, có viền hoặc nền mờ. Áp cho tất cả dòng.</Step>
+<Step title="Đặt vị trí">Kéo khối phụ đề vào vùng an toàn: giữa khung, hơi thấp hơn tâm, tránh mép dưới và cột phải.</Step>
+<Step title="Rút ngắn dòng">Mỗi dòng 3–6 từ, tối đa 2 dòng.</Step>
+</Steps>
+
+## Âm thanh: ba lớp và ducking
+
+| Lớp | Mức gợi ý | Ghi chú |
+| --- | --- | --- |
+| Voice-over | Mức chuẩn, nghe rõ nhất | Không để vỡ tiếng khi đỉnh |
+| Nhạc nền | Thấp hơn giọng rõ rệt khi có lời | Tăng lại khi không có lời |
+| Hiệu ứng | Vừa đủ nghe | 2–3 hiệu ứng đúng chỗ là đủ |
+
+Hạ nhạc khi có lời (ducking) bằng keyframe âm lượng: chọn track nhạc, đặt đầu phát ngay trước câu nói, bấm hình thoi cạnh Volume, đặt keyframe thứ hai lúc câu bắt đầu và kéo âm lượng xuống, làm ngược lại khi câu kết thúc. Thêm fade in, fade out 0,5–1 giây ở đầu và cuối bản nhạc.
+
+<Note>
+
+Nhạc có sẵn trong thư viện CapCut có điều kiện sử dụng riêng. Với video cho khách, dùng nhạc có giấy phép thương mại rõ ràng và lưu lại giấy phép.
+
+</Note>
+
+## Màu: cân bằng rồi mới tạo phong cách
+
+<Steps>
+<Step title="Chọn shot chuẩn">Shot đẹp nhất về màu làm chuẩn.</Step>
+<Step title="Cân từng shot">Chọn shot, mở mục Adjust: chỉnh nhiệt độ màu, độ sáng, tương phản cho khớp shot chuẩn.</Step>
+<Step title="Lớp chỉnh chung">Thêm một Adjustment layer phủ cả video, đặt phong cách chung (ví dụ giảm bão hòa nhẹ, tăng tương phản).</Step>
+<Step title="LUT nếu có">Có thể nhập tệp LUT trong mục Adjust và giảm cường độ; sau LUT thường vẫn phải chỉnh lại.</Step>
+<Step title="Kiểm tra màu da">Da ám xanh hoặc ám cam là lỗi dễ thấy nhất.</Step>
+</Steps>
+
+## Xuất tệp
+
+| Mục | Chọn |
+| --- | --- |
+| Độ phân giải | 1080p |
+| Tốc độ khung | 30 fps |
+| Định dạng | MP4 |
+| Mã hóa | H.264 |
+| Bitrate | Mức khuyến nghị hoặc cao |
+
+Đặt tên bản master: `LUNE_quangcao_24s_v1_master.mp4`. Mở tệp vừa xuất trên điện thoại, xem trong TikTok, Reels, Shorts ở chế độ nháp để kiểm tra phụ đề có bị che không.
+
+<Checklist id="st-capcut" items="Dự án đặt 9:16 từ đầu|Voice-over đặt trước, hình cắt theo lời|Có keyframe zoom 105–115% ở cảnh cảm xúc|Phụ đề đã sửa tay và nằm trong vùng an toàn|Nhạc được hạ khi có lời, có fade đầu cuối|Đã cân màu từng shot rồi mới áp lớp chung|Xuất 1080×1920, 30 fps, MP4 H.264|Đã xem bản xuất trên điện thoại" />
+
+<Exercise title="Dựng quảng cáo LUNE 24 giây">
+
+1. Tạo dự án 9:16, nhập 6 đoạn video và 6 tệp voice-over.
+2. Dựng theo lời dẫn, thêm 2 keyframe zoom, phụ đề tự động đã sửa tay.
+3. Thêm nhạc nền có giấy phép, làm ducking, thêm 2–3 hiệu ứng âm thanh.
+4. Cân màu, xuất master và kiểm tra trên điện thoại.
+
+</Exercise>
+
+<Output>
+
+Tệp `LUNE_quangcao_24s_v1_master.mp4` đạt đủ 8 mục trong checklist.
+
+</Output>

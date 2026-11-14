@@ -1,52 +1,34 @@
-## Sản phẩm B: Chuyến phiêu lưu của chú mèo nhỏ
+## Nhân vật hoạt hình và khối phong cách
 
-Thể loại: AI Animated Story. Yêu cầu: tạo nhân vật 3D, 3–4 bối cảnh, duy trì phong cách hình ảnh, biểu cảm và hành động, lồng tiếng và hậu kỳ.
-
-Hoạt hình có một lợi thế lớn: người xem dễ chấp nhận chuyển động chưa hoàn hảo hơn so với phim người thật. Đổi lại, phong cách hình ảnh phải thống nhất tuyệt đối.
-
-## Thiết kế nhân vật hoạt hình
-
-<Cards>
-<Card title="Hình dáng đơn giản" tone="coral">Dáng nhận ra được ngay cả khi chỉ còn là bóng. Đầu to, mắt lớn, ít chi tiết.</Card>
-<Card title="Một dấu hiệu nhận diện" tone="cream">Chiếc khăn đỏ, một bên tai cụp, đốm trắng ở đuôi. Chọn một thứ và giữ mãi.</Card>
-<Card title="Tính cách" tone="violet">Tò mò, nhút nhát hay liều lĩnh? Tính cách quyết định cách nhân vật di chuyển.</Card>
-<Card title="Bảng màu nhân vật" tone="dark">Hai đến ba màu, tương phản rõ với màu bối cảnh.</Card>
-</Cards>
-
-## Khóa phong cách
-
-Viết một khối mô tả phong cách cố định và dán vào mọi prompt:
+Hoạt hình chịu được chuyển động chưa hoàn hảo, nhưng phong cách phải thống nhất tuyệt đối giữa các shot. Giải pháp: một **khối phong cách** cố định dán vào mọi prompt.
 
 ```text
-[KHỐI PHONG CÁCH - không sửa]
-3D animated film style, soft rounded shapes, warm cinematic
-lighting, rich saturated colors, shallow depth of field
+[KHỐI PHONG CÁCH]
+3D animated film style, soft rounded shapes, warm cinematic lighting,
+rich saturated colors, shallow depth of field
 ```
 
-Chỉ đổi phần mô tả cảnh, không đổi khối phong cách. Đổi một từ trong khối này có thể khiến cả cảnh trông như thuộc bộ phim khác.
+## Thiết kế chú mèo
 
-## Thiết kế thế giới
+| Mục | Ví dụ |
+| --- | --- |
+| Hình dáng | Mèo cam nhỏ, đầu to, mắt lớn |
+| Dấu hiệu nhận diện | Khăn quàng đỏ |
+| Tính cách | Tò mò, hơi nhút nhát |
+| Bảng màu nhân vật | Cam, đỏ, kem |
 
-Chọn 3–4 bối cảnh nằm trên một hành trình: nơi bắt đầu, nơi gặp thử thách, nơi kết thúc. Ví dụ: mái nhà lúc bình minh, khu chợ đông đúc, con hẻm dưới mưa, khung cửa sổ sáng đèn.
+## Làm thực tế
 
-<Palette colors="#f2b45a,#d9534f,#3b4a7a,#f6ead0" names="Nắng sớm|Đỏ khăn|Xanh đêm|Kem sáng" />
-
-## Bảng biểu cảm
-
-Tạo trước bốn biểu cảm của nhân vật: tò mò, sợ, buồn, vui. Bảng này giúp bạn kiểm tra nhân vật có giữ được nét khi cảm xúc thay đổi không, và là ảnh tham chiếu cho các cảnh sau.
-
-<Exercise title="Nhân vật và thế giới hoạt hình">
-
-1. Viết hồ sơ nhân vật: hình dáng, dấu hiệu nhận diện, tính cách, bảng màu.
-2. Tạo character sheet bốn góc và bảng bốn biểu cảm.
-3. Viết khối phong cách cố định.
-4. Tạo ảnh toàn cảnh cho 3–4 bối cảnh.
-5. Viết kịch bản 30–45 giây theo năm nhịp và làm storyboard.
-
-</Exercise>
+<Steps>
+<Step title="Ảnh mỏ neo">Chú mèo chính diện, nền trơn, có khối phong cách.</Step>
+<Step title="Bảng 4 biểu cảm">Tò mò, sợ, buồn, vui, cùng một ảnh, đính kèm ảnh mỏ neo.</Step>
+<Step title="Element MEO">Tạo Element trên Kling từ ảnh mỏ neo và 2–3 góc.</Step>
+<Step title="4 bối cảnh">Mái nhà bình minh, khu chợ, hẻm dưới mưa, cửa sổ sáng đèn; ảnh toàn cảnh có khối phong cách.</Step>
+<Step title="Kịch bản 5 nhịp, 8 shot">Viết cùng ChatGPT, nhập vào Bảng storyboard.</Step>
+</Steps>
 
 <Output>
 
-Một bộ character reference, ảnh các bối cảnh và storyboard cho phim hoạt hình.
+Ảnh mỏ neo, bảng biểu cảm, Element `MEO`, 4 ảnh bối cảnh và storyboard 8 shot.
 
 </Output>

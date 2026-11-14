@@ -1,6 +1,6 @@
 import { Children, isValidElement, type CSSProperties, type ReactElement, type ReactNode } from "react";
 import { Icon } from "./icons";
-import { Checklist, IncomeCalc, Quiz, Rubric, SelfCheck } from "./lesson-interactive";
+import { Checklist, IncomeCalc } from "./lesson-interactive";
 
 // Thành phần dùng trong bài học (.mdx).
 
@@ -347,9 +347,6 @@ export const mdxComponents = {
   CameraMoves,
   LightingDemo,
   ToolLink,
-  Quiz,
-  SelfCheck,
-  Rubric,
   Checklist,
   IncomeCalc,
   table: (props: React.ComponentProps<"table">) => (

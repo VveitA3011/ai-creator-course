@@ -38,18 +38,23 @@ Nếu bạn làm nội dung tiếng Anh, đừng dịch từng câu từ tiếng
 
 <ToolLink href="/cong-cu/kich-ban" title="Dựng nhịp kịch bản">Công cụ đếm số từ lời dẫn so với thời lượng từng nhịp.</ToolLink>
 
-<Exercise title="Viết lại lời dẫn">
+## Làm trên dự án LUNE
 
-Lấy một kịch bản quảng cáo và một kịch bản kể chuyện bạn đã viết. Với mỗi kịch bản:
+<Steps>
+<Step title="Đếm từ">Dán lời dẫn từng cảnh vào công cụ Dựng nhịp kịch bản, xem số từ so với thời lượng.</Step>
+<Step title="Đọc thành tiếng và bấm giờ">Dùng đồng hồ bấm giờ của điện thoại, đọc với tốc độ bạn muốn nghe trong quảng cáo.</Step>
+<Step title="Rút gọn với ChatGPT">Dán câu dài nhất và yêu cầu như mẫu dưới.</Step>
+<Step title="Ghi số giây thật">Ghi vào cột ghi chú của kịch bản.</Step>
+</Steps>
 
-1. Gạch bỏ mọi câu lặp lại điều hình ảnh đã cho thấy.
-2. Rút mỗi câu còn lại xuống một ý.
-3. Đọc thành tiếng, bấm giờ, ghi số giây thật bên cạnh từng cảnh.
-
-</Exercise>
+```text
+Rút câu lời dẫn sau còn tối đa [n] từ, giữ ý chính, viết để nghe chứ không để đọc,
+không lặp lại điều hình ảnh đã cho thấy. Đưa 3 phương án.
+Câu gốc: [dán]
+```
 
 <Output>
 
-Hai kịch bản có lời dẫn đã rút gọn và số giây đọc thật cho từng cảnh.
+Tệp `01_kich-ban/LUNE_kichban_v2.xlsx`: lời dẫn đã rút, mỗi cảnh có số giây đọc thật ngắn hơn thời lượng hình.
 
 </Output>
