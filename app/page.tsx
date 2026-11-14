@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ModuleCard } from "@/components/module-card";
 import { ContinueBar, Stats, UpNext } from "@/components/progress-ui";
-import { flatLessons, modules, pipeline } from "@/lib/curriculum";
+import { allModules, flatLessons, pipeline } from "@/lib/curriculum";
 
 const i = (n: number) => ({ "--i": n }) as React.CSSProperties;
 
@@ -11,7 +11,7 @@ export default function Home() {
       <section className="hero a-hero rise">
         <div className="hero-body">
           <div className="pill-row">
-            <span className="pill cream">Đang mở · {flatLessons.length} bài</span>
+            <span className="pill cream">{flatLessons.length} bài</span>
             <span className="pill">8 tuần</span>
             <span className="pill">9:16</span>
           </div>
@@ -52,7 +52,7 @@ export default function Home() {
           <Link href="/lo-trinh">Xem tất cả</Link>
         </div>
         <div className="cards-row">
-          {modules.map((m, n) => (
+          {allModules.map((m, n) => (
             <ModuleCard key={m.slug} module={m} index={n} />
           ))}
         </div>

@@ -1,0 +1,47 @@
+## Vì sao image-to-video là cách làm chính
+
+Với image-to-video, bạn đưa cho AI một ảnh tĩnh làm khung hình đầu và mô tả chuyển động. Bố cục, nhân vật, ánh sáng đã được khóa trong ảnh, AI chỉ còn phải lo phần chuyển động. Vì vậy kết quả ổn định hơn nhiều so với text-to-video.
+
+Đây là lý do Tuần 2 bạn làm storyboard bằng ảnh: những ảnh tốt nhất giờ trở thành khung hình đầu.
+
+<Compare>
+<Before label="Text-to-video">AI tự quyết định mọi thứ. Nhanh để thử ý tưởng, khó giữ nhất quán.</Before>
+<After label="Image-to-video">Bạn quyết định hình ảnh, AI thêm chuyển động. Chậm hơn một bước nhưng kiểm soát được.</After>
+</Compare>
+
+## Viết prompt chuyển động
+
+Ảnh đã nói về hình. Prompt chỉ cần nói về **cái gì chuyển động** và **máy quay làm gì**.
+
+```text
+She slowly turns her head toward the window and smiles slightly.
+Her hair moves gently. Static camera.
+```
+
+Ba nguyên tắc:
+
+- **Một chuyển động chính.** Quay đầu, bước một bước, nâng tay. Không gộp ba hành động.
+- **Chuyển động nhỏ, chậm.** Chuyển động lớn và nhanh dễ làm biến dạng nhân vật.
+- **Nói rõ thứ đứng yên** nếu cần: nền không đổi, máy đứng yên.
+
+## Chuẩn bị ảnh đầu vào
+
+- Đúng tỷ lệ 9:16 ngay từ ảnh.
+- Nhân vật không bị cắt ở vị trí kỳ lạ, tay và mặt rõ ràng.
+- Còn khoảng trống theo hướng nhân vật sẽ di chuyển.
+
+<Quiz q="Ảnh đầu vào đã có đủ nhân vật và bối cảnh. Prompt image-to-video nên tập trung vào gì?" a="Mô tả lại chi tiết ngoại hình nhân vật" b="Chuyển động của chủ thể và của máy quay" c="Thêm thật nhiều tính từ về phong cách" correct="b" why="Hình ảnh đã được khóa trong ảnh đầu vào. Prompt chỉ cần nói cái gì chuyển động và máy quay làm gì." />
+
+<Exercise title="Cho storyboard chuyển động">
+
+1. Chọn bốn ảnh storyboard tốt nhất của Tuần 2.
+2. Với mỗi ảnh, viết một prompt chuyển động chỉ gồm một hành động.
+3. Sinh video, xem lại và ghi chú: chuyển động có tự nhiên không, nhân vật có biến dạng không.
+
+</Exercise>
+
+<Output>
+
+Bốn đoạn video sinh từ ảnh storyboard.
+
+</Output>

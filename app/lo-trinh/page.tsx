@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ModuleCard } from "@/components/module-card";
-import { flatLessons, modules, totalPlanned, tracks } from "@/lib/curriculum";
+import { extraModules, flatLessons, modules, totalPlanned } from "@/lib/curriculum";
 
 export const metadata: Metadata = { title: "Lộ trình" };
 
@@ -11,8 +11,8 @@ export default function Roadmap() {
         <span className="mono">Lộ trình lõi · {totalPlanned} bài</span>
         <h1>Lộ trình 8 tuần thực chiến</h1>
         <p className="lead">
-          Mỗi tuần một module, mỗi module kết thúc bằng một đầu ra cụ thể. Hiện đã mở {flatLessons.length} bài đầu; các
-          tuần còn lại đang được biên soạn.
+          Mỗi tuần một module, mỗi module kết thúc bằng một đầu ra cụ thể. Cộng hai lộ trình mở rộng, toàn khóa có
+          {flatLessons.length} bài.
         </p>
       </header>
 
@@ -24,17 +24,10 @@ export default function Roadmap() {
 
       <section className="stack">
         <h2>Sau lộ trình lõi</h2>
-        <div className="grid-2">
-          {tracks.map((t) => (
-            <div className="panel" key={t.title}>
-              <span className="mono">{t.tag} · Sắp có</span>
-              <h3>{t.title}</h3>
-              <ul>
-                {t.points.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </div>
+        <p className="lead">Hai lộ trình mở rộng, học theo thứ tự nào cũng được.</p>
+        <div className="cards-grid">
+          {extraModules.map((m, n) => (
+            <ModuleCard key={m.slug} module={m} index={n + 2} />
           ))}
         </div>
       </section>

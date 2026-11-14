@@ -1,0 +1,55 @@
+## Mục tiêu của Tuần 3
+
+Biết chuyển ảnh tĩnh thành những đoạn video có chuyển động tự nhiên. Tuần này bạn học bảy buổi theo thứ tự, mỗi buổi một kỹ thuật, và kết thúc bằng một video thử nghiệm 15–20 giây.
+
+<Note>
+
+Giao diện và tên nút trong Kling AI thay đổi theo phiên bản. Bài học mô tả cách làm và cách nghĩ; khi tên nút khác đi, hãy tìm tính năng tương ứng trong công cụ bạn đang dùng.
+
+</Note>
+
+## Text-to-Video là gì
+
+Bạn viết một đoạn mô tả, công cụ sinh ra một đoạn video ngắn. Đây là cách nhanh nhất để thử ý tưởng, nhưng cũng là cách khó kiểm soát nhất vì AI tự quyết định nhân vật, bố cục và ánh sáng.
+
+Dùng text-to-video cho cảnh không cần nhân vật cố định: cảnh thiên nhiên, cảnh thành phố, chi tiết đồ vật, cảnh chuyển.
+
+## Công thức một prompt video
+
+<Steps>
+<Step title="Chủ thể">Ai hoặc cái gì, mô tả ngắn và cụ thể.</Step>
+<Step title="Hành động">Một hành động duy nhất, diễn ra trong vài giây.</Step>
+<Step title="Bối cảnh">Ở đâu, lúc nào.</Step>
+<Step title="Máy quay">Cỡ cảnh và chuyển động máy, dùng thuật ngữ Tuần 2.</Step>
+<Step title="Ánh sáng và phong cách">Kiểu ánh sáng, tông màu, chân thực hay hoạt hình.</Step>
+</Steps>
+
+```text
+A glass perfume bottle on black marble, a single drop of water
+slides down the bottle, dark studio, extreme close-up,
+slow dolly-in, low-key lighting with warm rim light,
+cinematic, realistic, vertical 9:16
+```
+
+## Quy tắc quan trọng nhất
+
+Không yêu cầu AI tạo cả bộ phim dài bằng một prompt. Hãy tạo các đoạn khoảng 4–8 giây, kiểm tra chất lượng từng cảnh rồi mới ghép.
+
+<Compare>
+<Before label="Prompt quá tham">Một cô gái thức dậy, pha cà phê, ra phố, gặp bạn cũ và cả hai cùng cười.</Before>
+<After label="Một shot, một hành động">Một cô gái đứng bên cửa sổ, nâng cốc cà phê lên, hơi nóng bay lên trong nắng sớm. Medium shot, static camera.</After>
+</Compare>
+
+<Exercise title="Ba đoạn text-to-video">
+
+1. Chọn ba shot không có nhân vật chính từ storyboard Tuần 2 (cảnh sản phẩm, cảnh bối cảnh).
+2. Viết prompt theo công thức năm phần cho từng shot.
+3. Sinh mỗi shot hai lần, so sánh và ghi lại điều gì trong prompt tạo ra khác biệt.
+
+</Exercise>
+
+<Output>
+
+Ba đoạn video 4–8 giây và prompt tương ứng, lưu vào thư mục `video`.
+
+</Output>

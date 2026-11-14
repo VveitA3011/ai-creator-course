@@ -2636,3 +2636,153 @@ th {
     display: none;
   }
 }
+
+/* Thang điểm, checklist, máy tính thu nhập */
+.selfcheck-avg small {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.meter {
+  position: relative;
+  height: 10px;
+  border-radius: 5px;
+  background: rgb(0 0 0 / 0.3);
+  margin-block: 4px;
+}
+
+.meter i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--coral), var(--cream));
+  transition: width 0.4s var(--ease);
+}
+
+.meter b {
+  position: absolute;
+  left: 80%;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--fg);
+}
+
+.checklist {
+  background: var(--card);
+  border-radius: var(--r-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checklist ul {
+  list-style: none;
+  padding: 0 !important;
+  gap: 4px !important;
+}
+
+.checklist label {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.checklist label:hover {
+  background: var(--line);
+}
+
+.checklist input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--coral);
+  flex: none;
+}
+
+.checklist label.is-done span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.calc {
+  background: var(--card);
+  border-radius: var(--r-md);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.calc-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calc-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+}
+
+.calc-row > span:first-child {
+  flex: 1 1 180px;
+}
+
+.calc input {
+  width: 68px;
+  font: inherit;
+  font-size: 14.5px;
+  color: var(--fg);
+  background: rgb(0 0 0 / 0.3);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 6px 8px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.calc input:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+
+@media (max-width: 720px) {
+  .calc {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Ảnh bìa bài học (thêm ảnh vào public/images/<module>/<bài>.jpg) */
+.lesson-hero.has-cover {
+  min-height: 220px;
+  justify-content: flex-end;
+}
+
+.lesson-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(90deg, transparent 20%, #000 75%);
+  mask-image: linear-gradient(90deg, transparent 20%, #000 75%);
+}
+
+.lesson-hero.has-cover > :not(.lesson-cover) {
+  position: relative;
+}
+
+.lesson-hero.has-cover .lesson-num {
+  display: none;
+}

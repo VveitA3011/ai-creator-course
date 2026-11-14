@@ -10,9 +10,6 @@ export type Module = {
   lessons: Lesson[];
 };
 
-export type Track = { tag: string; title: string; points: string[] };
-
-// Thứ tự ở đây quyết định thứ tự học. Nội dung từng bài nằm ở content/<module>/<bài>.mdx.
 export const modules: Module[] = [
   {
     slug: "module-0",
@@ -66,7 +63,15 @@ export const modules: Module[] = [
     summary: "Text-to-video, image-to-video, chuyển động camera, tham chiếu nhân vật, multi-shot và keyframe.",
     output: "12–15 đoạn video AI ngắn, một chuỗi cùng nhân vật, một video thử 15–20 giây",
     lessonCount: 7,
-    lessons: [],
+    lessons: [
+      { slug: "text-to-video", title: "Text-to-Video: tạo video từ mô tả", minutes: 15 },
+      { slug: "image-to-video", title: "Image-to-Video: cho ảnh tĩnh chuyển động", minutes: 15 },
+      { slug: "camera-movement", title: "Điều khiển chuyển động camera", minutes: 15 },
+      { slug: "character-reference", title: "Giữ nhân vật bằng ảnh tham chiếu", minutes: 18 },
+      { slug: "multi-shot-keyframe", title: "Multi-shot và keyframe", minutes: 15 },
+      { slug: "tao-chuoi-canh", title: "Thực hành tạo chuỗi cảnh", minutes: 25 },
+      { slug: "chon-loc-sua-loi", title: "Chọn lọc, đánh giá và sửa lỗi", minutes: 15 },
+    ],
   },
   {
     slug: "tuan-4",
@@ -75,7 +80,15 @@ export const modules: Module[] = [
     summary: "ElevenLabs, nhạc nền và hiệu ứng, cắt dựng theo nhịp thoại, phụ đề, color grading.",
     output: "Video hoàn chỉnh số 1: quảng cáo sản phẩm ngắn, khung dọc 9:16",
     lessonCount: 7,
-    lessons: [],
+    lessons: [
+      { slug: "voice-over-elevenlabs", title: "Tạo voice-over bằng ElevenLabs", minutes: 15 },
+      { slug: "nhip-doc-cam-xuc", title: "Điều chỉnh nhịp đọc và cảm xúc", minutes: 12 },
+      { slug: "nhac-nen-hieu-ung", title: "Nhạc nền và hiệu ứng âm thanh", minutes: 15 },
+      { slug: "cat-dung-theo-nhip", title: "Cắt dựng theo nhịp thoại", minutes: 18 },
+      { slug: "phu-de", title: "Chèn và chỉnh phụ đề", minutes: 12 },
+      { slug: "keyframe-zoom", title: "Keyframe, zoom và chuyển động", minutes: 12 },
+      { slug: "color-grading-xuat-video", title: "Color grading cơ bản và xuất video số 1", minutes: 20 },
+    ],
   },
   {
     slug: "tuan-5",
@@ -84,7 +97,12 @@ export const modules: Module[] = [
     summary: "Thương hiệu nước hoa giả lập: bản Cinematic Commercial và bản Social Media Advertisement.",
     output: "2 video quảng cáo, 2 bộ kịch bản, 2 storyboard, prompt và ảnh tham chiếu",
     lessonCount: 4,
-    lessons: [],
+    lessons: [
+      { slug: "brief-va-concept", title: "Brief và concept cho thương hiệu nước hoa", minutes: 18 },
+      { slug: "cinematic-commercial", title: "Phiên bản A: Cinematic Commercial", minutes: 25 },
+      { slug: "social-media-ad", title: "Phiên bản B: Social Media Advertisement", minutes: 20 },
+      { slug: "danh-gia-hai-phien-ban", title: "So sánh, hoàn thiện và đóng gói đầu ra", minutes: 15 },
+    ],
   },
   {
     slug: "tuan-6",
@@ -93,7 +111,12 @@ export const modules: Module[] = [
     summary: "Phim ngắn chân thực “Bức thư gửi từ tương lai” và hoạt hình “Chuyến phiêu lưu của chú mèo nhỏ”.",
     output: "1 phim ngắn AI chân thực, 1 phim hoạt hình AI, 2 storyboard, 1 bộ character reference",
     lessonCount: 4,
-    lessons: [],
+    lessons: [
+      { slug: "buc-thu-kich-ban", title: "Bức thư gửi từ tương lai: kịch bản và storyboard", minutes: 20 },
+      { slug: "buc-thu-san-xuat", title: "Bức thư gửi từ tương lai: sản xuất", minutes: 25 },
+      { slug: "chu-meo-nhan-vat", title: "Chú mèo nhỏ: nhân vật 3D và thế giới", minutes: 20 },
+      { slug: "chu-meo-san-xuat", title: "Chú mèo nhỏ: sản xuất, lồng tiếng, hậu kỳ", minutes: 25 },
+    ],
   },
   {
     slug: "tuan-7",
@@ -102,7 +125,11 @@ export const modules: Module[] = [
     summary: "Chọn 5–6 sản phẩm tốt nhất, viết case study, ghi rõ dự án tự thực hiện.",
     output: "Trang portfolio công khai",
     lessonCount: 3,
-    lessons: [],
+    lessons: [
+      { slug: "chon-san-pham", title: "Chọn 5–6 sản phẩm tốt nhất", minutes: 12 },
+      { slug: "viet-case-study", title: "Viết case study 7 phần", minutes: 20 },
+      { slug: "trinh-bay-portfolio", title: "Trình bày portfolio", minutes: 15 },
+    ],
   },
   {
     slug: "tuan-8",
@@ -111,7 +138,11 @@ export const modules: Module[] = [
     summary: "Ba gói khởi điểm: AI Script Package, AI Short Video, AI Video Series.",
     output: "3 gói dịch vụ có mô tả phạm vi và bàn giao",
     lessonCount: 3,
-    lessons: [],
+    lessons: [
+      { slug: "ba-goi-dich-vu", title: "Ba gói dịch vụ khởi điểm", minutes: 15 },
+      { slug: "pham-vi-ban-giao", title: "Quy định phạm vi và bàn giao", minutes: 15 },
+      { slug: "ho-so-tim-job", title: "Định vị hồ sơ và tìm job", minutes: 18 },
+    ],
   },
   {
     slug: "final",
@@ -120,32 +151,55 @@ export const modules: Module[] = [
     summary: "Phim ngắn AI chân thực 45–60 giây, storyboard 6–8 cảnh, xuất 9:16.",
     output: "Tự chấm đạt 80/100 trước khi đưa vào portfolio",
     lessonCount: 1,
-    lessons: [],
+    lessons: [
+      { slug: "the-last-letter", title: "Final Challenge: The Last Letter", minutes: 30 },
+    ],
   },
 ];
 
-export const tracks: Track[] = [
+export const extraModules: Module[] = [
   {
-    tag: "Mở rộng A · 10 bài",
+    slug: "freelance",
+    tag: "Mở rộng A",
     title: "Freelance remote",
-    points: [
-      "Mô hình dịch vụ: quảng cáo, storytelling, repurposing",
-      "Chọn khách hàng, đóng gói và định giá",
-      "Tìm khách hằng tuần và lộ trình 12 tháng",
-      "Quản trị rủi ro và 6 chỉ số kinh doanh",
+    summary: "Mô hình dịch vụ, khách hàng, giá, tìm khách, lộ trình 12 tháng và quản trị rủi ro.",
+    output: "Kế hoạch kinh doanh cá nhân và 30 ngày hành động đầu tiên",
+    lessonCount: 10,
+    lessons: [
+      { slug: "mo-hinh-kinh-doanh", title: "Mô hình kinh doanh cá nhân", minutes: 12 },
+      { slug: "chon-khach-hang", title: "Chọn khách hàng mục tiêu", minutes: 12 },
+      { slug: "dong-goi-va-gia", title: "Đóng gói dịch vụ và giá đề xuất", minutes: 18 },
+      { slug: "co-cau-doanh-thu", title: "Cơ cấu doanh thu để đạt mục tiêu", minutes: 15 },
+      { slug: "phi-nen-tang", title: "Phí nền tảng quốc tế", minutes: 10 },
+      { slug: "tim-khach-hang", title: "Kế hoạch tìm khách hàng", minutes: 18 },
+      { slug: "lo-trinh-12-thang", title: "Lộ trình doanh thu 12 tháng", minutes: 15 },
+      { slug: "quan-tri-rui-ro", title: "Quản trị công việc và rủi ro", minutes: 15 },
+      { slug: "theo-doi-kinh-doanh", title: "Hệ thống theo dõi kinh doanh", minutes: 12 },
+      { slug: "ke-hoach-30-ngay", title: "Kế hoạch hành động 30 ngày đầu", minutes: 15 },
     ],
   },
   {
-    tag: "Mở rộng B · 9 bài",
+    slug: "kenh-us",
+    tag: "Mở rộng B",
     title: "Kênh TikTok/YouTube cho khán giả Mỹ",
-    points: [
-      "Chọn ngách nội dung và vai trò từng nền tảng",
-      "Concept kênh, series và kịch bản mẫu",
-      "Viết tiếng Anh tự nhiên, cấu trúc 60–90 giây",
-      "Điều kiện kiếm tiền và khai báo nội dung AI",
+    summary: "Chọn ngách, vai trò từng nền tảng, concept kênh, kịch bản mẫu, kiếm tiền và lộ trình 12 tháng.",
+    output: "Concept kênh, 3 series và lịch đăng 90 ngày",
+    lessonCount: 9,
+    lessons: [
+      { slug: "nhan-dinh-chien-luoc", title: "Nhận định chiến lược: freelance và kênh riêng", minutes: 12 },
+      { slug: "nam-ngach-noi-dung", title: "Năm ngách nội dung US nên thử", minutes: 15 },
+      { slug: "youtube-chinh-tiktok-phan-phoi", title: "YouTube chính, TikTok phân phối", minutes: 15 },
+      { slug: "concept-kenh", title: "Concept kênh và ba trụ cột nội dung", minutes: 15 },
+      { slug: "kich-ban-mau", title: "Kịch bản mẫu: The Cat Who Waited", minutes: 15 },
+      { slug: "noi-dung-cho-khan-gia-my", title: "Chiến lược nội dung cho khán giả Mỹ", minutes: 18 },
+      { slug: "kiem-tien-tu-ai-content", title: "Kiếm tiền từ AI content", minutes: 15 },
+      { slug: "lo-trinh-kenh-12-thang", title: "Lộ trình 12 tháng xây kênh", minutes: 12 },
+      { slug: "hai-mo-hinh-xay-kenh", title: "Hai mô hình xây kênh", minutes: 12 },
     ],
   },
 ];
+
+export const allModules: Module[] = [...modules, ...extraModules];
 
 export const pipeline = [
   { step: "Brief", text: "Mục tiêu, người xem, nền tảng, thông điệp, CTA" },
@@ -156,7 +210,7 @@ export const pipeline = [
   { step: "Hậu kỳ", text: "Cắt dựng, phụ đề, màu, xuất 9:16" },
 ];
 
-export const availableModules = modules.filter((m) => m.lessons.length > 0);
+export const availableModules = allModules.filter((m) => m.lessons.length > 0);
 
 export type FlatLesson = Lesson & { module: Module; id: string; href: string };
 
@@ -171,6 +225,12 @@ export const flatLessons: FlatLesson[] = availableModules.flatMap((m) =>
 
 export const totalPlanned = modules.reduce((n, m) => n + m.lessonCount, 0);
 
+export const groups = [
+  { key: "core", label: "Lộ trình lõi", short: "Lõi", href: "/lo-trinh", modules },
+  { key: "freelance", label: "Freelance", short: "A", href: "/khoa-hoc/freelance", modules: [extraModules[0]] },
+  { key: "us", label: "Kênh US", short: "B", href: "/khoa-hoc/kenh-us", modules: [extraModules[1]] },
+];
+
 export function getModule(slug: string) {
-  return modules.find((m) => m.slug === slug);
+  return allModules.find((m) => m.slug === slug);
 }

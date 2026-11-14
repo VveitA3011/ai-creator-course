@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useProgress } from "@/lib/progress";
-import { availableModules, flatLessons, type Module } from "@/lib/curriculum";
+import { availableModules, flatLessons, groups, type Module } from "@/lib/curriculum";
 import { Icon } from "./icons";
 
 export function CompleteButton({ id }: { id: string }) {
@@ -75,8 +75,8 @@ export function UpNext() {
   if (items.length === 0) {
     return (
       <div className="panel">
-        <h3>Bạn đã học hết các bài hiện có</h3>
-        <p className="muted small">Tuần 3 trở đi đang được biên soạn.</p>
+        <h3>Bạn đã học hết khóa</h3>
+        <p className="muted small">Hãy hoàn thiện các đầu ra và portfolio của bạn.</p>
       </div>
     );
   }
@@ -123,17 +123,21 @@ export function Stats() {
         </div>
       </div>
       <ul className="stat-row">
-        {availableModules.map((m) => (
-          <li key={m.slug}>
-            <Link href={`/khoa-hoc/${m.slug}`} aria-label={`${m.tag}: ${m.title}`}>
-              {m.tag.replace("Module ", "M").replace("Tuần ", "T")}
-            </Link>
-            <b>
-              {countDone(m, isDone)}/{m.lessons.length}
-            </b>
-            {m.tag}
-          </li>
-        ))}
+        {groups.map((g) => {
+          const total = g.modules.reduce((n, m) => n + m.lessons.length, 0);
+          const n = g.modules.reduce((x, m) => x + countDone(m, isDone), 0);
+          return (
+            <li key={g.key}>
+              <Link href={g.href} aria-label={g.label}>
+                {g.short}
+              </Link>
+              <b>
+                {n}/{total}
+              </b>
+              {g.label}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -197,8 +201,8 @@ export function Dashboard() {
             </>
           ) : (
             <>
-              <h2>Bạn đã học hết các bài hiện có</h2>
-              <p>Tuần 3 trở đi đang được biên soạn. Trong lúc chờ, hãy hoàn thiện các đầu ra của Tuần 1 và Tuần 2.</p>
+              <h2>Bạn đã học hết khóa</h2>
+              <p>Việc còn lại là hoàn thiện các đầu ra và đưa sản phẩm tốt nhất vào portfolio.</p>
             </>
           )}
           <div className="mod-bar" style={{ marginTop: "auto" }}>

@@ -1,0 +1,45 @@
+## Bài toán khó nhất của video AI
+
+Người xem chấp nhận một chuyển động hơi cứng, nhưng họ nhận ra ngay khi nhân vật ở cảnh 3 không giống nhân vật ở cảnh 1. Trong thang điểm cuối khóa, nhất quán nhân vật chiếm 20%, ngang với kịch bản và chất lượng hình ảnh.
+
+## Dùng ảnh tham chiếu
+
+Character sheet bạn tạo ở Tuần 2 là công cụ chính. Cách làm:
+
+<Steps>
+<Step title="Chọn ảnh tham chiếu chuẩn">Một ảnh chính diện rõ mặt và một ảnh toàn thân rõ trang phục.</Step>
+<Step title="Tạo ảnh từng cảnh từ ảnh tham chiếu">Dùng tính năng ảnh tham chiếu của công cụ tạo ảnh để đặt nhân vật vào bối cảnh mới.</Step>
+<Step title="So với character sheet">Đặt ảnh mới cạnh ảnh gốc: mặt, tóc, trang phục, màu da.</Step>
+<Step title="Chỉ ảnh đạt mới đem sinh video">Sửa ở bước ảnh rẻ hơn nhiều so với sửa ở bước video.</Step>
+</Steps>
+
+## Giữ nguyên phần mô tả
+
+Trong mọi prompt, đoạn mô tả ngoại hình nhân vật phải giống nhau từng chữ. Lưu nó thành một khối văn bản cố định trong thư viện prompt và dán vào thay vì gõ lại.
+
+```text
+[KHỐI NHÂN VẬT - không sửa]
+a 28-year-old woman, oval face, dark brown eyes, small mole
+under left eye, shoulder-length black hair, cream knit sweater,
+dark blue jeans
+```
+
+## Ba thứ phải nhất quán
+
+- **Khuôn mặt:** hình dáng, mắt, chi tiết nhận diện.
+- **Trang phục:** kiểu dáng và màu. Chỉ đổi khi câu chuyện cho thấy thời gian trôi qua.
+- **Tông màu:** cùng bảng màu và kiểu ánh sáng trong cùng một bối cảnh.
+
+<Quiz q="Ảnh cảnh 3 có khuôn mặt nhân vật hơi khác character sheet. Bạn nên làm gì?" a="Cứ sinh video, lỗi nhỏ người xem không để ý" b="Tạo lại ảnh cho đến khi khớp rồi mới sinh video" c="Đổi sang nhân vật khác cho cảnh đó" correct="b" why="Sửa ở bước ảnh rẻ hơn nhiều so với bước video, và lỗi khuôn mặt là thứ người xem nhận ra nhanh nhất." />
+
+<Exercise title="Một nhân vật, bốn cảnh">
+
+Tạo cùng một nhân vật trong bốn cảnh: đứng trên phố, đi vào quán cà phê, ngồi bên cửa sổ, nhìn ra ngoài trời mưa. Giữ nhất quán khuôn mặt, trang phục và tông màu. Ở bài này chỉ cần ảnh tĩnh; bạn sẽ sinh video ở buổi 6.
+
+</Exercise>
+
+<Output>
+
+Bốn ảnh cùng một nhân vật trong bốn bối cảnh, đã so khớp với character sheet.
+
+</Output>

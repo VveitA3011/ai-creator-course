@@ -7,8 +7,8 @@ import { mdxComponents } from "@/components/mdx";
 import { Icon } from "@/components/icons";
 import { LessonMotion } from "@/components/lesson-interactive";
 import { CompleteButton, LessonList } from "@/components/progress-ui";
-import { readLesson } from "@/lib/content";
-import { flatLessons, modules } from "@/lib/curriculum";
+import { findCover, readLesson } from "@/lib/content";
+import { allModules, flatLessons } from "@/lib/curriculum";
 
 type Props = { params: Promise<{ module: string; lesson: string }> };
 
@@ -34,6 +34,7 @@ export default async function LessonPage({ params }: Props) {
   if (!lesson) notFound();
 
   const source = await readLesson(lesson.module.slug, lesson.slug);
+  const cover = findCover(lesson.module.slug, lesson.slug);
   const prev = flatLessons[index - 1];
   const next = flatLessons[index + 1];
   const m = lesson.module;
@@ -49,7 +50,8 @@ export default async function LessonPage({ params }: Props) {
 
       <article className="stack rise">
         <LessonMotion />
-        <header className={`lesson-hero v${modules.indexOf(m) % 4}`}>
+        <header className={`lesson-hero v${allModules.indexOf(m) % 4}${cover ? " has-cover" : ""}`}>
+          {cover && <img className="lesson-cover" src={cover} alt="" />}
           <span className="lesson-num" aria-hidden="true">
             {String(no).padStart(2, "0")}
           </span>
