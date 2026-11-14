@@ -1,6 +1,6 @@
 # Prompt ảnh bìa cho 63 bài học
 
-Mỗi bài một ảnh bìa. Tạo ảnh bằng ChatGPT Images hoặc Kling Image, lưu đúng tên tệp ghi dưới mỗi bài, rồi đặt vào thư mục `public/images/`. Trang bài học tự hiện ảnh ở banner đầu bài; bài nào chưa có ảnh vẫn hiện banner màu như cũ.
+Hiện mỗi bài đã có một ảnh bìa 3D dựng sẵn (xem `scripts/covers/`). Nếu muốn thay bằng ảnh tạo bằng AI, tạo ảnh bằng ChatGPT Images hoặc Kling Image, lưu đúng tên tệp ghi dưới mỗi bài, rồi đặt vào thư mục `public/images/`. Ghi đè tệp cùng tên là trang bài học dùng ảnh mới.
 
 ## Cách dùng
 

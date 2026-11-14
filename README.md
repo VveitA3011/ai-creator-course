@@ -28,4 +28,4 @@ Mở http://localhost:3000.
 
 ## Ảnh bìa bài học
 
-Đặt ảnh vào `public/images/<module>/<slug>.jpg` (hoặc `.png`, `.webp`). Trang bài học tự hiện ảnh ở banner. Prompt cho cả 63 bài nằm ở `docs/prompt-anh-minh-hoa.md`.
+Cả 63 bài đã có ảnh bìa 3D trong `public/images/<module>/<slug>.jpg`, dựng bằng bộ công cụ ở `scripts/covers/`. Trang bài học tự hiện ảnh ở banner. Muốn thay bằng ảnh tạo bằng AI, dùng prompt ở `docs/prompt-anh-minh-hoa.md` và ghi đè tệp cùng tên.
