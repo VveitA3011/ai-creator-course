@@ -19,6 +19,20 @@ const paths = {
     </>
   ),
   chevron: <path d="M9 5l7 7-7 7" />,
+  pencil: <path d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4" />,
+  flag: <path d="M5 21V4h11l-2 4 2 4H5" />,
+  alert: (
+    <>
+      <path d="M12 3l9.5 17h-19z" />
+      <path d="M12 10v4M12 17.5v.5" />
+    </>
+  ),
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </>
+  ),
   play: <path d="M8 5v14l11-7z" fill="currentColor" stroke="none" />,
 };
 

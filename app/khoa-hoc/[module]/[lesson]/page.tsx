@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx";
+import { Icon } from "@/components/icons";
+import { LessonMotion } from "@/components/lesson-interactive";
 import { CompleteButton, LessonList } from "@/components/progress-ui";
 import { readLesson } from "@/lib/content";
-import { flatLessons } from "@/lib/curriculum";
+import { flatLessons, modules } from "@/lib/curriculum";
 
 type Props = { params: Promise<{ module: string; lesson: string }> };
 
@@ -35,6 +37,7 @@ export default async function LessonPage({ params }: Props) {
   const prev = flatLessons[index - 1];
   const next = flatLessons[index + 1];
   const m = lesson.module;
+  const no = m.lessons.findIndex((l) => l.slug === lesson.slug) + 1;
 
   return (
     <div className="lesson-layout">
@@ -45,13 +48,25 @@ export default async function LessonPage({ params }: Props) {
       </aside>
 
       <article className="stack rise">
-        <p className="crumbs">
-          <Link href="/lo-trinh">Lộ trình</Link> / <Link href={`/khoa-hoc/${m.slug}`}>{m.tag}</Link>
-        </p>
-        <span className="mono">
-          Bài {m.lessons.findIndex((l) => l.slug === lesson.slug) + 1}/{m.lessons.length} · khoảng {lesson.minutes} phút
-        </span>
-        <h1>{lesson.title}</h1>
+        <LessonMotion />
+        <header className={`lesson-hero v${modules.indexOf(m) % 4}`}>
+          <span className="lesson-num" aria-hidden="true">
+            {String(no).padStart(2, "0")}
+          </span>
+          <p className="crumbs">
+            <Link href="/lo-trinh">Lộ trình</Link> / <Link href={`/khoa-hoc/${m.slug}`}>{m.tag}</Link>
+          </p>
+          <h1>{lesson.title}</h1>
+          <div className="pill-row">
+            <span className="pill cream">
+              Bài {no}/{m.lessons.length}
+            </span>
+            <span className="pill">
+              <Icon name="clock" /> Khoảng {lesson.minutes} phút
+            </span>
+            <span className="pill">{m.title}</span>
+          </div>
+        </header>
         <div className="prose">
           <MDXRemote
             source={source}
