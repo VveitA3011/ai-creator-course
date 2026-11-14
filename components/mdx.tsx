@@ -1,6 +1,7 @@
 import { Children, isValidElement, type CSSProperties, type ReactElement, type ReactNode } from "react";
 import { Icon } from "./icons";
 import { Checklist, IncomeCalc } from "./lesson-interactive";
+import credits from "@/content/vi-du.json";
 
 // Thành phần dùng trong bài học (.mdx).
 
@@ -324,7 +325,44 @@ export function LightingDemo() {
   );
 }
 
+/* Ảnh ví dụ thực tế: ảnh trong public/images/vd/, nguồn và giấy phép lấy từ content/vi-du.json */
+type Credit = { file: string; author: string; license: string; page: string };
+const creditMap = credits as Record<string, Credit>;
+
+export function Gallery({ title, wide, children }: { title?: string; wide?: boolean; children: ReactNode }) {
+  return (
+    <section className="gallery">
+      {title && <p className="gallery-title">{title}</p>}
+      <div className={`gallery-grid${wide ? " is-wide" : ""}`}>{children}</div>
+    </section>
+  );
+}
+
+export function Ex({ id, label, children }: { id: string; label?: string; children?: ReactNode }) {
+  const c = creditMap[id];
+  if (!c) throw new Error(`Thiếu ảnh ví dụ: ${id}`);
+  const src = `/images/vd/${c.file}`;
+  return (
+    <figure className="ex">
+      <a className="ex-pic" href={src} target="_blank" rel="noopener">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={label ?? ""} loading="lazy" />
+        {label && <span className="ex-label">{label}</span>}
+      </a>
+      {children && <figcaption>{children}</figcaption>}
+      <small className="ex-credit">
+        Ảnh: {c.author || "không rõ tác giả"} · {c.license} ·{" "}
+        <a href={c.page} target="_blank" rel="noopener">
+          nguồn
+        </a>
+      </small>
+    </figure>
+  );
+}
+
 export const mdxComponents = {
+  Gallery,
+  Ex,
   Beats,
   Beat,
   Exercise,

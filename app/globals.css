@@ -4663,3 +4663,97 @@ input[type="range"] {
     max-width: 80ch;
   }
 }
+
+/* Ảnh ví dụ thực tế */
+.gallery {
+  margin: var(--s5, 24px) 0;
+}
+
+.gallery-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid.is-wide {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.ex {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ex-pic {
+  position: relative;
+  display: block;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  background: var(--ink);
+  aspect-ratio: 3 / 2;
+  transition: transform 0.2s var(--ease);
+}
+
+.ex-pic:hover {
+  transform: translate(-2px, -3px);
+}
+
+.ex-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-grid.is-wide .ex-pic {
+  aspect-ratio: auto;
+}
+
+.gallery-grid.is-wide .ex-pic img {
+  height: auto;
+  object-fit: contain;
+}
+
+.ex-label {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: var(--yellow);
+  color: var(--ink);
+  border: var(--bw-thin) solid var(--ink);
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ex figcaption {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ex-credit {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.ex-credit a {
+  color: inherit;
+}
