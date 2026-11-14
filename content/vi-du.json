@@ -1,0 +1,386 @@
+{
+ "ai-chu": {
+  "file": "ai-chu.webp",
+  "author": "Dall-E2 and Stable Diffusion",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Comparison_between_Dall-E2_and_Stable_Diffusion.png"
+ },
+ "ai-dauvantay": {
+  "file": "ai-dauvantay.webp",
+  "author": "GPT Image 2.5",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:AI-generated_image_of_a_caveman_presenting_the_invention_of_the_wheel,_showing_6-fingered_handprints_on_the_cave_painting.png"
+ },
+ "ai-hieusai": {
+  "file": "ai-hieusai.webp",
+  "author": "AI Qu",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:DALL-E_Flow_a_horse_riding_an_astronaut.png"
+ },
+ "ai-seed": {
+  "file": "ai-seed.webp",
+  "author": "Auto1111- AI Art maker",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Realistic_photographs_of_model_wearing_dress_with_Floral_pattern,_medium_close_up_shot_,_inside_studio_,_plain_empty_background.png"
+ },
+ "ai-tay": {
+  "file": "ai-tay.webp",
+  "author": "Stable Diffusion 1.5, prompted by Corvus",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:AI_generated_hand.png"
+ },
+ "am-song": {
+  "file": "am-song.webp",
+  "author": "Peter H Sampson",
+  "license": "GPL",
+  "page": "https://commons.wikimedia.org/wiki/File:Audacity_Version_3.png"
+ },
+ "as-golden": {
+  "file": "as-golden.webp",
+  "author": "EH-RON",
+  "license": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/42804821@N00/14882872877"
+ },
+ "as-highkey": {
+  "file": "as-highkey.webp",
+  "author": "Fred_Smith739",
+  "license": "CC BY-NC 2.0",
+  "page": "https://www.flickr.com/photos/159504891@N05/49777577298"
+ },
+ "as-lowkey": {
+  "file": "as-lowkey.webp",
+  "author": "PortraitSpecialist",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/58758061@N05/51402417629"
+ },
+ "as-neon": {
+  "file": "as-neon.webp",
+  "author": "Diego3336",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/31018257@N00/127406228"
+ },
+ "as-overcast": {
+  "file": "as-overcast.webp",
+  "author": "Jeffrey",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/48889052497@N01/21269472306"
+ },
+ "as-rim": {
+  "file": "as-rim.webp",
+  "author": "Khánh Hmoong",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/7997148@N05/18722526318"
+ },
+ "as-silhouette": {
+  "file": "as-silhouette.webp",
+  "author": "SodanieChea",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/41942551@N02/7211052548"
+ },
+ "as-window": {
+  "file": "as-window.webp",
+  "author": "Fountain_Head",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/37626043@N00/3992579030"
+ },
+ "bc-hang": {
+  "file": "bc-hang.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_zoom_in.ogv"
+ },
+ "bc-rung": {
+  "file": "bc-rung.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_04_2b.jpg"
+ },
+ "bc-thanhpho": {
+  "file": "bc-thanhpho.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_03_1a.jpg"
+ },
+ "bf-moodboard": {
+  "file": "bf-moodboard.webp",
+  "author": "Jordanhill School D&T Dept",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/42042252@N02/3972599723"
+ },
+ "cm-crane": {
+  "file": "cm-crane.webp",
+  "author": "Elsie esq.",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/61132483@N00/3044408760"
+ },
+ "cm-dolly": {
+  "file": "cm-dolly.webp",
+  "author": "cloudchaser32000",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/22566089@N03/4940091447"
+ },
+ "cm-slider": {
+  "file": "cm-slider.webp",
+  "author": "Pete Prodoehl",
+  "license": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/35237092540@N01/8124692046"
+ },
+ "cm-steadicam": {
+  "file": "cm-steadicam.webp",
+  "author": "vancouverfilmschool",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/38174668@N05/3617626088"
+ },
+ "cm-waveform": {
+  "file": "cm-waveform.webp",
+  "author": "Erreja",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:WFM5200_221a83_2023-Dec-11_20-03-25.jpg"
+ },
+ "cs-cu": {
+  "file": "cs-cu.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_04_5h.jpg"
+ },
+ "cs-ecu": {
+  "file": "cs-ecu.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_ecu.ogv"
+ },
+ "cs-ews": {
+  "file": "cs-ews.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_00_1c.jpg"
+ },
+ "cs-fs": {
+  "file": "cs-fs.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_01_2a.jpg"
+ },
+ "cs-low": {
+  "file": "cs-low.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_low_angle_shot.ogv"
+ },
+ "cs-ms": {
+  "file": "cs-ms.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_04_3e.jpg"
+ },
+ "cs-ws": {
+  "file": "cs-ws.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_09_1a.jpg"
+ },
+ "dg-timeline": {
+  "file": "dg-timeline.webp",
+  "author": "KDE",
+  "license": "GPLv2",
+  "page": "https://commons.wikimedia.org/wiki/File:Kdenlive_19.04.2_English.png"
+ },
+ "dt-luot": {
+  "file": "dt-luot.webp",
+  "author": "Haags Uitburo",
+  "license": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/8816624@N08/7832856410"
+ },
+ "hh-chim": {
+  "file": "hh-chim.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_Buck_Bunny_8_seconds_bird_clip.ogv"
+ },
+ "hh-soc": {
+  "file": "hh-soc.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%22Movbild-fizika%22_falo_en_Big_Buck_Bunny.webm"
+ },
+ "hh-tho": {
+  "file": "hh-tho.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_mcu.ogv"
+ },
+ "mau-am": {
+  "file": "mau-am.webp",
+  "author": "Durian Open Movie project",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sintel_trailer-1080p.ogv"
+ },
+ "mau-lanh": {
+  "file": "mau-lanh.webp",
+  "author": "(CC) Blender Foundation | Project Mango",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_03_1a.jpg"
+ },
+ "mau-pastel": {
+  "file": "mau-pastel.webp",
+  "author": "Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_tilt_down.ogv"
+ },
+ "meo-cantmat": {
+  "file": "meo-cantmat.webp",
+  "author": "Chrismatos ♥90% OFF, sorry",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/31318464@N02/8398010345"
+ },
+ "meo-cuaso": {
+  "file": "meo-cuaso.webp",
+  "author": "D Coetzee",
+  "license": "CC0",
+  "page": "https://www.flickr.com/photos/29507259@N02/5524799412"
+ },
+ "meo-cuaso2": {
+  "file": "meo-cuaso2.webp",
+  "author": "the12thplaya",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/36708987@N06/4727782211"
+ },
+ "meo-trungcanh": {
+  "file": "meo-trungcanh.webp",
+  "author": "1970_Lincoln_Continental",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/39311243@N05/4273390202"
+ },
+ "nv-3d": {
+  "file": "nv-3d.webp",
+  "author": "David Revoy / Blender Foundation",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Character_Sintel-model-sheet.png"
+ },
+ "nv-bieucam": {
+  "file": "nv-bieucam.webp",
+  "author": "Henri Testelin / Charles Le Brun",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Expressions_MET_272508.jpg"
+ },
+ "nv-colorsheet": {
+  "file": "nv-colorsheet.webp",
+  "author": "BenSadfleck",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Updated_Gwen_sheet!!_by_BenSadfleck.png"
+ },
+ "nv-modelsheet": {
+  "file": "nv-modelsheet.webp",
+  "author": "Piti Yindee",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Piti_Yindee_-_Wuffle_-_Wuffle_-_Character_Model_Sheet_(second_version).jpg"
+ },
+ "nv-turnaround": {
+  "file": "nv-turnaround.webp",
+  "author": "Uploaded by Julien Kaspar/Blender Foundation",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Spring-concept_art-Spring.png"
+ },
+ "pd-codien": {
+  "file": "pd-codien.webp",
+  "author": "Directed and produced by Stanley Donen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Example_of_subtitles_(Charade,_1963).jpg"
+ },
+ "pd-elephants": {
+  "file": "pd-elephants.webp",
+  "author": "Ton Roosendaal et al.",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Elephants_Dream_Subtitles_German.jpg"
+ },
+ "sb-anhsang": {
+  "file": "sb-anhsang.webp",
+  "author": "Uploaded by Andy Goralczyk/Blender Foundation",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Charge-concept_art-storyboard.png"
+ },
+ "sb-chitiet": {
+  "file": "sb-chitiet.webp",
+  "author": "Rodrigo Ferrusca",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Storyboard_example.jpg"
+ },
+ "sb-ghichu": {
+  "file": "sb-ghichu.webp",
+  "author": "https://www.flickr.com/photos/tmray02/",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Storyboard_for_The_Radio_Adventures_of_Dr._Floyd.jpg"
+ },
+ "sb-phacthao": {
+  "file": "sb-phacthao.webp",
+  "author": "Iván López Fuente",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Storyboard_-_Iv%C3%A1n_L%C3%B3pez_Fuente.jpg"
+ },
+ "sb-taytrang": {
+  "file": "sb-taytrang.webp",
+  "author": "tracky_birthday",
+  "license": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/54193908@N00/2129695414"
+ },
+ "sp-bokeh": {
+  "file": "sp-bokeh.webp",
+  "author": "Glassholic",
+  "license": "CC BY-NC 2.0",
+  "page": "https://www.flickr.com/photos/59077316@N06/7614015416"
+ },
+ "sp-hangchai": {
+  "file": "sp-hangchai.webp",
+  "author": "Sprengben",
+  "license": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/37010090@N04/4931170077"
+ },
+ "sp-kemchongnang": {
+  "file": "sp-kemchongnang.webp",
+  "author": "Tom Newby Photography",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/23460063@N06/5392321454"
+ },
+ "sp-nenden": {
+  "file": "sp-nenden.webp",
+  "author": "Glassholic",
+  "license": "CC BY-NC 2.0",
+  "page": "https://www.flickr.com/photos/59077316@N06/8550470979"
+ },
+ "sp-nentrang": {
+  "file": "sp-nentrang.webp",
+  "author": "misteraitch",
+  "license": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/36521968871@N01/4064421092"
+ },
+ "sp-quangcao-cu": {
+  "file": "sp-quangcao-cu.webp",
+  "author": "bunky's pickle",
+  "license": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/33497470@N06/48512635136"
+ },
+ "sp-rim": {
+  "file": "sp-rim.webp",
+  "author": "Glassholic",
+  "license": "CC BY-NC 2.0",
+  "page": "https://www.flickr.com/photos/59077316@N06/5631658515"
+ },
+ "th-chongthu": {
+  "file": "th-chongthu.webp",
+  "author": "Vintage RS",
+  "license": "CC0",
+  "page": "https://stocksnap.io/photo/old-letter-RBOT2VFYQO"
+ },
+ "th-phongbi": {
+  "file": "th-phongbi.webp",
+  "author": "Provenance Online Project",
+  "license": "CC0",
+  "page": "https://www.flickr.com/photos/58558794@N07/5818462618"
+ },
+ "th-thutay": {
+  "file": "th-thutay.webp",
+  "author": "thompsoe",
+  "license": "Public domain",
+  "page": "https://www.flickr.com/photos/8158623@N05/2142755011"
+ }
+}
