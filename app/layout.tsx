@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Lộ trình 8 tuần thực chiến để trở thành AI Short-form Video Creator: từ kịch bản, storyboard đến video AI hoàn chỉnh và portfolio.",
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#4b1b22" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#f5f5dc" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Space+Mono:wght@400;700&display=swap"
         />
       </head>
       <body>
