@@ -25,3 +25,7 @@ Mở http://localhost:3000.
 
 1. Thêm một dòng vào mảng `lessons` của module trong `lib/curriculum.ts`.
 2. Tạo tệp `content/<module>/<slug>.mdx` trùng với `slug` vừa khai báo.
+
+## Ảnh bìa bài học
+
+Đặt ảnh vào `public/images/<module>/<slug>.jpg` (hoặc `.png`, `.webp`). Trang bài học tự hiện ảnh ở banner. Prompt cho cả 63 bài nằm ở `docs/prompt-anh-minh-hoa.md`.
