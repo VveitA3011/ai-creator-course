@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
+import { Sticker } from "@/components/marquee";
 import { tools } from "@/lib/tools";
 
 export const metadata: Metadata = { title: "Công cụ" };
@@ -8,7 +9,10 @@ export const metadata: Metadata = { title: "Công cụ" };
 export default function ToolsIndex() {
   return (
     <div className="stack-lg">
-      <header className="stack rise">
+      <header className="stack rise page-head">
+        <Sticker tone="yellow" tilt={7} className="head-sticker">
+          Tự lưu
+        </Sticker>
         <span className="mono">Công cụ thực hành · {tools.length} công cụ</span>
         <h1>Làm bài tập ngay trên web</h1>
         <p className="lead">

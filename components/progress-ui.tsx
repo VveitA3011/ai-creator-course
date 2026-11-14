@@ -1,22 +1,46 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useProgress } from "@/lib/progress";
 import { availableModules, flatLessons, groups, type Module } from "@/lib/curriculum";
 import { Icon } from "./icons";
 
 export function CompleteButton({ id }: { id: string }) {
-  const { isDone, toggle } = useProgress();
+  const { isDone, toggle, done: all } = useProgress();
   const done = isDone(id);
+  const [toast, setToast] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (toast === null) return;
+    const t = setTimeout(() => setToast(null), 2200);
+    return () => clearTimeout(t);
+  }, [toast]);
+
   return (
-    <button
-      type="button"
-      className={done ? "btn btn-ghost" : "btn"}
-      aria-pressed={done}
-      onClick={() => toggle(id)}
-    >
-      {done ? "Đã hoàn thành ✓ (bấm để bỏ)" : "Đánh dấu hoàn thành"}
-    </button>
+    <>
+      <button
+        type="button"
+        className={done ? "btn btn-ghost" : "btn"}
+        aria-pressed={done}
+        onClick={() => {
+          if (!done) setToast(Object.keys(all).length + 1);
+          toggle(id);
+        }}
+      >
+        {done ? "Đã hoàn thành ✓ (bấm để bỏ)" : "Đánh dấu hoàn thành"}
+      </button>
+      <div className="toast-zone" role="status" aria-live="polite">
+        {toast !== null && (
+          <div className="toast" key={toast}>
+            <b>+1 bài xong!</b>
+            <span>
+              {toast}/{flatLessons.length} bài của khóa
+            </span>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

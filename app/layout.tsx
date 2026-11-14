@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { AuthProvider } from "@/components/auth";
+import { Marquee } from "@/components/marquee";
 import { Rail, TopBar } from "@/components/shell";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="stage">
             <TopBar />
             <main id="main">{children}</main>
+            <Marquee tone="yellow" reverse items={["Học", "Làm", "Nộp", "Sửa", "Đưa vào portfolio", "Nhận job"]} />
             <footer className="site-footer">
               Nội dung mang tính hướng dẫn nghề nghiệp. Các con số về thị trường, giá dịch vụ và thu nhập là nhận định
               tham khảo, không phải cam kết kết quả.

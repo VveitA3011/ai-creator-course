@@ -34,7 +34,8 @@ export default async function LessonPage({ params }: Props) {
   if (!lesson) notFound();
 
   const source = await readLesson(lesson.module.slug, lesson.slug);
-  const cover = findCover(lesson.module.slug, lesson.slug);
+  const coverNo = index + 1;
+  const cover = findCover(coverNo);
   const prev = flatLessons[index - 1];
   const next = flatLessons[index + 1];
   const m = lesson.module;
@@ -50,9 +51,16 @@ export default async function LessonPage({ params }: Props) {
 
       <article className="stack rise">
         <LessonMotion />
-        <header className={`lesson-hero v${allModules.indexOf(m) % 4}${cover ? " has-cover" : ""}`}>
-          {cover && <img className="lesson-cover" src={cover} alt="" />}
-          <span className="lesson-num" aria-hidden="true">
+        <header className={`lesson-hero has-cover v${allModules.indexOf(m) % 4}`}>
+          {cover ? (
+            <img className="lesson-cover" src={cover} alt="" />
+          ) : (
+            <div className="lesson-cover cover-slot" aria-hidden="true">
+              <span className="cover-slot-no">#{coverNo}</span>
+              <span className="mono">Ảnh số {coverNo} · đang chờ</span>
+            </div>
+          )}
+          <span className="sticker lesson-sticker" aria-hidden="true">
             {String(no).padStart(2, "0")}
           </span>
           <p className="crumbs">

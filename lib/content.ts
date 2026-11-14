@@ -7,10 +7,10 @@ export async function readLesson(moduleSlug: string, lessonSlug: string) {
   return fs.readFile(file, "utf8");
 }
 
-// Ảnh bìa tùy chọn: public/images/<module>/<bài>.(webp|jpg|jpeg|png)
-export function findCover(moduleSlug: string, lessonSlug: string) {
+// Ảnh bìa bài học: public/images/bai/<số thứ tự bài>.(webp|jpg|jpeg|png), số từ 1 đến 63 theo thứ tự trong khóa.
+export function findCover(no: number) {
   for (const ext of ["webp", "jpg", "jpeg", "png"]) {
-    const rel = `/images/${moduleSlug}/${lessonSlug}.${ext}`;
+    const rel = `/images/bai/${no}.${ext}`;
     if (existsSync(path.join(process.cwd(), "public", rel))) return rel;
   }
   return null;

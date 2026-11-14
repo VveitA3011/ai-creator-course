@@ -28,7 +28,7 @@ Mở http://localhost:3000.
 
 ## Ảnh bìa bài học
 
-Cả 63 bài đã có ảnh bìa 3D trong `public/images/<module>/<slug>.jpg`, dựng bằng bộ công cụ ở `scripts/covers/`. Trang bài học tự hiện ảnh ở banner. Muốn thay bằng ảnh tạo bằng AI, dùng prompt ở `docs/prompt-anh-minh-hoa.md` và ghi đè tệp cùng tên.
+Mỗi bài có một ô ảnh đánh số theo thứ tự bài trong khóa, từ 1 đến 63. Đặt ảnh vào `public/images/bai/<số>.png` (hoặc `.jpg`, `.webp`), trang bài học tự hiện ảnh; chưa có ảnh thì hiện ô trống ghi số. Prompt tạo ảnh bằng ChatGPT cho cả 63 ảnh: `docs/prompt-anh-chatgpt.md`.
 
 ## Tài khoản học viên (tùy chọn)
 

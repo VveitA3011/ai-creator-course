@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Marquee, Sticker } from "@/components/marquee";
 import { ModuleCard } from "@/components/module-card";
 import { ContinueBar, Stats, UpNext } from "@/components/progress-ui";
 import { allModules, flatLessons, pipeline } from "@/lib/curriculum";
@@ -8,7 +9,17 @@ const i = (n: number) => ({ "--i": n }) as React.CSSProperties;
 export default function Home() {
   return (
     <div className="home">
+      <div className="a-tick">
+        <Marquee items={["Brief", "Kịch bản", "Storyboard", "Hình ảnh", "Video AI", "Âm thanh", "Hậu kỳ", "Portfolio", "Nhận job"]} />
+      </div>
       <section className="hero a-hero rise">
+        <Sticker tone="magenta" tilt={8} className="hero-sticker-1">
+          Mỗi tuần
+          <br />1 đầu ra
+        </Sticker>
+        <Sticker tone="white" tilt={-10} className="hero-sticker-2">
+          Khung dọc 9:16
+        </Sticker>
         <div className="hero-body">
           <div className="pill-row">
             <span className="pill cream">{flatLessons.length} bài</span>

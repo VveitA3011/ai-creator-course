@@ -60,7 +60,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgb(0 0 0 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 0 0 / 0.045) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--fg);
   font-family: var(--font-body);
   font-size: 16px;
@@ -492,12 +496,25 @@ main {
 }
 
 .section-head {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  border-bottom: var(--bw) solid var(--ink);
-  padding-bottom: 8px;
+  padding-bottom: 18px;
+}
+
+.section-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 12px;
+  border-top: var(--bw) solid var(--ink);
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 48px) top / 100% 12px no-repeat,
+    repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 12px) top / 100% 6px no-repeat;
 }
 
 .section-head a {
@@ -649,6 +666,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
   grid-template-areas:
+    "tick tick"
     "hero next"
     "mods stats"
     "cont stats"
@@ -3886,7 +3904,7 @@ input[type="range"] {
 @media (max-width: 1020px) {
   .home {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "hero" "next" "cont" "mods" "stats" "pipe" "out";
+    grid-template-areas: "tick" "hero" "next" "cont" "mods" "stats" "pipe" "out";
   }
 
   .pipeline {
@@ -4112,4 +4130,403 @@ input[type="range"] {
   .continue .tile {
     font-size: 9.5px;
   }
+}
+
+
+/* ================================================================ Chi tiết brutalist */
+.a-tick {
+  grid-area: tick;
+}
+
+.marquee {
+  overflow: hidden;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-1);
+  background: var(--ink);
+  color: var(--white);
+  transform: rotate(-0.6deg);
+}
+
+.marquee.m-yellow {
+  background: var(--yellow);
+  color: var(--ink);
+  transform: rotate(0.4deg);
+}
+
+.marquee.m-teal {
+  background: var(--teal);
+  color: var(--ink);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee.reverse .marquee-track {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-row {
+  display: flex;
+  flex: none;
+}
+
+.marquee-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 0 8px 18px;
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.marquee-row i {
+  font-style: normal;
+  color: var(--yellow);
+}
+
+.marquee.m-yellow .marquee-row i,
+.marquee.m-teal .marquee-row i {
+  color: var(--magenta);
+  -webkit-text-stroke: 1px var(--ink);
+}
+
+.stage > .marquee {
+  margin-top: var(--s4);
+}
+
+/* Nhãn dán */
+.sticker {
+  position: absolute;
+  z-index: 3;
+  display: inline-grid;
+  place-items: center;
+  text-align: center;
+  padding: 8px 12px;
+  border: var(--bw) solid var(--ink);
+  background: var(--white);
+  box-shadow: var(--shadow-1);
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  transform: rotate(var(--tilt, -6deg));
+  animation: stamp 0.55s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  animation-delay: 0.35s;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.sticker:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+.sticker.s-magenta {
+  background: var(--magenta);
+}
+
+.sticker.s-yellow {
+  background: var(--yellow);
+}
+
+.sticker.s-teal {
+  background: var(--teal);
+}
+
+.sticker.s-white {
+  background: var(--white);
+}
+
+.hero-sticker-1 {
+  right: 22px;
+  bottom: 22px;
+  border-radius: 50%;
+  width: 104px;
+  height: 104px;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.hero-sticker-2 {
+  top: 18px;
+  right: 30%;
+}
+
+.page-head {
+  position: relative;
+  padding-right: 120px;
+}
+
+.head-sticker {
+  top: 0;
+  right: 8px;
+  font-size: 16px;
+  padding: 10px 14px;
+}
+
+.lesson-sticker {
+  left: -6px;
+  top: -6px;
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  --tilt: -12deg;
+  box-shadow: 3px 3px 0 var(--white);
+}
+
+.lesson-hero .crumbs {
+  padding-left: 52px;
+}
+
+/* Tiêu đề in lệch màu */
+.hero-body h1 {
+  text-shadow: 4px 4px 0 var(--magenta);
+}
+
+.pf-hero h1 {
+  text-shadow: 4px 4px 0 var(--yellow);
+}
+
+.page-head h1 {
+  text-shadow: 3px 3px 0 var(--teal);
+}
+
+/* Ô ảnh đang chờ */
+.cover-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(-45deg, transparent 0 14px, rgb(0 0 0 / 0.08) 14px 28px);
+  background-size: 40px 40px;
+  animation: stripes 1.2s linear infinite;
+  overflow: hidden;
+}
+
+.cover-slot::before,
+.cover-slot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140%;
+  height: var(--bw);
+  background: var(--ink);
+  opacity: 0.18;
+  transform: translate(-50%, -50%) rotate(var(--a, 32deg));
+}
+
+.cover-slot::after {
+  --a: -32deg;
+}
+
+.cover-slot-no {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 1;
+  color: var(--white);
+  -webkit-text-stroke: 3px var(--ink);
+  text-shadow: 4px 4px 0 var(--ink);
+}
+
+.cover-slot .mono {
+  position: relative;
+  z-index: 1;
+  background: var(--ink);
+  color: var(--white);
+  padding: 2px 8px;
+}
+
+/* Thông báo +1 bài */
+.toast-zone {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 60;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 18px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r);
+  background: var(--teal);
+  box-shadow: var(--shadow-1);
+  transform: rotate(-3deg);
+  animation:
+    toast-in 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) both,
+    toast-out 0.3s ease-in 1.9s forwards;
+}
+
+.toast b {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.toast span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Hiệu ứng nhấn mạnh khi rê lên nhãn màu */
+.pill {
+  transition: transform 0.15s var(--ease);
+}
+
+.pill:hover {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+/* Đường chạy dưới liên kết trong bài */
+.prose a {
+  background: linear-gradient(var(--yellow), var(--yellow)) left bottom / 0 40% no-repeat;
+  transition: background-size 0.25s var(--ease);
+}
+
+.prose a:hover {
+  background-size: 100% 40%;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: rotate(calc(var(--tilt, -6deg) - 20deg)) scale(2.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--tilt, -6deg)) scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(var(--tilt, -6deg));
+  }
+  25% {
+    transform: rotate(calc(var(--tilt, -6deg) - 8deg)) scale(1.06);
+  }
+  75% {
+    transform: rotate(calc(var(--tilt, -6deg) + 6deg)) scale(1.06);
+  }
+}
+
+@keyframes stripes {
+  to {
+    background-position: 40px 0;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(8deg) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(20px) rotate(-3deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .marquee-row span {
+    font-size: 15px;
+  }
+
+  .hero-sticker-1 {
+    width: 86px;
+    height: 86px;
+    font-size: 11px;
+    right: 14px;
+    bottom: auto;
+    top: 160px;
+  }
+
+  .hero-sticker-2 {
+    top: 12px;
+    right: 12px;
+    font-size: 12px;
+  }
+
+  .page-head {
+    padding-right: 0;
+    padding-top: 40px;
+  }
+
+  .head-sticker {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .toast-zone {
+    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .cover-slot-no {
+    font-size: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .cover-slot,
+  .sticker,
+  .toast {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .head-sticker {
+    right: 18px;
+  }
+}
+
+.tool-hero .pill {
+  white-space: normal;
+  max-width: 100%;
 }

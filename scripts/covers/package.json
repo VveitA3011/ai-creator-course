@@ -1,6 +1,0 @@
-{
-  "name": "cover-render",
-  "private": true,
-  "description": "Dựng ảnh bìa 3D cho bài học bằng three.js và Playwright",
-  "dependencies": { "three": "0.170.0" }
-}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Sticker } from "@/components/marquee";
 import { ModuleCard } from "@/components/module-card";
 import { extraModules, flatLessons, modules, totalPlanned } from "@/lib/curriculum";
 
@@ -7,7 +8,10 @@ export const metadata: Metadata = { title: "Lộ trình" };
 export default function Roadmap() {
   return (
     <div className="stack-lg">
-      <header className="stack rise">
+      <header className="stack rise page-head">
+        <Sticker tone="teal" tilt={-7} className="head-sticker">
+          8 tuần
+        </Sticker>
         <span className="mono">Lộ trình lõi · {totalPlanned} bài</span>
         <h1>Lộ trình 8 tuần thực chiến</h1>
         <p className="lead">
