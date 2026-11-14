@@ -334,3 +334,50 @@ export function IncomeCalc() {
     </div>
   );
 }
+
+/* Mục lục bài học ở cột phải trên màn hình rộng: lấy các tiêu đề h2 trong bài, đánh dấu mục đang đọc */
+export function LessonToc() {
+  const [items, setItems] = useState<{ id: string; text: string }[]>([]);
+  const [active, setActive] = useState<string | null>(null);
+
+  useEffect(() => {
+    const heads = [...document.querySelectorAll<HTMLHeadingElement>(".prose h2")];
+    const used = new Set<string>();
+    const list = heads.map((h, i) => {
+      if (!h.id) {
+        let id = `muc-${i + 1}`;
+        while (used.has(id)) id += "-x";
+        h.id = id;
+      }
+      used.add(h.id);
+      return { id: h.id, text: h.textContent ?? "" };
+    });
+    setItems(list);
+    if (!("IntersectionObserver" in window) || heads.length === 0) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (vis[0]) setActive(vis[0].target.id);
+      },
+      { rootMargin: "0px 0px -70% 0px" },
+    );
+    heads.forEach((h) => io.observe(h));
+    return () => io.disconnect();
+  }, []);
+
+  if (items.length < 2) return null;
+  return (
+    <nav className="lesson-toc" aria-label="Các mục trong bài">
+      <span className="mono">Trong bài này</span>
+      <ol>
+        {items.map((it) => (
+          <li key={it.id}>
+            <a href={`#${it.id}`} className={active === it.id ? "is-on" : undefined} aria-current={active === it.id ? "location" : undefined}>
+              {it.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}

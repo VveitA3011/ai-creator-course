@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx";
 import { Icon } from "@/components/icons";
-import { LessonMotion } from "@/components/lesson-interactive";
+import { LessonMotion, LessonToc } from "@/components/lesson-interactive";
 import { CompleteButton, LessonList } from "@/components/progress-ui";
 import { findCover, readLesson } from "@/lib/content";
 import { allModules, flatLessons } from "@/lib/curriculum";
@@ -104,6 +104,9 @@ export default async function LessonPage({ params }: Props) {
           </div>
         </div>
       </article>
+      <aside className="lesson-aside">
+        <LessonToc />
+      </aside>
     </div>
   );
 }

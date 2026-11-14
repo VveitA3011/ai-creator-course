@@ -4530,3 +4530,136 @@ input[type="range"] {
   white-space: normal;
   max-width: 100%;
 }
+
+/* Màn hình rộng: dùng gần hết bề ngang thay vì khung 1280px ở giữa */
+.shell {
+  max-width: 1760px;
+}
+
+@media (min-width: 1440px) {
+  .shell {
+    padding-inline: 32px;
+    gap: var(--s6);
+  }
+
+  .home {
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+    gap: var(--s6);
+  }
+
+  .lesson-layout {
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+
+  .lesson-layout .prose,
+  .lesson-layout .lesson-foot {
+    max-width: 76ch;
+  }
+}
+
+/* Mục lục bên phải bài học (chỉ màn hình rộng) */
+.lesson-aside {
+  display: none;
+}
+
+.lesson-toc {
+  background: var(--white);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-1);
+  padding: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lesson-toc .mono {
+  background: var(--ink);
+  color: var(--white);
+  padding: 2px 8px;
+  align-self: flex-start;
+}
+
+.lesson-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  counter-reset: toc;
+}
+
+.lesson-toc a {
+  counter-increment: toc;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 8px;
+  align-items: baseline;
+  min-height: 40px;
+  padding: 8px 8px;
+  border: var(--bw-thin) solid transparent;
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  transition:
+    background 0.12s,
+    transform 0.15s var(--ease);
+}
+
+.lesson-toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.lesson-toc a:hover {
+  background: var(--yellow);
+  border-color: var(--ink);
+  transform: translateX(3px);
+}
+
+.lesson-toc a.is-on {
+  background: var(--magenta);
+  border-color: var(--ink);
+}
+
+.prose h2 {
+  scroll-margin-top: 24px;
+}
+
+@media (min-width: 1440px) {
+  .lesson-layout {
+    grid-template-columns: 300px minmax(0, 1fr) 250px;
+  }
+
+  .lesson-aside {
+    display: block;
+    position: sticky;
+    top: var(--s5);
+    align-self: start;
+    margin-top: 340px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .lesson-layout .prose,
+  .lesson-layout .lesson-foot {
+    max-width: none;
+  }
+
+  .lesson-layout .prose {
+    font-size: 18px;
+  }
+
+  .lesson-layout .prose > p,
+  .lesson-layout .prose > ul,
+  .lesson-layout .prose > ol,
+  .lesson-layout .prose > blockquote {
+    max-width: 80ch;
+  }
+}
