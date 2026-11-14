@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Submissions } from "@/components/account/submissions";
 import { LessonList, ModuleBar } from "@/components/progress-ui";
 import { availableModules, getModule } from "@/lib/curriculum";
 
@@ -41,6 +42,7 @@ export default async function ModulePage({ params }: Props) {
       <Link className="btn" href={`/khoa-hoc/${m.slug}/${m.lessons[0].slug}`}>
         Vào bài đầu tiên
       </Link>
+      <Submissions moduleSlug={m.slug} output={m.output} />
     </div>
   );
 }

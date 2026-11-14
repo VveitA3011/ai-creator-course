@@ -1,0 +1,6 @@
+{
+  "name": "test-accounts",
+  "private": true,
+  "description": "Kiểm thử phần tài khoản: quy tắc bảo mật của cơ sở dữ liệu và luồng đăng nhập, đồng bộ, portfolio trên trình duyệt",
+  "dependencies": { "@electric-sql/pglite": "0.2.17" }
+}

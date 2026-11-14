@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { flatLessons } from "@/lib/curriculum";
 import { useProgress } from "@/lib/progress";
+import { accountsEnabled } from "@/lib/supabase";
+import { useAuth } from "./auth";
 import { Icon } from "./icons";
 
 const links = [
@@ -12,6 +14,16 @@ const links = [
   { href: "/lo-trinh", label: "Lộ trình", icon: "layers" as const, match: (p: string) => p.startsWith("/lo-trinh") || p.startsWith("/khoa-hoc") },
   { href: "/cong-cu", label: "Công cụ", icon: "tools" as const, match: (p: string) => p.startsWith("/cong-cu") },
   { href: "/hoc-tap", label: "Học tập", icon: "pie" as const, match: (p: string) => p.startsWith("/hoc-tap") },
+  ...(accountsEnabled
+    ? [
+        {
+          href: "/tai-khoan",
+          label: "Tài khoản",
+          icon: "user" as const,
+          match: (p: string) => ["/tai-khoan", "/dang-nhap", "/portfolio"].some((x) => p.startsWith(x)),
+        },
+      ]
+    : []),
 ];
 
 export function Rail() {
@@ -63,6 +75,8 @@ function fold(s: string) {
 export function TopBar() {
   const path = usePathname();
   const { isDone } = useProgress();
+  const { user, profile } = useAuth();
+  const name = profile?.display_name || (user ? (user.email ?? "").split("@")[0] : "Creator");
   const [greeting, setGreeting] = useState("Xin chào");
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
@@ -88,7 +102,7 @@ export function TopBar() {
   return (
     <div className="topbar">
       <p className="greeting">
-        {greeting}, <b>Creator</b>
+        {greeting}, <b>{name}</b>
       </p>
       <div
         className="search"

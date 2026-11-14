@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { AuthProvider } from "@/components/auth";
 import { Rail, TopBar } from "@/components/shell";
 import "./globals.css";
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">
           Bỏ qua điều hướng
         </a>
+        <AuthProvider>
         <div className="shell">
           <Rail />
           <div className="stage">
@@ -36,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </footer>
           </div>
         </div>
+        </AuthProvider>
       </body>
     </html>
   );

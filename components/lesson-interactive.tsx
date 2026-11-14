@@ -68,28 +68,12 @@ const skills = [
   "Xây dựng prompt",
   "Kinh nghiệm social media",
 ];
-const KEY = "aic-selfcheck-v1";
-
 export function SelfCheck() {
-  const [vals, setVals] = useState<number[]>(skills.map(() => 5));
-
-  useEffect(() => {
-    try {
-      const saved = JSON.parse(window.localStorage.getItem(KEY) ?? "null");
-      if (Array.isArray(saved) && saved.length === skills.length) setVals(saved.map(Number));
-    } catch {
-      /* không đọc được thì dùng giá trị mặc định */
-    }
-  }, []);
+  const [saved, setSaved] = useSaved<number[]>("aic-selfcheck-v1", skills.map(() => 5));
+  const vals = Array.isArray(saved) && saved.length === skills.length ? saved.map(Number) : skills.map(() => 5);
 
   function set(i: number, v: number) {
-    const next = vals.map((x, j) => (j === i ? v : x));
-    setVals(next);
-    try {
-      window.localStorage.setItem(KEY, JSON.stringify(next));
-    } catch {
-      /* bỏ qua */
-    }
+    setSaved(vals.map((x, j) => (j === i ? v : x)));
   }
 
   const avg = vals.reduce((s, v) => s + v, 0) / vals.length;

@@ -1,23 +1,30 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { readLocal, REMOTE_APPLIED, writeLocal } from "./local";
 
-// Lưu một giá trị trên trình duyệt của học viên (localStorage).
+// Lưu một giá trị của học viên trên trình duyệt (và đồng bộ lên tài khoản khi đã đăng nhập).
 // Lần render đầu dùng giá trị mặc định để khớp với bản dựng tĩnh, sau đó đọc giá trị đã lưu.
 export function useSaved<T>(key: string, initial: T): [T, (v: T | ((prev: T) => T)) => void, boolean] {
   const [val, setVal] = useState<T>(initial);
   const [ready, setReady] = useState(false);
   const latest = useRef(val);
   latest.current = val;
+  const initialRef = useRef(initial);
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(key);
-      if (raw) setVal(JSON.parse(raw));
-    } catch {
-      /* dữ liệu hỏng hoặc trình duyệt chặn lưu trữ: dùng giá trị mặc định */
-    }
-    setReady(true);
+    const load = () => {
+      try {
+        const raw = readLocal(key);
+        setVal(raw ? JSON.parse(raw) : initialRef.current);
+      } catch {
+        setVal(initialRef.current);
+      }
+      setReady(true);
+    };
+    load();
+    window.addEventListener(REMOTE_APPLIED, load);
+    return () => window.removeEventListener(REMOTE_APPLIED, load);
   }, [key]);
 
   const save = useCallback(
@@ -25,11 +32,7 @@ export function useSaved<T>(key: string, initial: T): [T, (v: T | ((prev: T) => 
       const next = typeof v === "function" ? (v as (p: T) => T)(latest.current) : v;
       latest.current = next;
       setVal(next);
-      try {
-        window.localStorage.setItem(key, JSON.stringify(next));
-      } catch {
-        /* bỏ qua */
-      }
+      writeLocal(key, JSON.stringify(next));
     },
     [key],
   );

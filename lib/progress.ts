@@ -1,25 +1,24 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { readLocal, REMOTE_APPLIED, writeLocal } from "./local";
 
-// Tiến độ lưu trên trình duyệt của học viên. Đợt 3 sẽ đồng bộ lên tài khoản.
+// Tiến độ lưu trên trình duyệt của học viên, đồng bộ lên tài khoản khi đã đăng nhập.
 const KEY = "aic-progress-v1";
 const EVENT = "aic-progress";
 
 function readRaw(): string {
-  try {
-    return window.localStorage.getItem(KEY) ?? "{}";
-  } catch {
-    return "{}";
-  }
+  return readLocal(KEY) ?? "{}";
 }
 
 function subscribe(cb: () => void) {
   window.addEventListener(EVENT, cb);
   window.addEventListener("storage", cb);
+  window.addEventListener(REMOTE_APPLIED, cb);
   return () => {
     window.removeEventListener(EVENT, cb);
     window.removeEventListener("storage", cb);
+    window.removeEventListener(REMOTE_APPLIED, cb);
   };
 }
 
@@ -42,11 +41,7 @@ export function useProgress() {
       const next = { ...parse(readRaw()) };
       if (next[id]) delete next[id];
       else next[id] = Date.now();
-      try {
-        window.localStorage.setItem(KEY, JSON.stringify(next));
-      } catch {
-        /* trình duyệt chặn lưu trữ: bỏ qua */
-      }
+      writeLocal(KEY, JSON.stringify(next));
       window.dispatchEvent(new Event(EVENT));
     },
   };
