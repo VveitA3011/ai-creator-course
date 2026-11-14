@@ -44,10 +44,13 @@ Khóa anon được thiết kế để nằm trong mã phía trình duyệt; d�
 ## 5. Đưa vào Vercel
 
 1. Mở dự án trên vercel.com → **Settings → Environment Variables**.
+   Giao diện mới của Vercel không còn mục này riêng: vào **Settings → Environments**, bấm dòng **Production**, tìm phần thêm biến.
 2. Thêm hai biến, áp dụng cho Production (và Preview nếu muốn):
-   - `NEXT_PUBLIC_SUPABASE_URL` = Project URL
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = khóa anon public
-3. Vào **Deployments**, bấm **Redeploy** bản mới nhất để web nhận biến mới.
+   - `SUPABASE_URL` = Project URL
+   - `ANON_KEY` = khóa anon public
+
+   Web cũng nhận các tên `NEXT_PUBLIC_SUPABASE_URL` và `NEXT_PUBLIC_SUPABASE_ANON_KEY` hoặc `SUPABASE_ANON_KEY`, dùng tên nào cũng được.
+3. Vào **Deployments**, bấm **Redeploy** bản mới nhất để web nhận biến mới. Giá trị được gắn vào mã lúc build, nên lưu biến xong phải build lại.
 
 Sau khi triển khai lại, thanh điều hướng có thêm biểu tượng **Tài khoản**.
 
@@ -66,12 +69,12 @@ Sau khi triển khai lại, thanh điều hướng có thêm biểu tượng **T
 
 ## Chạy thử trên máy
 
-Tạo tệp `.env.local` ở thư mục gốc (tệp này không được đưa lên kho):
+Tạo tệp `.env.local` ở thư mục gốc (tệp này không được đưa lên kho), điền hai giá trị ở bước 4:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Điền hai giá trị ở bước 4 rồi chạy `npm run dev`.
+Rồi chạy `npm run dev`.
 
 Bộ kiểm thử tự động cho phần tài khoản nằm ở `scripts/test-accounts/`.

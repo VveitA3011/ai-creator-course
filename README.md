@@ -32,4 +32,4 @@ Cả 63 bài đã có ảnh bìa 3D trong `public/images/<module>/<slug>.jpg`, d
 
 ## Tài khoản học viên (tùy chọn)
 
-Đăng nhập, đồng bộ tiến độ và dữ liệu công cụ giữa các máy, nộp đầu ra từng tuần, trang portfolio công khai tại `/p/<tên-trang>`. Dùng Supabase; chỉ bật khi khai báo `NEXT_PUBLIC_SUPABASE_URL` và `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Hướng dẫn từng bước: `docs/thiet-lap-tai-khoan.md`. Cơ sở dữ liệu: `supabase/schema.sql`. Kiểm thử: `scripts/test-accounts/`.
+Đăng nhập, đồng bộ tiến độ và dữ liệu công cụ giữa các máy, nộp đầu ra từng tuần, trang portfolio công khai tại `/p/<tên-trang>`. Dùng Supabase; chỉ bật khi khai báo `SUPABASE_URL` và `ANON_KEY` (hoặc `NEXT_PUBLIC_SUPABASE_URL` và `NEXT_PUBLIC_SUPABASE_ANON_KEY`). Hướng dẫn từng bước: `docs/thiet-lap-tai-khoan.md`. Cơ sở dữ liệu: `supabase/schema.sql`. Kiểm thử: `scripts/test-accounts/`.
